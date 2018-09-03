@@ -1,0 +1,13 @@
+\begin{thebibliography}{}
+
+\bibitem[Nomb, 2013]{articulo1}
+Nomb (2013).
+\newblock titulo articulo.
+\newblock {\em revista}.
+
+\bibitem[Nombre, 2013]{llaveLibro1}
+Nombre (2013).
+\newblock {\em titulo libro}.
+\newblock editorial.
+
+\end{thebibliography}
