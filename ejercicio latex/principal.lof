@@ -1,3 +1,7 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Imagen de Web}}{1}{figure.1.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \IeC {\'U}ltimo reinicio del agente en Linux.}}{3}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces N\IeC {\'u}mero de interfaces Ethernet en Linux.}}{4}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Velocidad de las interfaces en Linux.}}{4}{figure.2.3}
