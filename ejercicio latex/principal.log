@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.5)  5 SEP 2018 19:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.5)  5 SEP 2018 19:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -495,10 +495,10 @@ File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gin@req@height=\dimen108
 \Gin@req@width=\dimen109
 )
-(./principal.aux (./portada/portada.aux)
-LaTeX Info: Redefining \. on input line 24.
-LaTeX Info: Redefining \% on input line 24.
- (./capitulo1/introduccion.aux)
+(./principal.aux
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
+ (./portada/portada.aux) (./capitulo1/introduccion.aux)
 (./cuestionario/preguntas.aux))
 \openout1 = `principal.aux'.
 
@@ -1059,7 +1059,7 @@ re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on principal.pdf (13 pages, 110252 bytes).
+Output written on principal.pdf (13 pages, 110185 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  123 compressed objects within 2 object streams
