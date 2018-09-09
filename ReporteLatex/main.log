@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.5)  5 SEP 2018 22:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.5)  8 SEP 2018 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1539,79 +1539,81 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 2.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 2.
+(./Cuestionario/preguntasMarcela.tex
 
-Package xcolor Warning: Incompatible color definition on input line 5.
+Package xcolor Warning: Incompatible color definition on input line 2.
 
 <images/Pregunta1.png, id=72, 522.95375pt x 95.35625pt>
 File: images/Pregunta1.png Graphic file (type png)
 
 <use images/Pregunta1.png>
-Package pdftex.def Info: images/Pregunta1.png used on input line 10.
+Package pdftex.def Info: images/Pregunta1.png used on input line 7.
 (pdftex.def)             Requested size: 422.99713pt x 77.13191pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 17.
+Package xcolor Warning: Incompatible color definition on input line 14.
 
 <images/Pregunta2L.png, id=74, 544.0325pt x 59.22125pt>
 File: images/Pregunta2L.png Graphic file (type png)
 
 <use images/Pregunta2L.png>
-Package pdftex.def Info: images/Pregunta2L.png used on input line 21.
+Package pdftex.def Info: images/Pregunta2L.png used on input line 18.
 (pdftex.def)             Requested size: 422.99713pt x 46.04779pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 25.
+
+
+Package xcolor Warning: Incompatible color definition on input line 27.
+
+LaTeX Font Info:    Try loading font information for OMS+pxr on input line 27.
+(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/omspxr.fd
+File: omspxr.fd 2000/12/14 v1.0
+)
+LaTeX Font Info:    Font shape `OMS/pxr/m/n' in size <10> not available
+(Font)              Font shape `OMS/pxsy/m/n' tried instead on input line 27.
 
 
 Package xcolor Warning: Incompatible color definition on input line 28.
 
 
-Package xcolor Warning: Incompatible color definition on input line 30.
-
-LaTeX Font Info:    Try loading font information for OMS+pxr on input line 30.
-(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/omspxr.fd
-File: omspxr.fd 2000/12/14 v1.0
-)
-LaTeX Font Info:    Font shape `OMS/pxr/m/n' in size <10> not available
-(Font)              Font shape `OMS/pxsy/m/n' tried instead on input line 30.
-
-
-Package xcolor Warning: Incompatible color definition on input line 31.
-
-
-Package xcolor Warning: Incompatible color definition on input line 32.
+Package xcolor Warning: Incompatible color definition on input line 29.
 
 <images/Pregunta3L.png, id=76, 541.02126pt x 92.345pt>
 File: images/Pregunta3L.png Graphic file (type png)
 
 <use images/Pregunta3L.png>
-Package pdftex.def Info: images/Pregunta3L.png used on input line 37.
+Package pdftex.def Info: images/Pregunta3L.png used on input line 34.
 (pdftex.def)             Requested size: 422.99713pt x 72.2021pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 37.
  [6
 
- <./images/Pregunta1.png> <./images/Pregunta2L.png>]) <images/headerInp.png, id
-=86, 603.25375pt x 129.48375pt>
+ <./images/Pregunta1.png> <./images/Pregunta2L.png>]) (./Cuestionario/preguntas
+Rosa.tex) (./Cuestionario/preguntasSamuel.tex))
+<images/headerInp.png, id=86, 603.25375pt x 129.48375pt>
 File: images/headerInp.png Graphic file (type png)
 
 <use images/headerInp.png>
@@ -1804,13 +1806,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
  ) 
 Here is how much of TeX's memory you used:
- 11948 strings out of 493029
- 170933 string characters out of 6136235
- 277707 words of memory out of 5000000
+ 11963 strings out of 493029
+ 171215 string characters out of 6136235
+ 278707 words of memory out of 5000000
  15172 multiletter control sequences out of 15000+600000
  26042 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,15n,45p,317b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,15n,45p,317b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/pxfonts/rpxi.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -1819,10 +1821,10 @@ nts/rpxsc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (9 pages, 171568 bytes).
+Output written on main.pdf (9 pages, 171587 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
  79 words of extra memory for PDF output out of 10000 (max. 10000000)
 
