@@ -1,8 +1,15 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Configuraci\IeC {\'o}n de snmp (1).\relax }}{7}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Configuraci\IeC {\'o}n de snmp (2).\relax }}{8}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Archivo de configuraci\IeC {\'o}n finalizado.\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Archivo de hosts Observium.\relax }}{10}{figure.caption.7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ping a Linux.\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Agente a\IeC {\~n}adido.\relax }}{11}{figure.caption.9}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Informaci\IeC {\'o}n del agente.\relax }}{11}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \IeC {\'U}ltimo reinicio del agente en Linux.\relax }}{7}{figure.caption.4}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces N\IeC {\'u}mero de interfaces Ethernet en Linux.\relax }}{7}{figure.caption.5}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Velocidad de las interfaces en Linux.\relax }}{8}{figure.caption.6}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \IeC {\'U}ltimo reinicio del agente en Linux.\relax }}{13}{figure.caption.11}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces N\IeC {\'u}mero de interfaces Ethernet en Linux.\relax }}{13}{figure.caption.12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Velocidad de las interfaces en Linux.\relax }}{14}{figure.caption.13}
 \addvspace {10\p@ }
