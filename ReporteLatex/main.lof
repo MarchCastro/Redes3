@@ -22,4 +22,12 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces N\IeC {\'u}mero de interfaces Ethernet en Windows.\relax }}{17}{figure.caption.21}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Velocidad de las interfaces en Linux.\relax }}{17}{figure.caption.22}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Velocidad de las interfaces en Windows.\relax }}{18}{figure.caption.23}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Octetos por interfaz.\relax }}{18}{figure.caption.24}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Direcciones IP de cada interfaz.\relax }}{18}{figure.caption.25}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Octetos por interfaz.\relax }}{19}{figure.caption.26}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Direcciones IP de cada interfaz.\relax }}{19}{figure.caption.27}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Mensajes ICMP recibidos en Linux.\relax }}{19}{figure.caption.28}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Mensajes ICMP recibidos en Windows.\relax }}{19}{figure.caption.29}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Entradas en ipRouteTable en Linux.\relax }}{19}{figure.caption.30}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Entradas en ipRouteTable en Windows.\relax }}{19}{figure.caption.31}
 \addvspace {10\p@ }
