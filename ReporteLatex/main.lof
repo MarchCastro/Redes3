@@ -1,4 +1,4 @@
-\select@language {spanish}
+\babel@toc {spanish}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Configuraci\IeC {\'o}n de snmp (1).\relax }}{7}{figure.caption.4}
@@ -8,11 +8,18 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Ping a Linux.\relax }}{10}{figure.caption.8}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Agente a\IeC {\~n}adido.\relax }}{11}{figure.caption.9}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Informaci\IeC {\'o}n del agente.\relax }}{11}{figure.caption.10}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Caracter\IeC {\'\i }sticas de Windows.\relax }}{12}{figure.caption.11}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Protocolo SNMP.\relax }}{12}{figure.caption.12}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Captura SNMP.\relax }}{13}{figure.caption.13}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Comunidad SNMP.\relax }}{13}{figure.caption.14}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Permisos de la comunidad.\relax }}{14}{figure.caption.15}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Servicio SNMP.\relax }}{14}{figure.caption.16}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Firewall de Windows.\relax }}{15}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \IeC {\'U}ltimo reinicio del agente en Linux.\relax }}{13}{figure.caption.11}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces \IeC {\'U}ltimo reinicio del agente en Windows.\relax }}{13}{figure.caption.12}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces N\IeC {\'u}mero de interfaces Ethernet en Linux.\relax }}{14}{figure.caption.13}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces N\IeC {\'u}mero de interfaces Ethernet en Windows.\relax }}{14}{figure.caption.14}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Velocidad de las interfaces en Linux.\relax }}{14}{figure.caption.15}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Velocidad de las interfaces en Windows.\relax }}{15}{figure.caption.16}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \IeC {\'U}ltimo reinicio del agente en Linux.\relax }}{16}{figure.caption.18}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \IeC {\'U}ltimo reinicio del agente en Windows.\relax }}{16}{figure.caption.19}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces N\IeC {\'u}mero de interfaces Ethernet en Linux.\relax }}{17}{figure.caption.20}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces N\IeC {\'u}mero de interfaces Ethernet en Windows.\relax }}{17}{figure.caption.21}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Velocidad de las interfaces en Linux.\relax }}{17}{figure.caption.22}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Velocidad de las interfaces en Windows.\relax }}{18}{figure.caption.23}
 \addvspace {10\p@ }
