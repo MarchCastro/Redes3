@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.3.5)  12 SEP 2018 00:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.3.5)  12 SEP 2018 16:01
 entering extended mode
 **./preguntasRosa.tex
 (preguntasRosa.tex
@@ -616,31 +616,31 @@ G,.JBIG2,.JB2,.eps]
 <../images/Pregunta4O.png, id=1, 500.62032pt x 132.495pt>
 File: ../images/Pregunta4O.png Graphic file (type png)
 <use ../images/Pregunta4O.png>
-Package pdftex.def Info: ../images/Pregunta4O.png  used on input line 23. on in
-put line 23.
+Package pdftex.def Info: ../images/Pregunta4O.png  used on input line 24. on in
+put line 24.
 Package pdftex.def Info: Requested size: 241.84843pt x 64.00726pt on input line
- 23.
+ 24.
 <../images/Pregunta4W.png, id=2, 343.2825pt x 275.52937pt>
 File: ../images/Pregunta4W.png Graphic file (type png)
 <use ../images/Pregunta4W.png>
-Package pdftex.def Info: ../images/Pregunta4W.png  used on input line 36. on in
-put line 36.
+Package pdftex.def Info: ../images/Pregunta4W.png  used on input line 37. on in
+put line 37.
 Package pdftex.def Info: Requested size: 241.84843pt x 194.11368pt on input lin
-e 36.
+e 37.
 <../images/Pregunta4W2.png, id=3, 526.96875pt x 348.55219pt>
 File: ../images/Pregunta4W2.png Graphic file (type png)
 <use ../images/Pregunta4W2.png>
-Package pdftex.def Info: ../images/Pregunta4W2.png  used on input line 48. on i
-nput line 48.
+Package pdftex.def Info: ../images/Pregunta4W2.png  used on input line 49. on i
+nput line 49.
 Package pdftex.def Info: Requested size: 241.84843pt x 159.96896pt on input lin
-e 48.
+e 49.
 <../images/Pregunta5C.png, id=4, 398.99063pt x 106.14656pt>
 File: ../images/Pregunta5C.png Graphic file (type png)
 <use ../images/Pregunta5C.png>
-Package pdftex.def Info: ../images/Pregunta5C.png  used on input line 62. on in
-put line 62.
+Package pdftex.def Info: ../images/Pregunta5C.png  used on input line 64. on in
+put line 64.
 Package pdftex.def Info: Requested size: 241.84843pt x 64.34114pt on input line
- 62.
+ 64.
 [1{C:/Users/arturo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
  <../images/Pregunta4O.png> <../images/Pregunta4W.png> <../images/Pregunta4W2.p
@@ -648,25 +648,31 @@ ng>]
 <../images/Pregunta5W.png, id=11, 291.33844pt x 227.34938pt>
 File: ../images/Pregunta5W.png Graphic file (type png)
 <use ../images/Pregunta5W.png>
-Package pdftex.def Info: ../images/Pregunta5W.png  used on input line 75. on in
-put line 75.
+Package pdftex.def Info: ../images/Pregunta5W.png  used on input line 77. on in
+put line 77.
 Package pdftex.def Info: Requested size: 241.84843pt x 188.73462pt on input lin
-e 75.
+e 77.
+
+Overfull \hbox (23.62167pt too wide) in paragraph at lines 85--87
+[]\OT1/cmr/bx/n/10 SO Cen-tos \OT1/cmr/m/n/10 Con ifphy-sAd-dres (OID 1.3.6.1.2
+.1.2.2.1.6.2 )po-de-mos vi-sua-li-zar le Mac de en-pos3 \OT1/cmr/bx/n/10 8:0:27
+:91:60:40\OT1/cmr/m/n/10 . 
+ []
+
 <../images/Pregunta6C.png, id=12, 505.13719pt x 74.52844pt>
 File: ../images/Pregunta6C.png Graphic file (type png)
 <use ../images/Pregunta6C.png>
-Package pdftex.def Info: ../images/Pregunta6C.png  used on input line 89. on in
-put line 89.
+Package pdftex.def Info: ../images/Pregunta6C.png  used on input line 92. on in
+put line 92.
 Package pdftex.def Info: Requested size: 241.84843pt x 35.68225pt on input line
- 89.
+ 92.
 <../images/Pregunta6W.png, id=13, 328.22626pt x 249.18094pt>
 File: ../images/Pregunta6W.png Graphic file (type png)
 <use ../images/Pregunta6W.png>
-Package pdftex.def Info: ../images/Pregunta6W.png  used on input line 103. on i
-nput line 103.
+Package pdftex.def Info: ../images/Pregunta6W.png  used on input line 106. on i
+nput line 106.
 Package pdftex.def Info: Requested size: 241.84843pt x 183.60774pt on input lin
-e 103.
-
+e 106.
 [2 <../images/Pregunta5C.png> <../images/Pregunta5W.png> <../images/Pregunta6C.
 png>] [3 <../images/Pregunta6W.png>] (preguntasRosa.aux
 LaTeX Info: Redefining \. on input line 6.
@@ -682,7 +688,7 @@ Here is how much of TeX's memory you used:
  41i,5n,30p,349b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on preguntasRosa.pdf (3 pages, 385225 bytes).
+Output written on preguntasRosa.pdf (3 pages, 385203 bytes).
 PDF statistics:
  27 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
