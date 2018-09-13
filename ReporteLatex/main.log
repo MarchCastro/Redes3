@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.5)  12 SEP 2018 11:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.5)  12 SEP 2018 19:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1471,37 +1471,96 @@ Package xcolor Warning: Incompatible color definition on input line 36.
 
 Package xcolor Warning: Incompatible color definition on input line 37.
 
+
+Package xcolor Warning: Incompatible color definition on input line 38.
+
+
+Package xcolor Warning: Incompatible color definition on input line 39.
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 40.
+[3
+
+]
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 41.
+
+
+Package xcolor Warning: Incompatible color definition on input line 42.
+
+
+Package xcolor Warning: Incompatible color definition on input line 43.
+
+
+Package xcolor Warning: Incompatible color definition on input line 44.
+
 )
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 70.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 70.
- [3
+ <images/headerInp.png, id=148, 603.25375pt x 129.48375pt>
+File: images/headerInp.png Graphic file (type png)
 
-]
+<use images/headerInp.png>
+Package pdftex.def Info: images/headerInp.png used on input line 70.
+(pdftex.def)             Requested size: 163.06479pt x 35.0pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 38.60004pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 70.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 70.
+[4 <./images/headerInp.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 70.
 
@@ -1539,7 +1598,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 72.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 72.
- [4
+ [5
 
 ]
 Cap\'{\i }tulo 1.
@@ -1597,7 +1656,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 77.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 77.
- [5
+ [6
 
 ]
 Cap\'{\i }tulo 2.
@@ -1644,7 +1703,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 Package xcolor Warning: Incompatible color definition on input line 5.
 
-<images/../images/1-Observium.png, id=152, 546.54187pt x 359.84438pt>
+<images/../images/1-Observium.png, id=171, 546.54187pt x 359.84438pt>
 File: images/../images/1-Observium.png Graphic file (type png)
 
 <use images/../images/1-Observium.png>
@@ -1655,7 +1714,7 @@ Package pdftex.def Info: images/../images/1-Observium.png used on input line 10
 
 Package xcolor Warning: Incompatible color definition on input line 17.
 
-<images/../images/2-Observium.png, id=154, 546.54187pt x 361.35pt>
+<images/../images/2-Observium.png, id=173, 546.54187pt x 361.35pt>
 File: images/../images/2-Observium.png Graphic file (type png)
 
 <use images/../images/2-Observium.png>
@@ -1686,13 +1745,13 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 26.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 26.
- [6
+ [7
 
  <./images/../images/1-Observium.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 29.
 
-<images/../images/3-Observium.png, id=160, 639.13782pt x 289.83281pt>
+<images/../images/3-Observium.png, id=181, 639.13782pt x 289.83281pt>
 File: images/../images/3-Observium.png Graphic file (type png)
 
 <use images/../images/3-Observium.png>
@@ -1703,18 +1762,15 @@ Package pdftex.def Info: images/../images/3-Observium.png used on input line 34
 
 Package xcolor Warning: Incompatible color definition on input line 40.
 
-<images/../images/4-Observium.png, id=162, 404.26031pt x 254.45062pt>
+<images/../images/4-Observium.png, id=183, 404.26031pt x 254.45062pt>
 File: images/../images/4-Observium.png Graphic file (type png)
 
 <use images/../images/4-Observium.png>
 Package pdftex.def Info: images/../images/4-Observium.png used on input line 45
 .
 (pdftex.def)             Requested size: 328.99857pt x 207.08229pt.
-
-<images/headerInp.png, id=163, 603.25375pt x 129.48375pt>
 File: images/headerInp.png Graphic file (type png)
-
-<use images/headerInp.png>
+ <use images/headerInp.png>
 Package pdftex.def Info: images/headerInp.png used on input line 49.
 (pdftex.def)             Requested size: 163.06479pt x 35.0pt.
 
@@ -1748,12 +1804,11 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 49.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 49.
-[7 <./images/headerInp.png> <./images/../images/2-Observium.png> <./images/../i
-mages/3-Observium.png>]
+[8 <./images/../images/2-Observium.png> <./images/../images/3-Observium.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 51.
 
-<images/../images/5-Observium.png, id=170, 325.96782pt x 127.22531pt>
+<images/../images/5-Observium.png, id=189, 325.96782pt x 127.22531pt>
 File: images/../images/5-Observium.png Graphic file (type png)
 
 <use images/../images/5-Observium.png>
@@ -1836,7 +1891,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 15.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 15.
-[8 <./images/../images/4-Observium.png> <./images/../images/5-Observium.png>]
+[9 <./images/../images/4-Observium.png> <./images/../images/5-Observium.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 15.
 
@@ -1861,7 +1916,7 @@ Package xcolor Warning: Incompatible color definition on input line 21.
 
 Package xcolor Warning: Incompatible color definition on input line 22.
 
-<images/snmpconf1.png, id=179, 402.50375pt x 524.96124pt>
+<images/snmpconf1.png, id=197, 402.50375pt x 524.96124pt>
 File: images/snmpconf1.png Graphic file (type png)
 
 <use images/snmpconf1.png>
@@ -1902,7 +1957,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 31.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 31.
-[9]
+[10]
 File: images/headerInp.png Graphic file (type png)
  <use images/headerInp.png>
 Package pdftex.def Info: images/headerInp.png used on input line 31.
@@ -1938,7 +1993,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 31.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 31.
-[10 <./images/snmpconf1.png>]
+[11 <./images/snmpconf1.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 33.
 
@@ -1948,7 +2003,7 @@ Package xcolor Warning: Incompatible color definition on input line 35.
 
 Package xcolor Warning: Incompatible color definition on input line 36.
 
-<images/snmpconf2.png, id=190, 434.62375pt x 236.885pt>
+<images/snmpconf2.png, id=208, 434.62375pt x 236.885pt>
 File: images/snmpconf2.png Graphic file (type png)
 
 <use images/snmpconf2.png>
@@ -1967,7 +2022,7 @@ Package xcolor Warning: Incompatible color definition on input line 58.
 
 Package xcolor Warning: Incompatible color definition on input line 60.
 
-<images/snmpconf.png, id=192, 469.755pt x 623.32875pt>
+<images/snmpconf.png, id=210, 469.755pt x 623.32875pt>
 File: images/snmpconf.png Graphic file (type png)
 
 <use images/snmpconf.png>
@@ -2008,7 +2063,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 68.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 68.
-[11 <./images/snmpconf2.png>]
+[12 <./images/snmpconf2.png>]
 File: images/headerInp.png Graphic file (type png)
  <use images/headerInp.png>
 Package pdftex.def Info: images/headerInp.png used on input line 68.
@@ -2044,14 +2099,14 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 68.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 68.
-[12 <./images/snmpconf.png>]
+[13 <./images/snmpconf.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 72.
 
 
 Package xcolor Warning: Incompatible color definition on input line 74.
 
-<images/hosts.png, id=203, 722.7pt x 402.50375pt>
+<images/hosts.png, id=222, 722.7pt x 402.50375pt>
 File: images/hosts.png Graphic file (type png)
  <use images/hosts.png>
 Package pdftex.def Info: images/hosts.png used on input line 78.
@@ -2060,7 +2115,7 @@ Package pdftex.def Info: images/hosts.png used on input line 78.
 
 Package xcolor Warning: Incompatible color definition on input line 83.
 
-<images/ping.png, id=205, 556.0775pt x 112.42pt>
+<images/ping.png, id=224, 556.0775pt x 112.42pt>
 File: images/ping.png Graphic file (type png)
  <use images/ping.png>
 Package pdftex.def Info: images/ping.png used on input line 87.
@@ -2069,7 +2124,7 @@ Package pdftex.def Info: images/ping.png used on input line 87.
 
 Package xcolor Warning: Incompatible color definition on input line 93.
 
-<images/device.png, id=207, 963.6pt x 515.9275pt>
+<images/device.png, id=226, 963.6pt x 515.9275pt>
 File: images/device.png Graphic file (type png)
  <use images/device.png>
 Package pdftex.def Info: images/device.png used on input line 97.
@@ -2110,11 +2165,11 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 101.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 101.
-[13 <./images/hosts.png> <./images/ping.png>]
+[14 <./images/hosts.png> <./images/ping.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 103.
 
-<images/deviceinfo.png, id=214, 972.63374pt x 648.4225pt>
+<images/deviceinfo.png, id=232, 972.63374pt x 648.4225pt>
 File: images/deviceinfo.png Graphic file (type png)
 
 <use images/deviceinfo.png>
@@ -2171,11 +2226,11 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 2.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 2.
-[14 <./images/device.png> <./images/deviceinfo.png>]
+[15 <./images/device.png> <./images/deviceinfo.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 2.
 
-<images/progsycar.png, id=220, 312.41719pt x 279.29344pt>
+<images/progsycar.png, id=238, 312.41719pt x 279.29344pt>
 File: images/progsycar.png Graphic file (type png)
 
 <use images/progsycar.png>
@@ -2185,7 +2240,7 @@ Package pdftex.def Info: images/progsycar.png used on input line 7.
 
 Package xcolor Warning: Incompatible color definition on input line 13.
 
-<images/snmpCar.png, id=223, 318.43968pt x 280.04625pt>
+<images/snmpCar.png, id=241, 318.43968pt x 280.04625pt>
 File: images/snmpCar.png Graphic file (type png)
 
 <use images/snmpCar.png>
@@ -2195,7 +2250,7 @@ Package pdftex.def Info: images/snmpCar.png used on input line 18.
 
 Package xcolor Warning: Incompatible color definition on input line 24.
 
-<images/startSNMPtrap.png, id=225, 344.03531pt x 42.91031pt>
+<images/startSNMPtrap.png, id=243, 344.03531pt x 42.91031pt>
 File: images/startSNMPtrap.png Graphic file (type png)
 
 <use images/startSNMPtrap.png>
@@ -2236,11 +2291,11 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 32.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 32.
-[15 <./images/progsycar.png> <./images/snmpCar.png>]
+[16 <./images/progsycar.png> <./images/snmpCar.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 35.
 
-<images/comunidad.png, id=234, 305.64188pt x 363.60844pt>
+<images/comunidad.png, id=252, 305.64188pt x 363.60844pt>
 File: images/comunidad.png Graphic file (type png)
 
 <use images/comunidad.png>
@@ -2250,7 +2305,7 @@ Package pdftex.def Info: images/comunidad.png used on input line 40.
 
 Package xcolor Warning: Incompatible color definition on input line 46.
 
-<images/permisos.png, id=236, 307.1475pt x 364.36125pt>
+<images/permisos.png, id=254, 307.1475pt x 364.36125pt>
 File: images/permisos.png Graphic file (type png)
 
 <use images/permisos.png>
@@ -2291,18 +2346,18 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 55.
-[16 <./images/startSNMPtrap.png> <./images/comunidad.png>]
+[17 <./images/startSNMPtrap.png> <./images/comunidad.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 57.
 
-<images/paquetes.png, id=245, 307.90031pt x 362.10281pt>
+<images/paquetes.png, id=263, 307.90031pt x 362.10281pt>
 File: images/paquetes.png Graphic file (type png)
 
 <use images/paquetes.png>
 Package pdftex.def Info: images/paquetes.png used on input line 62.
 (pdftex.def)             Requested size: 187.99713pt x 221.09787pt.
 
-<images/firewall.png, id=246, 605.26125pt x 514.92375pt>
+<images/firewall.png, id=264, 605.26125pt x 514.92375pt>
 File: images/firewall.png Graphic file (type png)
 
 <use images/firewall.png>
@@ -2343,7 +2398,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 77.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 77.
-[17 <./images/permisos.png> <./images/paquetes.png>])
+[18 <./images/permisos.png> <./images/paquetes.png>])
 File: images/headerInp.png Graphic file (type png)
 
 <use images/headerInp.png>
@@ -2380,7 +2435,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 83.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 83.
-[18 <./images/firewall.png>]
+[19 <./images/firewall.png>]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 83.
@@ -2426,7 +2481,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 Package xcolor Warning: Incompatible color definition on input line 2.
 
-<images/Pregunta1.png, id=259, 522.95375pt x 95.35625pt>
+<images/Pregunta1.png, id=278, 522.95375pt x 95.35625pt>
 File: images/Pregunta1.png Graphic file (type png)
 
 <use images/Pregunta1.png>
@@ -2436,7 +2491,7 @@ Package pdftex.def Info: images/Pregunta1.png used on input line 7.
 
 Package xcolor Warning: Incompatible color definition on input line 13.
 
-<images/windows1.png, id=261, 642.4pt x 98.3675pt>
+<images/windows1.png, id=280, 642.4pt x 98.3675pt>
 File: images/windows1.png Graphic file (type png)
  <use images/windows1.png>
 Package pdftex.def Info: images/windows1.png used on input line 18.
@@ -2445,7 +2500,7 @@ Package pdftex.def Info: images/windows1.png used on input line 18.
 
 Package xcolor Warning: Incompatible color definition on input line 25.
 
-<images/Pregunta2L.png, id=263, 544.0325pt x 59.22125pt>
+<images/Pregunta2L.png, id=282, 544.0325pt x 59.22125pt>
 File: images/Pregunta2L.png Graphic file (type png)
 
 <use images/Pregunta2L.png>
@@ -2475,13 +2530,13 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 33.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 33.
- [19
+ [20
 
  <./images/Pregunta1.png> <./images/windows1.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 35.
 
-<images/windows2.png, id=272, 882.29625pt x 172.645pt>
+<images/windows2.png, id=290, 882.29625pt x 172.645pt>
 File: images/windows2.png Graphic file (type png)
 
 <use images/windows2.png>
@@ -2500,7 +2555,7 @@ Package xcolor Warning: Incompatible color definition on input line 49.
 
 Package xcolor Warning: Incompatible color definition on input line 50.
 
-<images/Pregunta3L.png, id=274, 541.02126pt x 92.345pt>
+<images/Pregunta3L.png, id=292, 541.02126pt x 92.345pt>
 File: images/Pregunta3L.png Graphic file (type png)
 
 <use images/Pregunta3L.png>
@@ -2572,19 +2627,202 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 73.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 73.
-[20 <./images/Pregunta2L.png> <./images/windows2.png> <./images/Pregunta3L.png>
-] <images/windows3.png, id=281, 884.30376pt x 350.30875pt>
+[21 <./images/Pregunta2L.png> <./images/windows2.png> <./images/Pregunta3L.png>
+] <images/windows3.png, id=299, 884.30376pt x 350.30875pt>
 File: images/windows3.png Graphic file (type png)
 
 <use images/windows3.png>
 Package pdftex.def Info: images/windows3.png used on input line 77.
 (pdftex.def)             Requested size: 446.49857pt x 176.87512pt.
-) (./Cuestionario/preguntasRosa.tex)
+) (./Cuestionario/preguntasRosa.tex
+
+Package xcolor Warning: Incompatible color definition on input line 6.
+
+<images/../images/Pregunta4O.png, id=301, 500.62032pt x 132.495pt>
+File: images/../images/Pregunta4O.png Graphic file (type png)
+
+<use images/../images/Pregunta4O.png>
+Package pdftex.def Info: images/../images/Pregunta4O.png used on input line 10.
+
+(pdftex.def)             Requested size: 235.0pt x 62.19582pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 19.
+
+<images/../images/Pregunta4W.png, id=303, 343.2825pt x 275.52937pt>
+File: images/../images/Pregunta4W.png Graphic file (type png)
+
+<use images/../images/Pregunta4W.png>
+Package pdftex.def Info: images/../images/Pregunta4W.png used on input line 23.
+
+(pdftex.def)             Requested size: 235.0pt x 188.61455pt.
+File: images/headerInp.png Graphic file (type png)
+ <use images/headerInp.png>
+Package pdftex.def Info: images/headerInp.png used on input line 27.
+(pdftex.def)             Requested size: 163.06479pt x 35.0pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 38.60004pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 27.
+[22 <./images/windows3.png> <./images/../images/Pregunta4O.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 31.
+
+<images/../images/Pregunta4W2.png, id=311, 526.96875pt x 348.55219pt>
+File: images/../images/Pregunta4W2.png Graphic file (type png)
+
+<use images/../images/Pregunta4W2.png>
+Package pdftex.def Info: images/../images/Pregunta4W2.png used on input line 35
+.
+(pdftex.def)             Requested size: 235.0pt x 155.43762pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 46.
+
+<images/../images/Pregunta5C.png, id=313, 398.99063pt x 106.14656pt>
+File: images/../images/Pregunta5C.png Graphic file (type png)
+
+<use images/../images/Pregunta5C.png>
+Package pdftex.def Info: images/../images/Pregunta5C.png used on input line 50.
+
+(pdftex.def)             Requested size: 235.0pt x 62.51903pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 59.
+
+<images/../images/Pregunta5W.png, id=315, 291.33844pt x 227.34938pt>
+File: images/../images/Pregunta5W.png Graphic file (type png)
+
+<use images/../images/Pregunta5W.png>
+Package pdftex.def Info: images/../images/Pregunta5W.png used on input line 63.
+
+(pdftex.def)             Requested size: 235.0pt x 183.38878pt.
+File: images/headerInp.png Graphic file (type png)
+ <use images/headerInp.png>
+Package pdftex.def Info: images/headerInp.png used on input line 66.
+(pdftex.def)             Requested size: 163.06479pt x 35.0pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 38.60004pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 66.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 66.
+[23 <./images/../images/Pregunta4W.png> <./images/../images/Pregunta4W2.png> <.
+/images/../images/Pregunta5C.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 73.
+
+<images/../images/Pregunta6C.png, id=322, 505.13719pt x 74.52844pt>
+File: images/../images/Pregunta6C.png Graphic file (type png)
+
+<use images/../images/Pregunta6C.png>
+Package pdftex.def Info: images/../images/Pregunta6C.png used on input line 77.
+
+(pdftex.def)             Requested size: 235.0pt x 34.67241pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 87.
+
+<images/../images/Pregunta6W.png, id=324, 328.22626pt x 249.18094pt>
+File: images/../images/Pregunta6W.png Graphic file (type png)
+
+<use images/../images/Pregunta6W.png>
+Package pdftex.def Info: images/../images/Pregunta6W.png used on input line 91.
+
+(pdftex.def)             Requested size: 235.0pt x 178.40634pt.
+File: images/headerInp.png Graphic file (type png)
+ <use images/headerInp.png>
+Package pdftex.def Info: images/headerInp.png used on input line 95.
+(pdftex.def)             Requested size: 163.06479pt x 35.0pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 38.60004pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 95.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 95.
+[24 <./images/../images/Pregunta5W.png> <./images/../images/Pregunta6C.png>])
 (./Cuestionario/preguntasSamuel.tex
 
 Package xcolor Warning: Incompatible color definition on input line 3.
 
-<images/7-linux-1.png, id=283, 572.89032pt x 37.64063pt>
+<images/7-linux-1.png, id=331, 572.89032pt x 37.64063pt>
 File: images/7-linux-1.png Graphic file (type png)
 
 <use images/7-linux-1.png>
@@ -2594,7 +2832,7 @@ Package pdftex.def Info: images/7-linux-1.png used on input line 8.
 
 Package xcolor Warning: Incompatible color definition on input line 14.
 
-<images/7-linux-2.png, id=285, 565.36218pt x 37.64063pt>
+<images/7-linux-2.png, id=333, 565.36218pt x 37.64063pt>
 File: images/7-linux-2.png Graphic file (type png)
 
 <use images/7-linux-2.png>
@@ -2607,15 +2845,22 @@ Package xcolor Warning: Incompatible color definition on input line 27.
 
 Package xcolor Warning: Incompatible color definition on input line 27.
 
-<images/7-windows-1.png, id=288, 606.76688pt x 42.1575pt>
+<images/7-windows-1.png, id=336, 606.76688pt x 42.1575pt>
 File: images/7-windows-1.png Graphic file (type png)
 
 <use images/7-windows-1.png>
 Package pdftex.def Info: images/7-windows-1.png used on input line 32.
 (pdftex.def)             Requested size: 422.99713pt x 29.38974pt.
+
+<images/7-windows-2.png, id=337, 542.77782pt x 40.65187pt>
+File: images/7-windows-2.png Graphic file (type png)
+
+<use images/7-windows-2.png>
+Package pdftex.def Info: images/7-windows-2.png used on input line 41.
+(pdftex.def)             Requested size: 422.99713pt x 31.68227pt.
 File: images/headerInp.png Graphic file (type png)
  <use images/headerInp.png>
-Package pdftex.def Info: images/headerInp.png used on input line 36.
+Package pdftex.def Info: images/headerInp.png used on input line 45.
 (pdftex.def)             Requested size: 163.06479pt x 35.0pt.
 
 
@@ -2625,51 +2870,45 @@ Package Fancyhdr Warning: \headheight is too small (30.0pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 36.
-[21 <./images/windows3.png> <./images/7-linux-1.png> <./images/7-linux-2.png>]
-<images/7-windows-2.png, id=300, 542.77782pt x 40.65187pt>
-File: images/7-windows-2.png Graphic file (type png)
-
-<use images/7-windows-2.png>
-Package pdftex.def Info: images/7-windows-2.png used on input line 41.
-(pdftex.def)             Requested size: 422.99713pt x 31.68227pt.
-
+(babel)             in language  on input line 45.
+[25 <./images/../images/Pregunta6W.png> <./images/7-linux-1.png> <./images/7-li
+nux-2.png> <./images/7-windows-1.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 51.
 
 
 Package xcolor Warning: Incompatible color definition on input line 51.
 
-<images/8-linux.png, id=303, 568.37344pt x 26.34843pt>
+<images/8-linux.png, id=349, 568.37344pt x 26.34843pt>
 File: images/8-linux.png Graphic file (type png)
 
 <use images/8-linux.png>
 Package pdftex.def Info: images/8-linux.png used on input line 56.
 (pdftex.def)             Requested size: 422.99713pt x 19.61009pt.
 
-<images/8-windows.png, id=304, 544.28343pt x 30.1125pt>
+<images/8-windows.png, id=350, 544.28343pt x 30.1125pt>
 File: images/8-windows.png Graphic file (type png)
 
 <use images/8-windows.png>
@@ -2682,14 +2921,14 @@ Package xcolor Warning: Incompatible color definition on input line 75.
 
 Package xcolor Warning: Incompatible color definition on input line 75.
 
-<images/9-linux.png, id=307, 564.60938pt x 36.88782pt>
+<images/9-linux.png, id=353, 564.60938pt x 36.88782pt>
 File: images/9-linux.png Graphic file (type png)
 
 <use images/9-linux.png>
 Package pdftex.def Info: images/9-linux.png used on input line 80.
 (pdftex.def)             Requested size: 422.99713pt x 27.63594pt.
 
-<images/9-windows.png, id=308, 596.2275pt x 127.97812pt>
+<images/9-windows.png, id=354, 596.2275pt x 127.97812pt>
 File: images/9-windows.png Graphic file (type png)
 
 <use images/9-windows.png>
@@ -2698,7 +2937,7 @@ Package pdftex.def Info: images/9-windows.png used on input line 89.
 )
 File: images/headerInp.png Graphic file (type png)
  <use images/headerInp.png>
-Package pdftex.def Info: images/headerInp.png used on input line 10.
+Package pdftex.def Info: images/headerInp.png used on input line 13.
 (pdftex.def)             Requested size: 163.06479pt x 35.0pt.
 
 
@@ -2708,34 +2947,33 @@ Package Fancyhdr Warning: \headheight is too small (30.0pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 10.
-[22 <./images/7-windows-1.png> <./images/7-windows-2.png> <./images/8-linux.png
-> <./images/8-windows.png> <./images/9-linux.png> <./images/9-windows.png>])
+(babel)             in language  on input line 13.
+[26 <./images/7-windows-2.png> <./images/8-linux.png> <./images/8-windows.png> 
+<./images/9-linux.png> <./images/9-windows.png>])
 File: images/headerInp.png Graphic file (type png)
-
-<use images/headerInp.png>
+ <use images/headerInp.png>
 Package pdftex.def Info: images/headerInp.png used on input line 87.
 (pdftex.def)             Requested size: 163.06479pt x 35.0pt.
 
@@ -2769,7 +3007,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 87.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 87.
-[23]
+[27]
 Cap\'{\i }tulo 4.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 87.
@@ -2875,7 +3113,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [24
+ [28
 
 ]
 
@@ -2910,7 +3148,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 96.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 96.
- [25
+ [29
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
@@ -2925,13 +3163,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 12223 strings out of 493029
- 176270 string characters out of 6136235
- 282566 words of memory out of 5000000
- 15336 multiletter control sequences out of 15000+600000
+ 12276 strings out of 493029
+ 177648 string characters out of 6136235
+ 284023 words of memory out of 5000000
+ 15371 multiletter control sequences out of 15000+600000
  27693 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,16n,45p,603b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,16n,45p,603b,669s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/pxfonts/rpxb.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -2943,10 +3181,10 @@ exmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplri8a.pfb>
-Output written on main.pdf (25 pages, 1334252 bytes).
+Output written on main.pdf (29 pages, 1674442 bytes).
 PDF statistics:
- 411 PDF objects out of 1000 (max. 8388607)
- 318 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 353 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
 
