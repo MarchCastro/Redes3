@@ -1,20 +1,8 @@
-\documentclass[10pt,a4paper]{book}
-\usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{placeins}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{Rosa}
-\begin{document}
-
 \section{Observium}
 
 Para llevar a cabo la comunicación de un Gestor-Agente, se necesitó se la configuración de 3 distintos Sistemas Operativos. 
 El Sistema Operativo que toma el rol de Gestor es Observium, el cual estará encargado de monitorear la comunicación entre los mismo Agentes y Gestor. El primer paso es crear una máquina virtual con dicho sistema operativo, es esencial que se le agregan los requerimientos necesarios como es la cantidad de memoria, tipo de archivo del disco duro, el tamaño en bits etc. Pero sobre todo una vez creada la máquina virtual entrar en su \textbf{configuración} y cambiar el adaptador de red para que se pueda conectar en \textbf{Adaptador Puente}.
-Una vez que se configuró la máquina virtual se inicia para su instalación del sistema, que es básicamente aceptar el modo de instalación que se hace mediante un disco y finalmente el reinicio del sistema operativo \ref{image:fin}.
+Una vez que se configuró la máquina virtual se inicia para su instalación del sistema, que es básicamente aceptar el modo de instalación que se hace mediante un disco y finalmente el reinicio del sistema operativo como se muestra en la figura \ref{image:fin}.
 
 \FloatBarrier
 \begin{figure}[htbp!]
@@ -26,7 +14,7 @@ Una vez que se configuró la máquina virtual se inicia para su instalación del
 \FloatBarrier
 
 Posteriormente se requiere ingresar un usuario con contraseña , después solo será necesario poner  \textbf{Skip} a las acciones para que al final nos encontremos con la  \textbf{dirección ip} que fue asignada.
- \textbf{Nota: es importante sabes que la dirección ip varía dependiendo de la red a la que se encuentre conectada la máquina virtual} \ref{image:ip}.
+ \textbf{Nota: Es importante saber que la dirección ip varía dependiendo de la red a la que se encuentre conectada la máquina virtual}, esto se puede visualizar en la figura \ref{image:ip}.
 
 \FloatBarrier
 \begin{figure}[htbp!]
@@ -38,7 +26,7 @@ Posteriormente se requiere ingresar un usuario con contraseña , después solo s
 \FloatBarrier
 
 En este momento podemos decir que ya terminamos el punto de las configuraciones y tenemos a nuestro \textbf{Gestor}.
-Si  se quiere comprobar la  conectividad se abre el navegador de nuestro SO nativo y se ingreso en la \textbf{dirección IP} que muestra Observium e ingresamos en modo \textbf{administrador} con la contraseña que se  introdujo al inicio de la configuración \ref{image:observium}.
+Si  se quiere comprobar la  conectividad se abre el navegador de nuestro SO nativo y se ingresa la \textbf{dirección IP} que muestra Observium e ingresamos en modo \textbf{administrador} con la contraseña que se  introdujo al inicio de la configuración \ref{image:observium}.
 
 \FloatBarrier
 \begin{figure}[htbp!]
@@ -72,8 +60,5 @@ Para poder agregar un agente en Observium solo se necesita poner en la consola e
 \FloatBarrier
 
 Una vez finalizado todo este procedimeitno, tenemos listo el so Observium como agente.
-
-
-\end{document}
 
 
