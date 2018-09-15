@@ -13,12 +13,6 @@ ip = ''
 comunnity = ''
 port = ''
 agentCount = 0
-#Declaro mi ventana principal
-top = Tkinter.Tk()
-top.title("Bienvenido a casi Observium :)")
-top.geometry('350x200')
-
-fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
 
 def fetch(entries): #Recorre todos los datos que agregue y me los imprime en consola
@@ -66,7 +60,8 @@ def ping():
 	file = open("hosts.txt", "r")
 	#ip = ''
 	for linea in file.readlines():
-		#agentCount = agentCount + 1
+		global agentCount
+		agentCount = agentCount + 1 #Aqui esta mi contador 
 		palabras = linea.split(" ")
 		ip = palabras[0]
 		print ip
@@ -80,7 +75,7 @@ def ping():
 	#check_ping(ip)
 	file.close() 
 
-def mib():
+def mib(): #No esta implementado aun
 	errorIndication, errorStatus, errorIndex, varBinds = next(
     getCmd(SnmpEngine(),
            CommunityData('comunidadMarcela', mpModel=0),
@@ -97,21 +92,31 @@ def mib():
 		for varBind in varBinds:
 			print(' = '.join([x.prettyPrint() for x in varBind]))
 
-add = Tkinter.Button(top, text ="Agregar agente", command = addClient)
-delete = Tkinter.Button(top, text ="Eliminar agente", command = ping)
-agentInfo = Tkinter.Button(top, text ="Informacion de agente", command = deleteClient)
+def main():
+	#Declaro mi ventana principal
+	top = Tkinter.Tk()
+	top.title("Bienvenido a casi Observium :)")
+	top.geometry('350x200')
 
-add.pack()
-delete.pack()
-agentInfo.pack()
+	fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
-#ping()
-w = Label(top, width=20, text="Numero de dispositivos: ", fg="black", anchor='w')
-w.pack(padx=5, pady=10, side=LEFT)
-w = Label(top, text=agentCount, fg="black")
-w.pack(padx=5, pady=20, side=LEFT)
+	add = Tkinter.Button(top, text ="Agregar agente", command = addClient)
+	delete = Tkinter.Button(top, text ="Eliminar agente", command = ping)
+	agentInfo = Tkinter.Button(top, text ="Informacion de agente", command = deleteClient)
 
-top.mainloop()
+	add.pack()
+	delete.pack()
+	agentInfo.pack()
 
-#if __name__== 'main': 
-	#tableMain()
+	ping() #Aqui estoy llamando a mi funcion 
+	#Aqui quiero plasmar mi numero que me de mi contador
+	w = Label(top, width=20, text="Numero de dispositivos: ", fg="black", anchor='w')
+	w.pack(padx=5, pady=10, side=LEFT)
+	w = Label(top, text=agentCount, fg="black")
+	w.pack(padx=5, pady=20, side=LEFT)
+
+	
+	top.mainloop()
+
+if __name__== '__main__': 
+	main()
