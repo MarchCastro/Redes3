@@ -1,7 +1,7 @@
-#!/usr/bin/python
-
-import tkinter
-top = tkinter.Tk()
-# Code to add widgets will go here...
-top.mainloop()
-#https://www.tutorialspoint.com/python/python_gui_programming.htm
+import Tkinter
+root = Tkinter.Tk(  )
+for r in range(3):
+   for c in range(4):
+      Tkinter.Label(root, text='R%s/C%s'%(r,c),
+         borderwidth=1 ).grid(row=r,column=c)
+root.mainloop(  )
