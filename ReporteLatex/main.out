@@ -5,6 +5,12 @@
 \BOOKMARK [1][-]{section.2.3}{Configuraci\363n de agente en Windows}{chapter.2}% 5
 \BOOKMARK [0][-]{chapter.3}{Cuestionario}{}% 6
 \BOOKMARK [1][-]{section.3.1}{Cuestionario}{chapter.3}% 7
-\BOOKMARK [0][-]{chapter.4}{Marco te\363rico}{}% 8
-\BOOKMARK [1][-]{section.4.1}{Seccion}{chapter.4}% 9
-\BOOKMARK [2][-]{subsubsection.4.1.0.1}{Subseccion}{section.4.1}% 10
+\BOOKMARK [0][-]{chapter.4}{An\341lisis de tr\341fico}{}% 8
+\BOOKMARK [1][-]{section.4.1}{An\341lisis de tr\341fico con Wireshark}{chapter.4}% 9
+\BOOKMARK [2][-]{subsection.4.1.1}{snmpget}{section.4.1}% 10
+\BOOKMARK [2][-]{subsection.4.1.2}{snmpgetnext}{section.4.1}% 11
+\BOOKMARK [2][-]{subsection.4.1.3}{snmpwalk}{section.4.1}% 12
+\BOOKMARK [2][-]{subsection.4.1.4}{snmpset}{section.4.1}% 13
+\BOOKMARK [0][-]{chapter.5}{Marco te\363rico}{}% 14
+\BOOKMARK [1][-]{section.5.1}{Seccion}{chapter.5}% 15
+\BOOKMARK [2][-]{subsubsection.5.1.0.1}{Subseccion}{section.5.1}% 16
