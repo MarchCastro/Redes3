@@ -6,10 +6,12 @@ import socket
 import Tkinter
 import time
 import os 
+import threading
 from Tkinter import *
 from tkMessageBox import *
 from pysnmp.hlapi import *
 from time import sleep
+from threading import Thread 
 
 ip = ''
 comunnity = ''
@@ -66,26 +68,31 @@ def deleteClient():
 	tkMessageBox.showinfo( "Agregar un nuevo agente", "Hello World")
 
 def getHostInfo():
-	while True:
-		file = open("hosts.txt", "r")
-		for linea in file.readlines():
-			global agentCount,ip,comunnity,port
-			agentCount = agentCount + 1 #Aqui esta mi contador 
-			palabras = linea.split(" ")
-			ip = palabras[0]
-			version = palabras[1]
-			port = palabras[2]
-			comunnity = palabras[3]
-			#print ip
-			#response = os.system("ping -c 1 " + ip)
-			# and then check the response...
-			#if response == 0:
-			#	pingstatus = "Network Active"
-			#else:
-			#	pingstatus = "Network Error"
-		#print agentCount
-		file.close() 
-		sleep(0.0005)
+	#while True:
+	global agentCount
+	agentCount = 0
+	file = open("hosts.txt", "r")
+	for linea in file.readlines():
+		global ip,comunnity,port
+		agentCount = agentCount + 1 #Aqui esta mi contador 
+		palabras = linea.split(" ")
+		ip = palabras[0]
+		version = palabras[1]
+		port = palabras[2]
+		comunnity = palabras[3]
+		#print ip
+		
+	print agentCount
+	Label(text=agentCount, width=25, fg='black').grid(row=4, column=1)
+	file.close() 
+	top.after(3000,getHostInfo)
+
+def ping():
+	response = os.system("ping -c 1 " + ip)
+	if response == 0:
+		pingstatus = "Network Active"
+	else:
+		pingstatus = "Network Error"
 
 def mib(): #No esta implementado aun
 	errorIndication, errorStatus, errorIndex, varBinds = next(
@@ -105,39 +112,25 @@ def mib(): #No esta implementado aun
 			print(' = '.join([x.prettyPrint() for x in varBind]))
 
 def main():
-	while True:
-		file = open("hosts.txt", "r")
-		for linea in file.readlines():
-			global agentCount,ip,comunnity,port, version
-			agentCount = agentCount + 1 #Aqui esta mi contador 
-			palabras = linea.split(" ")
-			ip = palabras[0]
-			version = palabras[1]
-			port = palabras[2]
-			comunnity = palabras[3]
-		
-		add = Tkinter.Button(top, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0)
-		delete = Tkinter.Button(top, text ="Eliminar agente", width=25, command = addClient).grid(row=1, column=0)
-		agentInfo = Tkinter.Button(top, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0)
+	add = Tkinter.Button(top, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0)
+	delete = Tkinter.Button(top, text ="Eliminar agente", width=25, command = addClient).grid(row=1, column=0)
+	agentInfo = Tkinter.Button(top, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0)
 
-		#getHostInfo()
-		print agentCount
-		#TITULO
-		colors = ['Dispositivos monitoreados','Numero de dispositivos', 'Status de dispositivos']
-		r = 3
-		for c in colors:
-			Label(text=c, width=25, fg='black').grid(row=r, column=0)
-			r = r+1
+	getHostInfo()
+	#print agentCount
+	#TITULO
+	colors = ['Dispositivos monitoreados','Numero de dispositivos', 'Status de dispositivos']
+	r = 3
+	for c in colors:
+		Label(text=c, width=25, fg='black').grid(row=r, column=0)
+		r = r+1
 
-		
-		Label(text=agentCount, width=25, fg='black').grid(row=4, column=1)
-		Label(text=agentCount, width=25, fg='black').grid(row=5, column=1)
-		
-		
-		
-		file.close() 
-		sleep(0.0005)
-		mainloop()
+	
+	#Label(text=agentCount, width=25, fg='black').grid(row=4, column=1)
+	Label(text=agentCount, width=25, fg='black').grid(row=5, column=1)
+
+	top.after(0, getHostInfo)
+	top.mainloop()
 
 if __name__== '__main__': 
 	main()
