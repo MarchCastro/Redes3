@@ -14,8 +14,10 @@ Functionally similar to:
 | $ snmpget -v1 -c public localhost SNMPv2-MIB::sysDescr.0
 
 """#
+"""
 from pysnmp.hlapi import *
 
+resultado_final = ''
 def consultaSNMP(comunidad,host,oid):
     errorIndication, errorStatus, errorIndex, varBinds = next(
         getCmd(SnmpEngine(),
@@ -31,20 +33,45 @@ def consultaSNMP(comunidad,host,oid):
     else:
         for varBind in varBinds:
             varB=(' = '.join([x.prettyPrint() for x in varBind]))
-            resultado= varB.split()[2]
-    return resultado
+            resultado= varB.split()
+            concat = []
+            valid = False
 
-total_input_traffic = 0
+            for palabra in resultado: 
+                if palabra == '=':
+                    valid = True
+                    continue 
+                    
+                if valid:
+                    concat.append(palabra)
+            global resultado_final
+            resultado_final = ''
+            for palabra in concat:
+                resultado_final = resultado_final + palabra
+    return resultado_final
+
+#total_input_traffic = 0
 total_output_traffic = 0
 
 
 while 1: #Monitorizamos los valores de entrada y salida de octetos de informacion
-    total_input_traffic = int(
-        consultaSNMP('comunidadMarcela','localhost',
-                     '1.3.6.1.2.1.2.2.1.10.1'))
-    total_output_traffic = int(
-        consultaSNMP('comunidadMarcela','localhost',
-                     '1.3.6.1.2.1.2.2.1.16.1'))
+    total_input_traffic = consultaSNMP('comunidad3','192.168.1.64',
+                    '1.3.6.1.2.1.1.1.0')
+    #total_output_traffic = int(
+     #   consultaSNMP('comunidadMarcela','localhost',
+      #               '1.3.6.1.2.1.2.2.1.16.1'))
 
-    valor = "N:" + str(total_input_traffic) + ':' + str(total_output_traffic)
-    print valor
+    valor = "N:" + total_input_traffic 
+    print valor"""
+
+import os
+hostname = "127.0.0.1" #example
+response = os.system("ping -c 1 " + hostname)
+
+#and then check the response...
+if response == 0:
+  print hostname, 'is up!'
+else:
+  print hostname, 'is down!'
+
+  

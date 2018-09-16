@@ -13,16 +13,16 @@ from pysnmp.hlapi import *
 from time import sleep
 from threading import Thread 
 
-ip = ''
-comunnity = ''
-port = ''
-version = ''
+ip = []
+comunnity = []
+port = []
+version = []
 agentCount = 0
-
+final_result = ''
 #Declaro mi ventana principal
 top = Tkinter.Tk()
 top.title("Bienvenido a casi Observium :)")
-top.geometry('400x400')
+top.geometry('1000x400')
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
@@ -70,46 +70,96 @@ def deleteClient():
 def getHostInfo():
 	#while True:
 	global agentCount
+	global ip,comunnity,port
 	agentCount = 0
+	ip = []
+	comunnity = []
 	file = open("hosts.txt", "r")
 	for linea in file.readlines():
-		global ip,comunnity,port
+		#global ip,comunnity,port
 		agentCount = agentCount + 1 #Aqui esta mi contador 
 		palabras = linea.split(" ")
-		ip = palabras[0]
-		version = palabras[1]
-		port = palabras[2]
-		comunnity = palabras[3]
-		#print ip
-		
+		#ip = palabras[0]
+		ip.append(palabras[0])
+		#version = palabras[1]
+		#port = palabras[2]
+		comunnity.append(palabras[3])
+		#print ip,comunnity
+	getAgentStatus(ip,comunnity)
 	print agentCount
 	Label(text=agentCount, width=25, fg='black').grid(row=4, column=1)
 	file.close() 
+	#getAgentStatus()
 	top.after(3000,getHostInfo)
 
-def ping():
+def ping(ip):
 	response = os.system("ping -c 1 " + ip)
 	if response == 0:
-		pingstatus = "Network Active"
+		print ip, 'Activa'
+		status = 'Activa'
 	else:
-		pingstatus = "Network Error"
+		print ip, 'Inactiva'
+		status = 'Inactiva'
+	return status
 
-def mib(): #No esta implementado aun
+def consultaSNMP(comunidad,host,oid):
+	print comunidad, host
 	errorIndication, errorStatus, errorIndex, varBinds = next(
-    getCmd(SnmpEngine(),
-           CommunityData('comunidadMarcela', mpModel=0),
-           UdpTransportTarget(('localhost', 161)),
-           ContextData(),
-           ObjectType(ObjectIdentity('1.3.6.1.2.1.1.1.0')))
-	)
+		getCmd(SnmpEngine(),
+			CommunityData(comunidad),
+			UdpTransportTarget((host, 161)),
+			ContextData(),
+			ObjectType(ObjectIdentity(oid))))
+
 	if errorIndication:
 		print(errorIndication)
 	elif errorStatus:
-		print('%s at %s' % (errorStatus.prettyPrint(),
-							errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
+		print('%s at %s' % (errorStatus.prettyPrint(),errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
 	else:
 		for varBind in varBinds:
-			print(' = '.join([x.prettyPrint() for x in varBind]))
+			varB=(' = '.join([x.prettyPrint() for x in varBind]))
+			result= varB.split()
+			concat = []
+			valid = False
+
+		for palabra in result: 
+			if palabra == '=':
+				valid = True
+				continue 
+				
+			if valid:
+				concat.append(palabra)
+
+		global final_result
+		final_result = ''
+		for palabra in concat:
+			final_result = final_result + ' ' + palabra
+	return final_result
+
+
+def getAgentStatus(ip,comunnity):
+	info_array = []
+	status_array = []
+	for ip_for,community_for in zip(ip,comunnity):
+		print ip_for, community_for
+		#agents = consultaSNMP(community_for,ip_for, '1.3.6.1.2.1.1.1.0')
+		agents = consultaSNMP('comunidadMarcela','127.0.0.1', '1.3.6.1.2.1.1.1.0')
+		info_array.append(agents)
+
+	for ip_for in zip(ip):
+		status_received = ping('127.0.0.1')
+		print status_received
+		status_array.append(status_received)	
+	#for c in info_array:
+		#print c
+	#print agents
+	colors = ['Dispositivos monitoreados','Numero de dispositivos', 'Status de dispositivos']
+	r = 5
+	for info,status in zip(info_array,status_array):
+		Label(text=info, width=85, fg='black').grid(row=r, column=1)
+		Label(text=status, width=10, fg='black').grid(row=r, column=2)
+		r = r+1
+		#Label(text=agents, width=100, height=20, fg='black').grid(row=5, column=1)
 
 def main():
 	add = Tkinter.Button(top, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0)
@@ -117,17 +167,18 @@ def main():
 	agentInfo = Tkinter.Button(top, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0)
 
 	getHostInfo()
+	#getAgentStatus()
 	#print agentCount
 	#TITULO
 	colors = ['Dispositivos monitoreados','Numero de dispositivos', 'Status de dispositivos']
 	r = 3
 	for c in colors:
-		Label(text=c, width=25, fg='black').grid(row=r, column=0)
+		Label(text=c, width=20, fg='black').grid(row=r, column=0)
 		r = r+1
 
 	
 	#Label(text=agentCount, width=25, fg='black').grid(row=4, column=1)
-	Label(text=agentCount, width=25, fg='black').grid(row=5, column=1)
+	#Label(text=agentCount, width=25, fg='black').grid(row=5, column=1)
 
 	top.after(0, getHostInfo)
 	top.mainloop()

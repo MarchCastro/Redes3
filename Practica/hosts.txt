@@ -1,3 +1,4 @@
 127.0.0.1 1 12345 comunidadMarcela 
-192.168.1.65 2 12345 comunidad
-127.0.0.1 1 1235 hahaha 
+192.168.1.68 1 1235 comunidadMarcela
+127.0.0.1 1 12345 comunidadMarcela 
+127.0.0.1 k k comunidadMarcela 
