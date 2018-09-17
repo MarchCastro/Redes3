@@ -36,6 +36,7 @@ else:
         print(' = '.join([x.prettyPrint() for x in varBind]))
 """
 from pysnmp.hlapi import *
+import binascii
 
 resultado_final = ''
 def consultaSNMP(comunidad,host,oid):
@@ -70,14 +71,29 @@ def consultaSNMP(comunidad,host,oid):
                 resultado_final = resultado_final + ' ' + palabra
     return resultado_final
 
+def convert_hex_to_ascii(h):
+    chars_in_reverse = []
+    while h != 0x0:
+        chars_in_reverse.append(chr(h & 0xFF))
+        h = h >> 8
+
+    chars_in_reverse.reverse()
+    return ''.join(chars_in_reverse)
 
 while 1: #Monitorizamos los valores de entrada y salida de octetos de informacion
     host = 'comunidad3'
-    ip = '192.168.1.64'
+    ip = '192.168.15.28'
     total_input_traffic = consultaSNMP(host,ip,
-                    '1.3.6.1.2.1.2.2.1.2.2')
-    parolaHex = ''
-    if total_input_traffic.startswith('0'):
-				parolaHex = int('0xfff',16)
-    valor = parolaHex 
-    print total_input_traffic.strip().decode('hex')
+                    '1.3.6.1.2.1.2.2.1.2.3')
+    print type(total_input_traffic)
+    #total_input_traffic = str(total_input_traffic)
+    #total_input_traffic.decode('hex')
+    #binascii.unhexlify(total_input_traffic)
+    #value = bytearray.fromhex(total_input_traffic).decode()
+    print total_input_traffic[1]
+    if total_input_traffic[1] == '0':
+        value = total_input_traffic[3:]
+
+    print value.decode('hex')
+    #print value +  '4d6963726f736f66742049502d485454505320506c6174666f726d204164617074657200'.decode('hex')
+    #print convert_hex_to_ascii(total_input_traffic)
