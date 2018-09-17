@@ -21,7 +21,9 @@ errorIndication, errorStatus, errorIndex, varBinds = next(
            CommunityData('comunidadMarcela', mpModel=0),
            UdpTransportTarget(('localhost', 161)),
            ContextData(),
-           ObjectType(ObjectIdentity('1.3.6.1.2.1.1.1.0')))
+           #ObjectType(ObjectIdentity('1.3.6.1.2.1.2.1.0')))
+           ObjectType(ObjectIdentity('1.3.6.1.2.1.2.2.1.2.3')))
+           #ObjectType(ObjectIdentity('1.3.6.1.2.1.2.2.1.8.3')))
 )
 
 if errorIndication:

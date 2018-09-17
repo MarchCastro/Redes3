@@ -14,7 +14,7 @@ Functionally similar to:
 | $ snmpget -v1 -c public localhost SNMPv2-MIB::sysDescr.0
 
 """#
-"""
+
 from pysnmp.hlapi import *
 
 resultado_final = ''
@@ -62,8 +62,8 @@ while 1: #Monitorizamos los valores de entrada y salida de octetos de informacio
       #               '1.3.6.1.2.1.2.2.1.16.1'))
 
     valor = "N:" + total_input_traffic 
-    print valor"""
-
+    print valor
+"""
 import os
 hostname = "127.0.0.1" #example
 response = os.system("ping -c 1 " + hostname)
@@ -72,6 +72,6 @@ response = os.system("ping -c 1 " + hostname)
 if response == 0:
   print hostname, 'is up!'
 else:
-  print hostname, 'is down!'
+  print hostname, 'is down!'"""
 
   

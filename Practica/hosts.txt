@@ -2,3 +2,6 @@
 192.168.1.68 1 1235 comunidadMarcela
 127.0.0.1 1 12345 comunidadMarcela 
 127.0.0.1 k k comunidadMarcela 
+127.0.0.1 1 12345 comunidadMarcela 
+127.0.0.1 1 12 comunidadMarcela 
+127.0.0.1 h h comunidadMarcela 

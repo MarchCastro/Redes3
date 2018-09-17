@@ -22,7 +22,8 @@ final_result = ''
 #Declaro mi ventana principal
 top = Tkinter.Tk()
 top.title("Bienvenido a casi Observium :)")
-top.geometry('1000x400')
+top.geometry('2080x800')
+scrollbar = Scrollbar(top)
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
@@ -85,25 +86,26 @@ def getHostInfo():
 		#port = palabras[2]
 		comunnity.append(palabras[3])
 		#print ip,comunnity
-	getAgentStatus(ip,comunnity)
-	print agentCount
-	Label(text=agentCount, width=25, fg='black').grid(row=4, column=1)
-	file.close() 
+	getAgentInfo(ip,comunnity)
+	#print agentCount
+	Label(text='Numero de agentes: ' + str(agentCount), width=25, fg='black').grid(row=1, column=1)
+	file.close()
+	scrollbar.pack(side = 'right', fill= Y)
 	#getAgentStatus()
-	top.after(3000,getHostInfo)
+	top.after(30000,getHostInfo)
 
 def ping(ip):
 	response = os.system("ping -c 1 " + ip)
 	if response == 0:
-		print ip, 'Activa'
+		#print ip, 'Activa'
 		status = 'Activa'
 	else:
-		print ip, 'Inactiva'
+		#print ip, 'Inactiva'
 		status = 'Inactiva'
 	return status
 
 def consultaSNMP(comunidad,host,oid):
-	print comunidad, host
+	#print comunidad, host
 	errorIndication, errorStatus, errorIndex, varBinds = next(
 		getCmd(SnmpEngine(),
 			CommunityData(comunidad),
@@ -137,29 +139,57 @@ def consultaSNMP(comunidad,host,oid):
 	return final_result
 
 
-def getAgentStatus(ip,comunnity):
+def getAgentInfo(ip,comunnity):
 	info_array = []
 	status_array = []
+	interfaces_number = []
+	interfaces_name = []
+	interfaces_status = []
 	for ip_for,community_for in zip(ip,comunnity):
-		print ip_for, community_for
+		#print ip_for, community_for
 		#agents = consultaSNMP(community_for,ip_for, '1.3.6.1.2.1.1.1.0')
 		agents = consultaSNMP('comunidadMarcela','127.0.0.1', '1.3.6.1.2.1.1.1.0')
+		interfaces = consultaSNMP('comunidadMarcela','127.0.0.1', '1.3.6.1.2.1.2.1.0')
 		info_array.append(agents)
+		interfaces_number.append(interfaces)
+		for i in range(1,int(interfaces)+1):
+			name_interfaces = consultaSNMP('comunidadMarcela','127.0.0.1', '1.3.6.1.2.1.2.2.1.2.'+str(i))
+
+			status_inter = consultaSNMP('comunidadMarcela','127.0.0.1', '1.3.6.1.2.1.2.2.1.8.'+str(i))
+			#print 'Status', status_inter
+			interfaces_name.append(name_interfaces)
+			interfaces_status.append(status_inter)
+			#print name_interfaces			
 
 	for ip_for in zip(ip):
 		status_received = ping('127.0.0.1')
-		print status_received
 		status_array.append(status_received)	
-	#for c in info_array:
-		#print c
-	#print agents
-	colors = ['Dispositivos monitoreados','Numero de dispositivos', 'Status de dispositivos']
-	r = 5
-	for info,status in zip(info_array,status_array):
-		Label(text=info, width=85, fg='black').grid(row=r, column=1)
-		Label(text=status, width=10, fg='black').grid(row=r, column=2)
-		r = r+1
+		
+
+	r = 6
+	for info,status,interfacesN in zip(info_array,status_array,interfaces_number):
+		Label(text=info, width=85, fg='black').grid(row=r, column=0)
+		Label(text=status, width=10, fg='black').grid(row=r, column=1)
+		Label(text=interfacesN, width=10, fg='black').grid(row=r, column=2)
+		r = r + int(interfacesN)
 		#Label(text=agents, width=100, height=20, fg='black').grid(row=5, column=1)
+	r = 6
+	for name, status in zip(interfaces_name, interfaces_status):
+		Label(text=name, width=25, fg='black').grid(row=r, column=3)
+		'''if status_inter == 1:
+				interfaces_status.append('Activo')
+			elif status_inter == 2:
+				interfaces_status.append('Inactivo')
+			elif status_inter == 3:
+				interfaces_status.append('Testing')'''
+		if int(status) == 1:
+			Label(text='Activo', width=20, fg='black').grid(row=r, column=4)
+		elif int(status) == 2:
+			Label(text='Inactivo', width=20, fg='black').grid(row=r, column=4)
+		elif int(status) == 3:
+			Label(text='Testing', width=20, fg='black').grid(row=r, column=4)
+		#Label(text=status, width=20, fg='black').grid(row=r, column=4)
+		r = r+1
 
 def main():
 	add = Tkinter.Button(top, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0)
@@ -170,15 +200,14 @@ def main():
 	#getAgentStatus()
 	#print agentCount
 	#TITULO
-	colors = ['Dispositivos monitoreados','Numero de dispositivos', 'Status de dispositivos']
-	r = 3
-	for c in colors:
-		Label(text=c, width=20, fg='black').grid(row=r, column=0)
-		r = r+1
+	Label(text='Dispositivos monitoreados', width=20, fg='black').grid(row=0, column=1)
 
-	
-	#Label(text=agentCount, width=25, fg='black').grid(row=4, column=1)
-	#Label(text=agentCount, width=25, fg='black').grid(row=5, column=1)
+	title = ['Nombre del agente', 'Status', 'No. de interfaces', 'Nombre interfaz', 'Status interfaz']
+	col = 0
+	row = 3
+	for c in title:
+		Label(text=c, width=20, fg='black').grid(row=row, column=col)
+		col = col + 1
 
 	top.after(0, getHostInfo)
 	top.mainloop()
