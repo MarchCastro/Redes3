@@ -78,26 +78,27 @@ def addClient(): #Abre un recuadro a partir del recuadro principal y muestra su 
    #b2 = Button(root, text='Quit', command=root.quit)
    #b2.pack(side=LEFT, padx=5, pady=5)
 
+def graphics(): #Abre un recuadro a partir del recuadro principal y muestra su propio boton para 
+	#llamar a la funcion fetch
+   #root = Tk()
+   graphic_window = Tkinter.Toplevel(top)
+   graphic_window.title("Graficos")
+   ents = makeform(graphic_window, fields) 
+   b1 = Button(root, text='Agregar agente',command='AQUI TU MENU')
+   b1.pack(side=LEFT, padx=5, pady=5)
+   #b2 = Button(root, text='Quit', command=root.quit)
+   #b2.pack(side=LEFT, padx=5, pady=5)
+
 def deleteClient():
 	tkMessageBox.showinfo( "Agregar un nuevo agente", "Hello World")
 
 def getHostInfo():
-	#while True:
-	global agentCount, new_agentCount
 	global ip,comunnity,port
-	agentCount = 0
 	ip_comunnity = [] # va con doble m no doble n
 	file = open("hosts.txt", "r")
 	for linea in file.readlines():
 		#global ip,comunnity,port
 		palabras = linea.split(" ")
-		try:
-			stat = ping(palabras[0])
-			if stat == 'Activa':
-				agentCount = agentCount + 1 #Aqui esta mi contador
-			new_agentCount = agentCount
-		except:
-			pass
 		#ip = palabras[0]
 		if palabras[3].endswith('\n'):
 			palabras[3] = palabras[3][:-1]
@@ -111,7 +112,6 @@ def getHostInfo():
 		#print ip,comunnity
 	getAgentInfo(ip_comunnity)
 	#print agentCount
-	Label(text='Numero de agentes: ' + str(new_agentCount), width=25, fg='black').grid(row=1, column=1)
 	file.close()
 	#getAgentStatus()
 	top.after(20000,getHostInfo)
@@ -178,6 +178,8 @@ def getAgentInfo(ip_community):
 	interfaces_number = []
 	interfaces_name = []
 	interfaces_status = []
+	global agentCount
+	agentCount = 0
 	for computer in ip_community:
 		cmty = computer['community']
 		#print cmty
@@ -192,8 +194,14 @@ def getAgentInfo(ip_community):
 		info_array.append(agents)
 		interfaces_number.append(interfaces)
 
-		status_received = ping(computer['ip']) #ip_for['ip]
-		status_array.append(status_received)
+		try:
+			status_received = ping(computer['ip']) #ip_for['ip]
+			status_array.append(status_received)
+			if status_received == 'Activa':
+				agentCount = agentCount + 1 #Aqui esta mi contador
+			Label(text='Numero de agentes: ' + str(agentCount), width=25, fg='black').grid(row=1, column=1)
+		except:
+			pass
 		
 		for i in range(1,int(interfaces)+1):
 			name_interfaces = consultaSNMP(computer['community'],computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i))
@@ -211,6 +219,7 @@ def getAgentInfo(ip_community):
 		Label(text=info, width=85, fg='black').grid(row=r, column=0)
 		Label(text=status, width=10, fg='black').grid(row=r, column=1)
 		Label(text=interfacesN, width=10, fg='black').grid(row=r, column=2)
+		Tkinter.Button(text ="Graficas",width=25, command = graphics).grid(row=r, column=5)
 		r = r + int(interfacesN)
 		#Label(text=agents, width=100, height=20, fg='black').grid(row=5, column=1)
 	r = 6
@@ -230,6 +239,7 @@ def main():
 
 	add = Tkinter.Button(top, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0)
 	delete = Tkinter.Button(top, text ="Eliminar agente", width=25, command = addClient).grid(row=1, column=0)
+	agentInfo = Tkinter.Button(top, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0)
 	agentInfo = Tkinter.Button(top, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0)
 
 	getHostInfo()
