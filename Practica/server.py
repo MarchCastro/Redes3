@@ -3,7 +3,7 @@
 #block_server.py
 
 import socket
-import Tkinter
+import Tkinter 
 import time
 import os 
 import threading
@@ -23,7 +23,18 @@ final_result = ''
 top = Tkinter.Tk()
 top.title("Bienvenido a casi Observium :)")
 top.geometry('2080x800')
-scrollbar = Scrollbar(top)
+'''frame_main = Frame(top)
+frame_main.grid(sticky='news')
+
+canvas = Canvas(frame_main)
+canvas.grid(row=0, column=0, sticky="news")
+canvas.grid_columnconfigure(0, minsize=20)
+canvas.grid_rowconfigure(0, minsize=20)
+# Link a scrollbar to the canvas
+vsb = Scrollbar(frame_main, orient="vertical", command=canvas.yview)
+vsb.grid_rowconfigure(0, minsize=20)
+canvas.configure(yscrollcommand=vsb.set)
+canvas.config(scrollregion=canvas.bbox("all"))'''
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
@@ -73,24 +84,27 @@ def getHostInfo():
 	global agentCount
 	global ip,comunnity,port
 	agentCount = 0
-	ip = []
-	comunnity = []
+	ip_comunnity = [] # va con doble m no doble n
 	file = open("hosts.txt", "r")
 	for linea in file.readlines():
 		#global ip,comunnity,port
 		agentCount = agentCount + 1 #Aqui esta mi contador 
 		palabras = linea.split(" ")
 		#ip = palabras[0]
-		ip.append(palabras[0])
+		if palabras[3].endswith('\n'):
+			palabras[3] = palabras[3][:-1]
+			ip_comunnity.append({'ip' : str(palabras[0]), 'community' : str(palabras[3])})
+		else:
+			ip_comunnity.append({'ip' : str(palabras[0]), 'community' : str(palabras[3])})
+		#print palabras[3], palabras[0]
 		#version = palabras[1]
 		#port = palabras[2]
-		comunnity.append(palabras[3])
+		#comunnity.append(palabras[3])
 		#print ip,comunnity
-	getAgentInfo(ip,comunnity)
+	getAgentInfo(ip_comunnity)
 	#print agentCount
 	Label(text='Numero de agentes: ' + str(agentCount), width=25, fg='black').grid(row=1, column=1)
 	file.close()
-	scrollbar.pack(side = 'right', fill= Y)
 	#getAgentStatus()
 	top.after(30000,getHostInfo)
 
@@ -105,64 +119,74 @@ def ping(ip):
 	return status
 
 def consultaSNMP(comunidad,host,oid):
-	#print comunidad, host
-	errorIndication, errorStatus, errorIndex, varBinds = next(
-		getCmd(SnmpEngine(),
-			CommunityData(comunidad),
-			UdpTransportTarget((host, 161)),
-			ContextData(),
-			ObjectType(ObjectIdentity(oid))))
+    errorIndication, errorStatus, errorIndex, varBinds = next(
+        getCmd(SnmpEngine(),
+               CommunityData(comunidad),
+               UdpTransportTarget((host, 161)),
+               ContextData(),
+               ObjectType(ObjectIdentity(oid))))
 
-	if errorIndication:
-		print(errorIndication)
-	elif errorStatus:
-		print('%s at %s' % (errorStatus.prettyPrint(),errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
-	else:
-		for varBind in varBinds:
-			varB=(' = '.join([x.prettyPrint() for x in varBind]))
-			result= varB.split()
-			concat = []
-			valid = False
+    if errorIndication:
+        print(errorIndication)
+    elif errorStatus:
+        print('%s at %s' % (errorStatus.prettyPrint(),errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
+    else:
+        for varBind in varBinds:
+            varB=(' = '.join([x.prettyPrint() for x in varBind]))
+            resultado= varB.split()
+            concat = []
+            valid = False
 
-		for palabra in result: 
-			if palabra == '=':
-				valid = True
-				continue 
-				
-			if valid:
-				concat.append(palabra)
+            for palabra in resultado: 
+                if palabra == '=':
+                    valid = True
+                    continue 
+                    
+                if valid:
+                    concat.append(palabra)
+            global resultado_final
+            resultado_final = ''
+            for palabra in concat:
+				if palabra == '-':
+					resultado_final = resultado_final + ' ' + palabra + '\n'
+				else:
+					resultado_final = resultado_final + ' ' + palabra
+    return resultado_final
 
-		global final_result
-		final_result = ''
-		for palabra in concat:
-			final_result = final_result + ' ' + palabra
-	return final_result
 
 
-def getAgentInfo(ip,comunnity):
+def getAgentInfo(ip_community):
 	info_array = []
 	status_array = []
 	interfaces_number = []
 	interfaces_name = []
 	interfaces_status = []
-	for ip_for,community_for in zip(ip,comunnity):
+	for computer in ip_community:
+		cmty = computer['community']
+		#print cmty
+		ip = computer['ip']
+		#print ip
 		#print ip_for, community_for
-		#agents = consultaSNMP(community_for,ip_for, '1.3.6.1.2.1.1.1.0')
-		agents = consultaSNMP('comunidadMarcela','127.0.0.1', '1.3.6.1.2.1.1.1.0')
-		interfaces = consultaSNMP('comunidadMarcela','127.0.0.1', '1.3.6.1.2.1.2.1.0')
+		agents = consultaSNMP(computer['community'],computer['ip'], '1.3.6.1.2.1.1.1.0')
+		#agents = consultaSNMP(cmty,ip, '1.3.6.1.2.1.1.1.0')
+		interfaces = consultaSNMP(computer['community'],computer['ip'], '1.3.6.1.2.1.2.1.0')
 		info_array.append(agents)
 		interfaces_number.append(interfaces)
 		for i in range(1,int(interfaces)+1):
-			name_interfaces = consultaSNMP('comunidadMarcela','127.0.0.1', '1.3.6.1.2.1.2.2.1.2.'+str(i))
-
-			status_inter = consultaSNMP('comunidadMarcela','127.0.0.1', '1.3.6.1.2.1.2.2.1.8.'+str(i))
+			name_interfaces = consultaSNMP(computer['community'],computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i))
+			status_inter = consultaSNMP(computer['community'],computer['ip'], '1.3.6.1.2.1.2.2.1.8.'+str(i))
+			if status_inter.startswith('0'):
+				status_inter = status_inter.decode("hex")
+				interfaces_status.append(status_inter)
+			else:
+				interfaces_status.append(status_inter)
 			#print 'Status', status_inter
 			interfaces_name.append(name_interfaces)
-			interfaces_status.append(status_inter)
+			
 			#print name_interfaces			
 
-	for ip_for in zip(ip):
-		status_received = ping('127.0.0.1')
+	for ip_for in ip_community:
+		status_received = ping(computer['ip']) #ip_for['ip]
 		status_array.append(status_received)	
 		
 
@@ -175,13 +199,8 @@ def getAgentInfo(ip,comunnity):
 		#Label(text=agents, width=100, height=20, fg='black').grid(row=5, column=1)
 	r = 6
 	for name, status in zip(interfaces_name, interfaces_status):
-		Label(text=name, width=25, fg='black').grid(row=r, column=3)
-		'''if status_inter == 1:
-				interfaces_status.append('Activo')
-			elif status_inter == 2:
-				interfaces_status.append('Inactivo')
-			elif status_inter == 3:
-				interfaces_status.append('Testing')'''
+		Label(text=name, width=35, fg='black').grid(row=r, column=3)
+
 		if int(status) == 1:
 			Label(text='Activo', width=20, fg='black').grid(row=r, column=4)
 		elif int(status) == 2:
@@ -192,6 +211,7 @@ def getAgentInfo(ip,comunnity):
 		r = r+1
 
 def main():
+
 	add = Tkinter.Button(top, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0)
 	delete = Tkinter.Button(top, text ="Eliminar agente", width=25, command = addClient).grid(row=1, column=0)
 	agentInfo = Tkinter.Button(top, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0)
