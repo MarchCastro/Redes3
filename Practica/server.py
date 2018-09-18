@@ -79,19 +79,22 @@ def deleteClient():
 	tkMessageBox.showinfo( "Agregar un nuevo agente", "Hello World")
 
 def getHostInfo():
-	ip_comunnity = [] # va con doble m no doble n
-	file = open("hosts.txt", "r")
-	for linea in file.readlines():
-		palabras = linea.split(" ")
-		if palabras[3].endswith('\n'):
-			palabras[3] = palabras[3][:-1]
-			ip_comunnity.append({'ip' : str(palabras[0]), 'community' : str(palabras[3])})
-		else:
-			ip_comunnity.append({'ip' : str(palabras[0]), 'community' : str(palabras[3])})
+	ip_comunnity = [] # va con doble m no doble n	
+	try:
+		file = open("hosts.txt", "r")
+		for linea in file.readlines():
+			palabras = linea.split(" ")
+			if palabras[3].endswith('\n'):
+				palabras[3] = palabras[3][:-1]
+				ip_comunnity.append({'ip' : str(palabras[0]), 'community' : str(palabras[3])})
+			else:
+				ip_comunnity.append({'ip' : str(palabras[0]), 'community' : str(palabras[3])})
 
-	getAgentInfo(ip_comunnity)
-	file.close()
-	top.after(30000,getHostInfo)
+		getAgentInfo(ip_comunnity)
+		file.close()
+		top.after(30000,getHostInfo)
+	except: 
+   		pass
 
 def ping(ip):
 	#response = os.system("ping -c 1 -q" + ip)
@@ -138,7 +141,7 @@ def consultaSNMP(comunidad,host,oid):
 						concat.append(palabra)
 				resultado_final = ''
 				for palabra in concat:
-					if palabra == '-':
+					if palabra == '-' or palabra == 'SMP':
 						resultado_final = resultado_final + ' ' + palabra + '\n'
 					else:
 						resultado_final = resultado_final + ' ' + palabra
@@ -174,7 +177,7 @@ def getAgentInfo(ip_community):
 				interface_name_status.append({'interface_name' : name_interfaces, 'interface_status' : status_inter})
 		
 		
-		Label(text=agents, width=85, fg='black').grid(row=r, column=0)
+		Label(text=agents, width=70, fg='black').grid(row=r, column=0)
 		Label(text=status_received, width=10, fg='black').grid(row=r, column=1)
 		Label(text=interfaces, width=10, fg='black').grid(row=r, column=2)
 		Tkinter.Button(text ="Graficas",width=10, command = graphics).grid(row=r, column=5)
@@ -184,7 +187,7 @@ def getAgentInfo(ip_community):
 		
 	r = 6
 	for inter_value in interface_name_status:
-		Label(text=inter_value['interface_name'], width=35, fg='black').grid(row=r, column=3)
+		Label(text=inter_value['interface_name'], width=100, fg='black').grid(row=r, column=3)
 
 		if int(inter_value['interface_status']) == 1:
 			Label(text='Activo', width=20, fg='black').grid(row=r, column=4)
@@ -204,7 +207,7 @@ def main():
 
 	getHostInfo()
 
-	Label(text='Dispositivos monitoreados', width=20, fg='black').grid(row=0, column=1)
+	Label(text='Dispositivos monitoreados', width=25, fg='black').grid(row=0, column=1)
 
 	title = ['Nombre del agente', 'Status', 'No. de interfaces', 'Nombre interfaz', 'Status interfaz']
 	col = 0
