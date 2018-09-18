@@ -69,7 +69,7 @@ if response == 0:
   print hostname, 'is up!'
 else:
   print hostname, 'is down!'"""
-
+'''
 import Tkinter as tk
 
 root = tk.Tk()
@@ -92,7 +92,7 @@ frame_canvas.grid_propagate(False)
 
 # Add a canvas in that frame
 canvas = tk.Canvas(frame_canvas, bg="yellow")
-canvas.grid(row=0, column=0, sticky="news")
+canvas.grid(row=1, column=0, sticky="news")
 
 # Link a scrollbar to the canvas
 vsb = tk.Scrollbar(frame_canvas, orient="vertical", command=canvas.yview)
@@ -126,7 +126,7 @@ canvas.config(scrollregion=canvas.bbox("all"))
 
 # Launch the GUI
 root.mainloop()
-
+'''
 '''
 import Tkinter as tk
 root=tk.Tk()
@@ -153,3 +153,99 @@ c.config(scrollregion=c.bbox("all"))
 
 root.mainloop()'''
 #https://stackoverflow.com/questions/42237310/tkinter-canvas-scrollbar
+'''
+from Tkinter import *   # from x import * is bad practice
+from ttk import *
+
+# http://tkinter.unpythonic.net/wiki/VerticalScrolledFrame
+
+class VerticalScrolledFrame(Frame):
+    """A pure Tkinter scrollable frame that actually works!
+    * Use the 'interior' attribute to place widgets inside the scrollable frame
+    * Construct and pack/place/grid normally
+    * This frame only allows vertical scrolling
+    """
+    def __init__(self, parent, *args, **kw):
+        Frame.__init__(self, parent, *args, **kw)            
+
+        # create a canvas object and a vertical scrollbar for scrolling it
+        vscrollbar = Scrollbar(self, orient=VERTICAL)
+        vscrollbar.pack(fill=Y, side=RIGHT, expand=FALSE)
+        canvas = Canvas(self, bd=0, highlightthickness=0,
+                        yscrollcommand=vscrollbar.set)
+        canvas.pack(side=LEFT, fill=BOTH, expand=TRUE)
+        vscrollbar.config(command=canvas.yview)
+
+        # reset the view
+        canvas.xview_moveto(0)
+        canvas.yview_moveto(0)
+
+        # create a frame inside the canvas which will be scrolled with it
+        self.interior = interior = Frame(canvas)
+        interior_id = canvas.create_window(0, 0, window=interior,
+                                           anchor=NW)
+
+        # track changes to the canvas and frame width and sync them,
+        # also updating the scrollbar
+        def _configure_interior(event):
+            # update the scrollbars to match the size of the inner frame
+            size = (interior.winfo_reqwidth(), interior.winfo_reqheight())
+            canvas.config(scrollregion="0 0 %s %s" % size)
+            if interior.winfo_reqwidth() != canvas.winfo_width():
+                # update the canvas's width to fit the inner frame
+                canvas.config(width=interior.winfo_reqwidth())
+        interior.bind('<Configure>', _configure_interior)
+
+        def _configure_canvas(event):
+            if interior.winfo_reqwidth() != canvas.winfo_width():
+                # update the inner frame's width to fill the canvas
+                canvas.itemconfigure(interior_id, width=canvas.winfo_width())
+        canvas.bind('<Configure>', _configure_canvas)
+
+
+if __name__ == "__main__":
+
+    class SampleApp(Tk):
+        def __init__(self, *args, **kwargs):
+            root = Tk.__init__(self, *args, **kwargs)
+
+
+            self.frame = VerticalScrolledFrame(root)
+            self.frame.pack()
+            self.label = Label(text="Shrink the window to activate the scrollbar.")
+            self.label.pack()
+            buttons = []
+            for i in range(10):
+                buttons.append(Button(self.frame.interior, text="Button " + str(i)))
+                buttons[-1].pack()
+
+    app = SampleApp()
+    app.mainloop()'''
+try:
+# Python2
+    import Tkinter as tk
+except ImportError:
+    # Python3
+    import tkinter as tk
+root = tk.Tk()
+# use width x height + x_offset + y_offset (no spaces!)
+root.geometry("240x180+130+180")
+root.title('listbox with scrollbar')
+# create the listbox (height/width in char)
+listbox = tk.Listbox(root, width=20, height=6)
+listbox.grid(row=0, column=0)
+# create a vertical scrollbar to the right of the listbox
+yscroll = tk.Scrollbar(command=listbox.yview, orient=tk.VERTICAL)
+yscroll.grid(row=0, column=1, sticky='ns')
+listbox.configure(yscrollcommand=yscroll.set)
+# now load the listbox with data
+friend_list = [
+'Stew', 'Tom', 'Jen', 'Adam', 'Ethel', 'Barb', 'Tiny',
+'Tim', 'Pete', 'Sue', 'Egon', 'Swen', 'Albert']
+for item in friend_list:
+    # insert each new item to the end of the listbox
+    listbox.insert('end', item)
+# optionally scroll to the bottom of the listbox
+lines = len(friend_list)
+listbox.yview_scroll(lines, 'units')
+root.mainloop()

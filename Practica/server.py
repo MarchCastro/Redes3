@@ -18,18 +18,6 @@ final_result = ''
 top = Tkinter.Tk()
 top.title("Bienvenido a casi Observium :)")
 top.geometry('2080x800')
-'''frame_main = Frame(top)
-frame_main.grid(sticky='news')
-
-canvas = Canvas(frame_main)
-canvas.grid(row=0, column=0, sticky="news")
-canvas.grid_columnconfigure(0, minsize=20)
-canvas.grid_rowconfigure(0, minsize=20)
-# Link a scrollbar to the canvas
-vsb = Scrollbar(frame_main, orient="vertical", command=canvas.yview)
-vsb.grid_rowconfigure(0, minsize=20)
-canvas.configure(yscrollcommand=vsb.set)
-canvas.config(scrollregion=canvas.bbox("all"))'''
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
@@ -67,28 +55,31 @@ def addClient(): #Abre un recuadro a partir del recuadro principal y muestra su 
    b1 = Button(root, text='Agregar agente',command=(lambda e=ents: fetch(e)))
    b1.pack(side=LEFT, padx=5, pady=5)
 
-def graphics(): #Abre un recuadro a partir del recuadro principal y muestra su propio boton para 
+def graphics(parametros): #Abre un recuadro a partir del recuadro principal y muestra su propio boton para 
 	#llamar a la funcion fetch
    graphic_window = Tkinter.Toplevel(top)
    graphic_window.title("Graficos")
-   ents = makeform(graphic_window, fields) 
-   b1 = Button(root, text='Agregar agente',command='AQUI TU MENU')
-   b1.pack(side=LEFT, padx=5, pady=5)
+   print parametros
+   #print comunidad, puerto, ip, oid
 
 def deleteClient():
 	tkMessageBox.showinfo( "Agregar un nuevo agente", "Hello World")
 
 def getHostInfo():
+	print 'holaaaaaa'
+	global agentCount
 	ip_comunnity = [] # va con doble m no doble n	
 	try:
 		file = open("hosts.txt", "r")
+		agentCount = 0
 		for linea in file.readlines():
 			palabras = linea.split(" ")
+			agentCount = agentCount + 1 #Aqui esta mi contador
 			if palabras[3].endswith('\n'):
 				palabras[3] = palabras[3][:-1]
-				ip_comunnity.append({'ip' : str(palabras[0]), 'community' : str(palabras[3])})
+				ip_comunnity.append({'ip' : str(palabras[0]), 'port' : str(palabras[2]), 'community' : str(palabras[3])})
 			else:
-				ip_comunnity.append({'ip' : str(palabras[0]), 'community' : str(palabras[3])})
+				ip_comunnity.append({'ip' : str(palabras[0]), 'port' : str(palabras[2]), 'community' : str(palabras[3])})
 
 		getAgentInfo(ip_comunnity)
 		file.close()
@@ -108,15 +99,17 @@ def ping(ip):
 			is_up = 'Activa'
 		except subprocess.CalledProcessError:
 			is_up = 'Inactiva'
+	print is_up
 	return is_up
 
-def consultaSNMP(comunidad,host,oid):
+def consultaSNMP(comunidad,port,host,oid):
 	global resultado_final
+	#print comunidad,port,host,oid
 	try:
 		errorIndication, errorStatus, errorIndex, varBinds = next(
 			getCmd(SnmpEngine(),
 					CommunityData(comunidad),
-					UdpTransportTarget((host, 161), timeout=0.25, retries=0),
+					UdpTransportTarget((host, int(port)), timeout=0.25, retries=0),
 					ContextData(),
 					ObjectType(ObjectIdentity(oid))))
 		if errorIndication:
@@ -150,53 +143,62 @@ def consultaSNMP(comunidad,host,oid):
 		print error
 
 def getAgentInfo(ip_community):
+	print 'getAgentInfo'
 	status_array = []
 	interface_name_status= []
 	global agentCount
-	agentCount = 0
 	r = 6
+	ro = 6
 	for computer in ip_community:
 		status_received = ping(computer['ip']) #ip_for['ip]
 		status_array.append(status_received)
-		if status_received != 'Activa':
-			continue	
+		if status_received == 'Activa':
+			agents = consultaSNMP(computer['community'], computer['port'], computer['ip'],'1.3.6.1.2.1.1.1.0')
+			print agents
+			if not agents:
+				continue
+			
+			interfaces = consultaSNMP(computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.1.0')
 
-		agents = consultaSNMP(computer['community'],computer['ip'], '1.3.6.1.2.1.1.1.0')
-		if not agents:
-			continue
-		
-		agentCount = agentCount + 1 #Aqui esta mi contador
-		interfaces = consultaSNMP(computer['community'],computer['ip'], '1.3.6.1.2.1.2.1.0')
+			for i in range(1,int(interfaces)+1):
+				name_interfaces = consultaSNMP(computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i))
+				status_inter = consultaSNMP(computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.8.'+str(i))
+				
+				if name_interfaces[1] == '0':
+					interface_name = name_interfaces[3:].decode('hex')
+					Label(text=interface_name, width=100, fg='black').grid(row=ro, column=3)
+					Tkinter.Button(text ="Graficas",width=10, command= lambda  name = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)] : graphics(name)).grid(row=ro, column=5)
+					#data = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)]
+					#widget = Tkinter.Button(text='Graficas', width = 10).grid(row=ro, column=5)
+					#widget.bind('<ButtonPress -1>', lambda event, arg = data : self.graphics(event, arg))
+				else:
+					Label(text=name_interfaces, width=100, fg='black').grid(row=ro, column=3)
+					#data = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)]
+					#widget = Tkinter.Button(text='Graficas', width = 10).grid(row=ro, column=5)
+					#widget.bind('<ButtonPress -1>', lambda event, arg = data : self.graphics(event, arg))
+					Tkinter.Button(text ="Graficas",width=10, command = lambda  name = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)] : graphics(name)).grid(row=ro, column=5)
+				
+				if int(status_inter) == 1:
+					Label(text='Activo', width=20, fg='black').grid(row=ro, column=4)
+				elif int(status_inter) == 2:
+					Label(text='Inactivo', width=20, fg='black').grid(row=ro, column=4)
+				elif int(status_inter) == 3:
+					Label(text='Testing', width=20, fg='black').grid(row=ro, column=4)
+				ro = ro + 1
+			
+			Label(text=agents, width=70, fg='black').grid(row=r, column=0)
+			Label(text=status_received, width=10, fg='black').grid(row=r, column=1)
+			Label(text=interfaces, width=10, fg='black').grid(row=r, column=2)
+			Tkinter.Button(text ="Estado",width=10, command = graphics).grid(row=r, column=6)
+			r = r + int(interfaces)
+		else:
+			Label(text = computer['ip'], width=70, fg='black').grid(row=r, column=0)
+			Label(text=status_received, width=10, fg='black').grid(row=r, column=1)
+			Label(text='Informacion no disponible', width=50, fg='black').grid(row=ro, column=3)
+			r = r + 1
+			ro = ro + 1
 
-		for i in range(1,int(interfaces)+1):
-			name_interfaces = consultaSNMP(computer['community'],computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i))
-			status_inter = consultaSNMP(computer['community'],computer['ip'], '1.3.6.1.2.1.2.2.1.8.'+str(i))
-			if name_interfaces[1] == '0':
-				interface_name_status.append({'interface_name' : name_interfaces[3:].decode('hex'), 'interface_status' : status_inter})
-			else:
-				interface_name_status.append({'interface_name' : name_interfaces, 'interface_status' : status_inter})
-		
-		
-		Label(text=agents, width=60, fg='black', bg='yellow').grid(row=r, column=0)
-		Label(text=status_received, width=10, fg='black').grid(row=r, column=1)
-		Label(text=interfaces, width=10, fg='black').grid(row=r, column=2)
-		Tkinter.Button(text ="Graficas",width=10, command = graphics).grid(row=r, column=5)
-		r = r + int(interfaces)
-	
 	Label(text='Numero de agentes: ' + str(agentCount), width=25, fg='black').grid(row=1, column=1)
-		
-	r = 6
-	for inter_value in interface_name_status:
-		Label(text=inter_value['interface_name'], width=100, fg='black').grid(row=r, column=3)
-
-		if int(inter_value['interface_status']) == 1:
-			Label(text='Activo', width=20, fg='black').grid(row=r, column=4)
-		elif int(inter_value['interface_status']) == 2:
-			Label(text='Inactivo', width=20, fg='black').grid(row=r, column=4)
-		elif int(inter_value['interface_status']) == 3:
-			Label(text='Testing', width=20, fg='black').grid(row=r, column=4)
-		#Label(text=status, width=20, fg='black').grid(row=r, column=4)
-		r = r+1
 
 def main():
 
@@ -216,7 +218,7 @@ def main():
 		Label(text=c, width=20, fg='black').grid(row=row, column=col)
 		col = col + 1
 
-	top.after(30000, getHostInfo)
+	top.after(10000, getHostInfo)
 	top.mainloop()
 
 if __name__== '__main__': 

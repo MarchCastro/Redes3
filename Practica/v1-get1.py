@@ -82,9 +82,9 @@ def convert_hex_to_ascii(h):
 
 while 1: #Monitorizamos los valores de entrada y salida de octetos de informacion
     host = 'comunidadLenovo'
-    ip = '192.168.1.67'
+    ip = '192.168.100.26'
     total_input_traffic = consultaSNMP(host,ip,
-                    '1.3.6.1.2.1.1.1.0')
+                    '1.3.6.1.2.1.2.2.1.1.1')
     print total_input_traffic
     #total_input_traffic = str(total_input_traffic)
     #total_input_traffic.decode('hex')
