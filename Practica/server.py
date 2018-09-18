@@ -5,6 +5,7 @@
 import socket
 import Tkinter 
 import time
+import threading
 import os
 import subprocess
 from Tkinter import *
@@ -218,7 +219,7 @@ def main():
 		Label(text=c, width=20, fg='black').grid(row=row, column=col)
 		col = col + 1
 
-	top.after(10000, getHostInfo)
+	#top.after(10000, getHostInfo)
 	top.mainloop()
 
 if __name__== '__main__': 
