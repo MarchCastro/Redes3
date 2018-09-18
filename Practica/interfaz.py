@@ -152,3 +152,4 @@ root.update()
 c.config(scrollregion=c.bbox("all"))
 
 root.mainloop()'''
+#https://stackoverflow.com/questions/42237310/tkinter-canvas-scrollbar

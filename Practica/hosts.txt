@@ -1,5 +1,5 @@
 127.0.0.1 a a comunidadMarcela
 a a a a
 192.168.15.28 a a comunidad3
-127.0.0.1 a h comunidadMarcela 
-127.0.0.1 2 161 comunidadSNMPSamuel
+127.0.0.1 a h comunidadMarcela
+127.0.0.1 a h comunidadMarcelaaa
