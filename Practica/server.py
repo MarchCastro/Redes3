@@ -208,7 +208,7 @@ def main():
 	agentInfo = Tkinter.Button(top, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0)
 	agentInfo = Tkinter.Button(top, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0)
 
-	getHostInfo()
+	#getHostInfo()
 
 	Label(text='Dispositivos monitoreados', width=25, fg='black').grid(row=0, column=1)
 
@@ -219,7 +219,7 @@ def main():
 		Label(text=c, width=20, fg='black').grid(row=row, column=col)
 		col = col + 1
 
-	#top.after(10000, getHostInfo)
+	top.after(0, getHostInfo)
 	top.mainloop()
 
 if __name__== '__main__': 
