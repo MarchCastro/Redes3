@@ -81,19 +81,19 @@ def convert_hex_to_ascii(h):
     return ''.join(chars_in_reverse)
 
 while 1: #Monitorizamos los valores de entrada y salida de octetos de informacion
-    host = 'comunidad3'
-    ip = '192.168.15.28'
+    host = 'comunidadLenovo'
+    ip = '192.168.1.67'
     total_input_traffic = consultaSNMP(host,ip,
-                    '1.3.6.1.2.1.2.2.1.2.3')
-    print type(total_input_traffic)
+                    '1.3.6.1.2.1.1.1.0')
+    print total_input_traffic
     #total_input_traffic = str(total_input_traffic)
     #total_input_traffic.decode('hex')
     #binascii.unhexlify(total_input_traffic)
     #value = bytearray.fromhex(total_input_traffic).decode()
-    print total_input_traffic[1]
+    
+    '''print total_input_traffic[1]
     if total_input_traffic[1] == '0':
         value = total_input_traffic[3:]
-
-    print value.decode('hex')
+        print value.decode('hex')'''
     #print value +  '4d6963726f736f66742049502d485454505320506c6174666f726d204164617074657200'.decode('hex')
     #print convert_hex_to_ascii(total_input_traffic)

@@ -177,7 +177,7 @@ def getAgentInfo(ip_community):
 				interface_name_status.append({'interface_name' : name_interfaces, 'interface_status' : status_inter})
 		
 		
-		Label(text=agents, width=70, fg='black').grid(row=r, column=0)
+		Label(text=agents, width=60, fg='black', bg='yellow').grid(row=r, column=0)
 		Label(text=status_received, width=10, fg='black').grid(row=r, column=1)
 		Label(text=interfaces, width=10, fg='black').grid(row=r, column=2)
 		Tkinter.Button(text ="Graficas",width=10, command = graphics).grid(row=r, column=5)
