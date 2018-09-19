@@ -5,3 +5,4 @@
 127.0.0.1 1 161 comunidadLenovo
 127.0.0.1 1 161 comunidadLenovo
 127.0.0.1 1 161 comunidadLenovo
+127.0.0.1 1 161 comunidadSNMPsamuel
