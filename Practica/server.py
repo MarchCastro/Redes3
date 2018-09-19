@@ -12,6 +12,9 @@ from Tkinter import *
 from tkMessageBox import showinfo
 from pysnmp.hlapi import *
 from time import sleep
+from actualizarRRD import actualizar
+from graficarRRD import graficar
+from elegirGrafica import VentanaGraficas
 
 agentCount = 0
 final_result = ''
@@ -69,9 +72,10 @@ def addClient(): #Abre un recuadro a partir del recuadro principal y muestra su 
 
 def graphics(parametros): #Abre un recuadro a partir del recuadro principal y muestra su propio boton para 
 	#llamar a la funcion fetch
-   graphic_window = Tkinter.Toplevel(top)
-   graphic_window.title("Graficos")
-   print parametros
+   #graphic_window = Tkinter.Toplevel(top)
+   #graphic_window.title("Graficos")
+   #print parametros
+   a = VentanaGraficas(top,parametros[2])
    #print comunidad, puerto, ip, oid
 
 def deleteClient():
@@ -219,7 +223,26 @@ def getAgentInfo(ip_community):
 
 	Label(canvasFrame, text='Numero de agentes: ' + str(agentCount), width=25, fg='black').grid(row=1, column=1, sticky="nsew")
 
+def inicia_capturas():
+	hilos = []
+	with open("hosts.txt",'r') as hosts:
+		for i in hosts.readlines():
+			datos = i.split(' ')
+			
+			response = os.system("ping -c 1 " + datos[0]) # realiza un ping a cada host del archivo - lo siento marcela, no encontre la lista en donde ya lo habias hecho :(
+			if response == 0 and datos[0] != "127.0.0.1": # Si esta vivo inicia un hilo con sus actualizaciones
+				thread = threading.Thread(target=actualizar, args=('Actualizando '+datos[0]+' '+datos[3][:-1],datos[3][:-1],datos[0],datos[2],datos[0]+'-net',))
+				thread.daemon = True
+				hilos.append(thread)
+			
+	for h in hilos:
+		h.start()
+			
+
 def main():
+
+	#Inicia actualizaciones de las BD de cada host encontrado
+	inicia_capturas()
 
 	add = Tkinter.Button(canvasFrame, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0, sticky="nsew")
 	delete = Tkinter.Button(canvasFrame, text ="Eliminar agente", width=25, command = addClient).grid(row=1, column=0, sticky="nsew")

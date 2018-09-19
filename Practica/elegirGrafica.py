@@ -15,11 +15,13 @@ class VentanaGraficas(object):
 		self.rrd_name = host+"-net.rrd"
 		#self.rrd_name = "net3.rrd" # Nombre de la rrd del host
 		
-		self.b = tk.Button(self.root, text="Graficas de la interfaz", command=self.create_window)
-		self.b.pack()
+		#self.b = tk.Button(self.root, text="Graficas de la interfaz", command=self.create_window)
+		#self.b.pack()
+		self.create_window()
 		
 	def create_window(self):
-		self.window = tk.Toplevel(self.root)	
+		self.window = tk.Toplevel(self.root)
+		self.window.title("Graficos")
 		tk.Button(self.window, text='Trafico de la interfaz', command= lambda: self.inicia_ventana_grafica(1)).grid(row=1, column=0)
 		tk.Button(self.window, text='Conexiones TCP establecidas', command= lambda: self.inicia_ventana_grafica(2)).grid(row=2, column=0)
 		tk.Button(self.window, text='Segmentos TCP', command= lambda: self.inicia_ventana_grafica(3)).grid(row=3, column=0)
@@ -47,6 +49,21 @@ class Grafica(object):
 		t2.start()
 	
 		self.window1 = tk.Toplevel(self.root)
+		
+		if id_grafica == 1:
+			self.window1.title("Trafico de la interfaz")
+		elif id_grafica == 2:
+			self.window1.title("Conexiones TCP establecidas")
+		elif id_grafica == 3:
+			self.window1.title("Segmentos TCP")
+		elif id_grafica == 4:
+			self.window1.title("Estadisticas ICMP")
+		elif id_grafica == 5:
+			self.window1.title("Respuestas SNMP")
+		else:
+			self.window1.title("Graficos")	
+			
+			
 		self.img = ImageTk.PhotoImage(Image.open(self.imagen))
 		self.display = tk.Label(self.window1, image=self.img)
 		self.display.pack(side = "bottom", fill = "both", expand = "yes")
