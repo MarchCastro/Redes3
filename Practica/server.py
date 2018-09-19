@@ -20,6 +20,17 @@ top = Tkinter.Tk()
 top.title("Bienvenido a casi Observium :)")
 top.geometry('2080x800')
 
+photoFrame = Frame(top, width=2080, height=800, bg="#EBEBEB")
+photoFrame.grid()
+photoFrame.rowconfigure(0, weight=1) 
+photoFrame.columnconfigure(0, weight=1) 
+
+photoCanvas = Canvas(photoFrame,width=2080, height=800, bg="#EBEBEB")
+photoCanvas.grid(row=0, column=5, sticky="nsew")
+
+canvasFrame = Frame(photoCanvas,  width=2080, height=800, bg="#EBEBEB")
+photoCanvas.create_window(0, 0, window=canvasFrame, anchor='nw')
+
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
 def fetch(entries): #Recorre todos los datos que agregue y me los imprime en consola
@@ -49,7 +60,7 @@ def makeform(root, fields): #Acomoda label en ventana de agregar agente
 
 def addClient(): #Abre un recuadro a partir del recuadro principal y muestra su propio boton para 
 	#llamar a la funcion fetch
-   root = Tkinter.Toplevel(top)
+   root = Tkinter.Toplevel(canvasFrame)
    root.title("Agregar un nuevo agente")
    ents = makeform(root, fields)
    root.bind('<Return>', (lambda event, e=ents: fetch(e)))   
@@ -65,6 +76,9 @@ def graphics(parametros): #Abre un recuadro a partir del recuadro principal y mu
 
 def deleteClient():
 	tkMessageBox.showinfo( "Agregar un nuevo agente", "Hello World")
+
+def update_scrollregion(event):
+    photoCanvas.configure(scrollregion=photoCanvas.bbox("all"))
 
 def getHostInfo():
 	print 'holaaaaaa'
@@ -84,6 +98,12 @@ def getHostInfo():
 
 		getAgentInfo(ip_comunnity)
 		file.close()
+		photoScroll = Scrollbar(photoFrame, orient=VERTICAL)
+		photoScroll.config(command=photoCanvas.yview)
+		photoCanvas.config(yscrollcommand=photoScroll.set)
+		photoScroll.grid(row=0, column=1, sticky="ns")
+
+		canvasFrame.bind("<Configure>", update_scrollregion)
 		top.after(30000,getHostInfo)
 	except: 
    		pass
@@ -167,56 +187,49 @@ def getAgentInfo(ip_community):
 				
 				if name_interfaces[1] == '0':
 					interface_name = name_interfaces[3:].decode('hex')
-					Label(text=interface_name, width=100, fg='black').grid(row=ro, column=3)
-					Tkinter.Button(text ="Graficas",width=10, command= lambda  name = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)] : graphics(name)).grid(row=ro, column=5)
-					#data = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)]
-					#widget = Tkinter.Button(text='Graficas', width = 10).grid(row=ro, column=5)
-					#widget.bind('<ButtonPress -1>', lambda event, arg = data : self.graphics(event, arg))
+					Label(canvasFrame, text=interface_name, width=100, fg='black').grid(row=ro, column=3, sticky="nsew")
+					Tkinter.Button(canvasFrame, text ="Graficas",width=10, command= lambda  name = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)] : graphics(name)).grid(row=ro, column=5, sticky="nsew")
 				else:
-					Label(text=name_interfaces, width=100, fg='black').grid(row=ro, column=3)
-					#data = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)]
-					#widget = Tkinter.Button(text='Graficas', width = 10).grid(row=ro, column=5)
-					#widget.bind('<ButtonPress -1>', lambda event, arg = data : self.graphics(event, arg))
-					Tkinter.Button(text ="Graficas",width=10, command = lambda  name = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)] : graphics(name)).grid(row=ro, column=5)
+					Label(canvasFrame, text=name_interfaces, width=100, fg='black').grid(row=ro, column=3, sticky="nsew")
+					Tkinter.Button(canvasFrame, text ="Graficas",width=10, command = lambda  name = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)] : graphics(name)).grid(row=ro, column=5, sticky="nsew")
 				
 				if int(status_inter) == 1:
-					Label(text='Activo', width=20, fg='black').grid(row=ro, column=4)
+					Label(canvasFrame, text='Activo', width=20, fg='black').grid(row=ro, column=4, sticky="nsew")
 				elif int(status_inter) == 2:
-					Label(text='Inactivo', width=20, fg='black').grid(row=ro, column=4)
+					Label(canvasFrame, text='Inactivo', width=20, fg='black').grid(row=ro, column=4, sticky="nsew")
 				elif int(status_inter) == 3:
-					Label(text='Testing', width=20, fg='black').grid(row=ro, column=4)
+					Label(canvasFrame, text='Testing', width=20, fg='black').grid(row=ro, column=4, sticky="nsew")
 				ro = ro + 1
 			
-			Label(text=agents, width=70, fg='black').grid(row=r, column=0)
-			Label(text=status_received, width=10, fg='black').grid(row=r, column=1)
-			Label(text=interfaces, width=10, fg='black').grid(row=r, column=2)
-			Tkinter.Button(text ="Estado",width=10, command = graphics).grid(row=r, column=6)
+			Label(canvasFrame, text=agents, width=70, fg='black').grid(row=r, column=0, sticky="nsew")
+			Label(canvasFrame, text=status_received, width=10, fg='black').grid(row=r, column=1, sticky="nsew")
+			Label(canvasFrame, text=interfaces, width=10, fg='black').grid(row=r, column=2, sticky="nsew")
+			Tkinter.Button(canvasFrame, text ="Estado",width=10, command = graphics).grid(row=r, column=6, sticky="nsew")
 			r = r + int(interfaces)
 		else:
-			Label(text = computer['ip'], width=70, fg='black').grid(row=r, column=0)
-			Label(text=status_received, width=10, fg='black').grid(row=r, column=1)
-			Label(text='Informacion no disponible', width=50, fg='black').grid(row=ro, column=3)
+			Label(canvasFrame, text = computer['ip'], width=70, fg='black').grid(row=r, column=0, sticky="nsew")
+			Label(canvasFrame, text=status_received, width=10, fg='black').grid(row=r, column=1, sticky="nsew")
+			Label(canvasFrame, text='Informacion no disponible', width=50, fg='black').grid(row=ro, column=3, sticky="nsew")
 			r = r + 1
 			ro = ro + 1
 
-	Label(text='Numero de agentes: ' + str(agentCount), width=25, fg='black').grid(row=1, column=1)
+	Label(canvasFrame, text='Numero de agentes: ' + str(agentCount), width=25, fg='black').grid(row=1, column=1, sticky="nsew")
 
 def main():
 
-	add = Tkinter.Button(top, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0)
-	delete = Tkinter.Button(top, text ="Eliminar agente", width=25, command = addClient).grid(row=1, column=0)
-	agentInfo = Tkinter.Button(top, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0)
-	agentInfo = Tkinter.Button(top, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0)
+	add = Tkinter.Button(canvasFrame, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0, sticky="nsew")
+	delete = Tkinter.Button(canvasFrame, text ="Eliminar agente", width=25, command = addClient).grid(row=1, column=0, sticky="nsew")
+	agentInfo = Tkinter.Button(canvasFrame, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0, sticky="nsew")
 
 	#getHostInfo()
 
-	Label(text='Dispositivos monitoreados', width=25, fg='black').grid(row=0, column=1)
+	Label(canvasFrame, text='Dispositivos monitoreados', width=25, fg='black').grid(row=0, column=1, sticky="nsew")
 
 	title = ['Nombre del agente', 'Status', 'No. de interfaces', 'Nombre interfaz', 'Status interfaz']
 	col = 0
 	row = 3
 	for c in title:
-		Label(text=c, width=20, fg='black').grid(row=row, column=col)
+		Label(canvasFrame, text=c, width=20, fg='black').grid(row=row, column=col, sticky="nsew")
 		col = col + 1
 
 	top.after(0, getHostInfo)
