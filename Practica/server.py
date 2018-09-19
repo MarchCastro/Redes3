@@ -18,17 +18,17 @@ final_result = ''
 #Declaro mi ventana principal
 top = Tkinter.Tk()
 top.title("Bienvenido a casi Observium :)")
-top.geometry('2080x800')
+top.geometry('1845x850')
 
-photoFrame = Frame(top, width=2080, height=800, bg="#EBEBEB")
+photoFrame = Frame(top, width=1830, height=800)
 photoFrame.grid()
 photoFrame.rowconfigure(0, weight=1) 
 photoFrame.columnconfigure(0, weight=1) 
 
-photoCanvas = Canvas(photoFrame,width=2080, height=800, bg="#EBEBEB")
+photoCanvas = Canvas(photoFrame,width=1830, height=800)
 photoCanvas.grid(row=0, column=5, sticky="nsew")
 
-canvasFrame = Frame(photoCanvas,  width=2080, height=800, bg="#EBEBEB")
+canvasFrame = Frame(photoCanvas,  width=1830, height=800)
 photoCanvas.create_window(0, 0, window=canvasFrame, anchor='nw')
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
@@ -103,6 +103,10 @@ def getHostInfo():
 		photoCanvas.config(yscrollcommand=photoScroll.set)
 		photoScroll.grid(row=0, column=1, sticky="ns")
 
+		hsbar = Scrollbar(photoFrame, orient=HORIZONTAL, command=photoCanvas.xview)
+		photoCanvas.config(xscrollcommand=hsbar.set)
+		hsbar.grid(row=1, column=5, sticky="ew")
+        
 		canvasFrame.bind("<Configure>", update_scrollregion)
 		top.after(30000,getHostInfo)
 	except: 
@@ -134,7 +138,7 @@ def consultaSNMP(comunidad,port,host,oid):
 					ContextData(),
 					ObjectType(ObjectIdentity(oid))))
 		if errorIndication:
-			print(errorIndication),comunidad,host
+			print(errorIndication),comunidad,host,oid
 			return None
 		elif errorStatus:
 			print('%s at %s' % (errorStatus.prettyPrint(),errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
@@ -180,7 +184,7 @@ def getAgentInfo(ip_community):
 				continue
 			
 			interfaces = consultaSNMP(computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.1.0')
-
+			print interfaces
 			for i in range(1,int(interfaces)+1):
 				name_interfaces = consultaSNMP(computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i))
 				status_inter = consultaSNMP(computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.8.'+str(i))
@@ -207,9 +211,9 @@ def getAgentInfo(ip_community):
 			Tkinter.Button(canvasFrame, text ="Estado",width=10, command = graphics).grid(row=r, column=6, sticky="nsew")
 			r = r + int(interfaces)
 		else:
-			Label(canvasFrame, text = computer['ip'], width=70, fg='black').grid(row=r, column=0, sticky="nsew")
-			Label(canvasFrame, text=status_received, width=10, fg='black').grid(row=r, column=1, sticky="nsew")
-			Label(canvasFrame, text='Informacion no disponible', width=50, fg='black').grid(row=ro, column=3, sticky="nsew")
+			Label(canvasFrame, text = computer['ip'], width=70, fg='red').grid(row=r, column=0, sticky="nsew")
+			Label(canvasFrame, text=status_received, width=10, fg='red').grid(row=r, column=1, sticky="nsew")
+			Label(canvasFrame, text='Informacion no disponible', width=50, fg='red').grid(row=ro, column=3, sticky="nsew")
 			r = r + 1
 			ro = ro + 1
 
