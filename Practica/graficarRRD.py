@@ -4,6 +4,7 @@ import time
 tiempo_actual = int(time.time())
 tiempo_final = tiempo_actual - 86400
 tiempo_inicial = tiempo_final -25920000
+tiempo_graficacion = str(1537404600) # tiempo del 19 de septiembre a las 18
 
 '''
 Este script genera una grafica en PNG a partir de la base de datos net3.rrd creada
@@ -24,7 +25,7 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		while 1:
 			print cadena
 			ret = rrdtool.graph( image_name,
-				             "--start",'1537293600', # tiempo del 18 de septiembre a las 18
+				             "--start",tiempo_graficacion, 
 		 #                    "--end","N",
 				             "--vertical-label=Bytes/s",
 				             "DEF:inoctets="+rrd+":inoctets:AVERAGE",
@@ -37,7 +38,7 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		while 1:
 			print cadena
 			ret = rrdtool.graph( image_name,
-				             "--start",'1537293600', # tiempo del 18 de septiembre a las 18
+				             "--start",tiempo_graficacion,
 		 #                    "--end","N",
 				             "--vertical-label=Numero de conexiones",
 				             "DEF:establishedtcpconn="+rrd+":establishedtcpconn:AVERAGE",
@@ -48,7 +49,7 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		while 1:
 			print cadena
 			ret = rrdtool.graph( image_name,
-				             "--start",'1537293600', # tiempo del 18 de septiembre a las 18
+				             "--start",tiempo_graficacion,
 		 #                    "--end","N",
 				             "--vertical-label=TCP Segs/s",
 				             "DEF:intcpsegs="+rrd+":intcpsegs:AVERAGE",
@@ -61,7 +62,7 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		while 1:
 			print cadena
 			ret = rrdtool.graph( image_name,
-				             "--start",'1537293600', # tiempo del 18 de septiembre a las 18
+				             "--start",tiempo_graficacion,
 		 #                    "--end","N",
 				             "--vertical-label=ICMP msgs/s",
 				             "DEF:inicmpmsgs="+rrd+":inicmpmsgs:AVERAGE",
@@ -74,7 +75,7 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		while 1:
 			print cadena
 			ret = rrdtool.graph( image_name,
-				             "--start",'1537293600', # tiempo del 18 de septiembre a las 18
+				             "--start",tiempo_graficacion,
 		 #                    "--end","N",
 				             "--vertical-label=SNMP PDUs/s",
 				             "DEF:insnmpresponses="+rrd+":insnmpresponses:AVERAGE",

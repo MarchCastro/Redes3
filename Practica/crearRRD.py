@@ -11,7 +11,7 @@ Script que crea la base de datos rrdtool para almacenar las 5 variables eleginas
 def crear(nombre):
 	ret = rrdtool.create(nombre,
 		                 "--start",'1537228800',
-		                 "--step",'60',
+		                 "--step",'10',
 		                 "DS:inoctets:COUNTER:600:U:U",
 		                 "DS:outoctets:COUNTER:600:U:U",
 		                 "DS:establishedtcpconn:GAUGE:600:U:U",

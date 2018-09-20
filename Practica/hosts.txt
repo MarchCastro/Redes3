@@ -6,3 +6,5 @@
 127.0.0.1 1 161 comunidadLenovo
 127.0.0.1 1 161 comunidadLenovo
 192.168.61.129 1 161 comunidadSNMPsamuel
+192.168.61.131 1 161 comunidadSNMPsamuel
+192.168.61.135 1 161 comunidadSNMPsamuel
