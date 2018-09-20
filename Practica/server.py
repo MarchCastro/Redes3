@@ -15,6 +15,8 @@ from time import sleep
 from actualizarRRD import actualizar
 from graficarRRD import graficar
 from elegirGrafica import VentanaGraficas
+from Eliminar import Aplicacion
+from Reporte import Estado
 
 agentCount = 0
 final_result = ''
@@ -81,7 +83,11 @@ def graphics(parametros): #Abre un recuadro a partir del recuadro principal y mu
    #print comunidad, puerto, ip, oid
 
 def deleteClient():
-	tkMessageBox.showinfo( "Agregar un nuevo agente", "Hello World")
+	Aplicacion()
+
+def MostrarEstado(ip):
+    print( ip )
+	#Estado(info)
 
 def update_scrollregion(event):
     photoCanvas.configure(scrollregion=photoCanvas.bbox("all"))
@@ -185,6 +191,7 @@ def getAgentInfo(ip_community):
 		status_received = ping(computer['ip']) #ip_for['ip]
 		status_array.append(status_received)
 		if status_received == 'Activa':
+			print('\n * * * * * * * *\nEl status es: ' + status_received)
 			agents = consultaSNMP(computer['community'], computer['port'], computer['ip'],'1.3.6.1.2.1.1.1.0')
 			print agents
 			if not agents:
@@ -215,7 +222,7 @@ def getAgentInfo(ip_community):
 			Label(canvasFrame, text=agents, width=70, fg='black').grid(row=r, column=0, sticky="nsew")
 			Label(canvasFrame, text=status_received, width=10, fg='black').grid(row=r, column=1, sticky="nsew")
 			Label(canvasFrame, text=interfaces, width=10, fg='black').grid(row=r, column=2, sticky="nsew")
-			Tkinter.Button(canvasFrame, text ="Estado",width=10, command = graphics).grid(row=r, column=6, sticky="nsew")
+			Tkinter.Button(canvasFrame, text ="Estado",width=10, command = lambda name = computer['ip']: MostrarEstado(name)).grid(row=r, column=6, sticky="nsew")
 			r = r + int(interfaces)
 		else:
 			Label(canvasFrame, text = computer['ip'], width=70, fg='red').grid(row=r, column=0, sticky="nsew")
@@ -249,7 +256,7 @@ def inicia_capturas():
 def main():
 
 	add = Tkinter.Button(canvasFrame, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0, sticky="nsew")
-	delete = Tkinter.Button(canvasFrame, text ="Eliminar agente", width=25, command = addClient).grid(row=1, column=0, sticky="nsew")
+	delete = Tkinter.Button(canvasFrame, text="Eliminar agente", width=25, command=deleteClient).grid(row=1, column=0,sticky="nsew")
 	agentInfo = Tkinter.Button(canvasFrame, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0, sticky="nsew")
 
 	#getHostInfo()

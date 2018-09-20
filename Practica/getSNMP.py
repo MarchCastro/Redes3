@@ -22,6 +22,7 @@ def consultaSNMP(comunidad,host,puerto,oid):
 	'''
 		Recibe el nombre de la comunidad, el host o ip y el OID a consultar
 	'''
+	resultado = ''
 	errorIndication, errorStatus, errorIndex, varBinds = next(
 		getCmd(SnmpEngine(),
 			CommunityData(comunidad),
