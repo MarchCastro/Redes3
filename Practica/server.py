@@ -36,6 +36,8 @@ photoCanvas.create_window(0, 0, window=canvasFrame, anchor='nw')
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
+alive_hosts = []
+
 def fetch(entries): #Recorre todos los datos que agregue y me los imprime en consola
 	showinfo('Agente creado!', 'Se ha creado correctamente un agente nuevo')
 	concatenation = ''
@@ -126,6 +128,7 @@ def ping(ip):
 				stderr=DEVNULL
 			)
 			is_up = 'Activa'
+			alive_hosts.append(ip)
 		except subprocess.CalledProcessError:
 			is_up = 'Inactiva'
 	print is_up
@@ -222,27 +225,28 @@ def getAgentInfo(ip_community):
 			ro = ro + 1
 
 	Label(canvasFrame, text='Numero de agentes: ' + str(agentCount), width=25, fg='black').grid(row=1, column=1, sticky="nsew")
+	
+	#Inicia actualizaciones de las BD de cada host encontrado y vivo
+	inicia_capturas()
 
 def inicia_capturas():
+	print "Iniciando..."
 	hilos = []
 	with open("hosts.txt",'r') as hosts:
 		for i in hosts.readlines():
 			datos = i.split(' ')
-			
-			response = os.system("ping -c 1 " + datos[0]) # realiza un ping a cada host del archivo - lo siento marcela, no encontre la lista en donde ya lo habias hecho :(
-			if response == 0 and datos[0] != "127.0.0.1": # Si esta vivo inicia un hilo con sus actualizaciones
-				thread = threading.Thread(target=actualizar, args=('Actualizando '+datos[0]+' '+datos[3][:-1],datos[3][:-1],datos[0],datos[2],datos[0]+'-net',))
-				thread.daemon = True
-				hilos.append(thread)
+			for j in alive_hosts:			
+				if j == datos[0] and datos[0] != "127.0.0.1": # Si esta vivo inicia un hilo con sus actualizaciones
+					thread = threading.Thread(target=actualizar, args=('Actualizando '+datos[0]+' '+datos[3][:-1],datos[3][:-1],datos[0],datos[2],datos[0]+'-net',))
+					thread.daemon = True
+					hilos.append(thread)
+					break
 			
 	for h in hilos:
 		h.start()
-			
+		
 
 def main():
-
-	#Inicia actualizaciones de las BD de cada host encontrado
-	inicia_capturas()
 
 	add = Tkinter.Button(canvasFrame, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0, sticky="nsew")
 	delete = Tkinter.Button(canvasFrame, text ="Eliminar agente", width=25, command = addClient).grid(row=1, column=0, sticky="nsew")
@@ -259,7 +263,7 @@ def main():
 		Label(canvasFrame, text=c, width=20, fg='black').grid(row=row, column=col, sticky="nsew")
 		col = col + 1
 
-	top.after(0, getHostInfo)
+	top.after(0, getHostInfo)	
 	top.mainloop()
 
 if __name__== '__main__': 
