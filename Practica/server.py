@@ -10,6 +10,7 @@ import os
 import ttk
 import tkMessageBox
 import subprocess
+import PIL
 from Tkinter import *
 from tkMessageBox import showinfo
 from pysnmp.hlapi import *
@@ -22,6 +23,7 @@ from graficarRRD import graficar
 from elegirGrafica import VentanaGraficas
 from Eliminar import Aplicacion
 from Reporte import Estado
+from PIL import Image, ImageTk
 
 agentCount = 0
 final_result = ''
@@ -168,7 +170,7 @@ def MostrarEstado(ip):
 	info = cadena
 	ventana = Tkinter.Toplevel(canvasFrame)
 	ventana.title('Reporte de Equipo')
-	ventana.geometry('370x300+300+0')
+	ventana.geometry('350x350')
 
 	version = info.split(' ')[1]
 	print(version)
@@ -192,16 +194,21 @@ def MostrarEstado(ip):
 	ubicacion = consultaSNMPcompleto(comunidad, ip, '1.3.6.1.2.1.1.6.0', int(puerto))
 	administrador = consultaSNMPcompleto(comunidad, ip, '1.3.6.1.2.1.1.5.0', int(puerto))
 
+	print sistema, numInterfaces, reinicio, ubicacion, administrador, version, ip
 	lcomunidad = ttk.Label(ventana, text='Comunidad')
 
 	if sistema.find('Linux', 0, len(sistema)) >= 0:
 		print('aqui: ' + sistema)
-		pic = PhotoImage(file="Logo/linux.png")
+		imagen = '/home/march/Documents/Redes3/Redes3/Practica/linux.png'
+		img = ImageTk.PhotoImage(Image.open(imagen))
 	else:
 		pic = PhotoImage(file="Logo/windows.png")
 		print('aqui: ' + sistema)
-
-	logo = ttk.Label(ventana, image=pic)  # image= self.pic  text = 'Icono'
+	
+	
+	display = ttk.Label(ventana, image=img)  # image= self.pic  text = 'Icono'
+	#display.grid(column=1, row=9, rowspan=2, padx=15, sticky=W + E + N + S)
+	display.pack(side='bottom', fill="both", expand="yes")
 	lip = ttk.Label(ventana, text='IP')
 	lnombre = ttk.Label(ventana, text='Sistema')
 	lversion = ttk.Label(ventana, text='Version')
@@ -210,35 +217,35 @@ def MostrarEstado(ip):
 	lubicacion = ttk.Label(ventana, text='Ubicacion')
 	ladministrador = ttk.Label(ventana, text='Administrador')
 
-	txtcom = Text(ventana, width=15, height=1)
+	txtcom = Text(ventana, width=25, height=1)
 	txtcom.insert("1.0", comunidad)
 	txtcom.config(state=DISABLED)
 
-	txtIP = Text(ventana, width=15, height=1)
+	txtIP = Text(ventana, width=25, height=1)
 	txtIP.insert("1.0", ip)
 	txtIP.config(state=DISABLED)
 
-	txtNom = Text(ventana, width=15, height=1)
+	txtNom = Text(ventana, width=25, height=1)
 	txtNom.insert("1.0", sistema)
 	txtNom.config(state=DISABLED)
 
-	txtVer = Text(ventana, width=15, height=1)
+	txtVer = Text(ventana, width=25, height=1)
 	txtVer.insert("1.0", version)
 	txtVer.config(state=DISABLED)
 
-	txtInt = Text(ventana, width=15, height=1)
+	txtInt = Text(ventana, width=25, height=1)
 	txtInt.insert("1.0", str(numInterfaces))
 	txtInt.config(state=DISABLED)
 
-	txtRe = Text(ventana, width=15, height=1)
+	txtRe = Text(ventana, width=25, height=1)
 	txtRe.insert("1.0", str(reinicio))
 	txtRe.config(state=DISABLED)
 
-	txtUb = Text(ventana, width=15, height=1)
+	txtUb = Text(ventana, width=25, height=1)
 	txtUb.insert("1.0", ubicacion)
 	txtUb.config(state=DISABLED)
 
-	txtadmin = Text(ventana, width=15, height=1)
+	txtadmin = Text(ventana, width=25, height=1)
 	txtadmin.insert("1.0", administrador)
 	txtadmin.config(state=DISABLED)
 
@@ -247,7 +254,7 @@ def MostrarEstado(ip):
 	# primera fila
 	lcomunidad.grid(column=0, row=0, sticky=W, )
 	txtcom.grid(column=1, row=0)
-	logo.grid(column=2, row=0, rowspan=2, padx=15, sticky=W + E + N + S)
+	'''logo.grid(column=2, row=0, rowspan=2, padx=15, sticky=W + E + N + S)'''
 	# segunda fila
 	lip.grid(column=0, row=1, sticky=W, pady=5)
 	txtIP.grid(column=1, row=1)

@@ -20,6 +20,7 @@ in available packages install pysnmp
 """#
 from pysnmp.hlapi import *
 
+resultado_final = ''
 def consultaSNMP22(comunidad,host,oid,port):
     resultado = ""
     errorIndication, errorStatus, errorIndex, varBinds = next(
@@ -82,19 +83,19 @@ def consultaSNMPcompleto(comunidad,host,oid,port):
 
 
 def consultaSNMP(comunidad,host,oid,puerto):
-    try:
-        errorIndication, errorStatus, errorIndex, varBinds = next(
-            getCmd(SnmpEngine(),
-                   CommunityData(comunidad),
-                   UdpTransportTarget((host, int(puerto)), timeout=0.25, retries=0),
-                   ContextData(),
-                   ObjectType(ObjectIdentity(oid))))
-        if errorIndication:
-            print(errorIndication), comunidad, host, oid
-            return None
-        elif errorStatus:
-            print('%s at %s' % (errorStatus.prettyPrint(), errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
-            return None
-        return resultado_final
-    except Exception as error:
-        print error
+    errorIndication, errorStatus, errorIndex, varBinds = next(
+        getCmd(SnmpEngine(),
+               CommunityData(comunidad),
+               UdpTransportTarget((host, int(puerto))),
+               ContextData(),
+               ObjectType(ObjectIdentity(oid))))
+
+    if errorIndication:
+        print(errorIndication)
+    elif errorStatus:
+        print('%s at %s' % (errorStatus.prettyPrint(),errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
+    else:
+        for varBind in varBinds:
+            varB=(' = '.join([x.prettyPrint() for x in varBind]))
+            resultado= varB.split()[2]
+    return resultado
