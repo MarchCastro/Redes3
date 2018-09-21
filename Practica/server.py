@@ -33,13 +33,14 @@ photoFrame.columnconfigure(0, weight=1)
 photoCanvas = Canvas(photoFrame,width=1830, height=800)
 photoCanvas.grid(row=0, column=5, sticky="nsew")
 
-canvasFrame = Frame(photoCanvas,  width=1830, height=800)
-photoCanvas.create_window(0, 0, window=canvasFrame, anchor='nw')
+#canvasFrame = Frame(photoCanvas,  width=1830, height=800)
+canvasFrame = None
+
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
 alive_hosts = []
-
+agentes_nombre = ''
 def fetch(entries): #Recorre todos los datos que agregue y me los imprime en consola
 	showinfo('Agente creado!', 'Se ha creado correctamente un agente nuevo')
 	concatenation = ''
@@ -95,34 +96,55 @@ def update_scrollregion(event):
 def getHostInfo():
 	print 'holaaaaaa'
 	global agentCount
+	global canvasFrame
 	ip_comunnity = [] # va con doble m no doble n	
 	try:
-		file = open("hosts.txt", "r")
-		agentCount = 0
-		for linea in file.readlines():
-			palabras = linea.split(" ")
-			agentCount = agentCount + 1 #Aqui esta mi contador
-			if palabras[3].endswith('\n'):
-				palabras[3] = palabras[3][:-1]
-				ip_comunnity.append({'ip' : str(palabras[0]), 'port' : str(palabras[2]), 'community' : str(palabras[3])})
-			else:
-				ip_comunnity.append({'ip' : str(palabras[0]), 'port' : str(palabras[2]), 'community' : str(palabras[3])})
+		if canvasFrame == None:
+			canvasFrame = Frame(photoCanvas,  width=1830, height=800)
+			photoCanvas.create_window(0, 0, window=canvasFrame, anchor='nw')
 
-		getAgentInfo(ip_comunnity)
-		file.close()
-		photoScroll = Scrollbar(photoFrame, orient=VERTICAL)
-		photoScroll.config(command=photoCanvas.yview)
-		photoCanvas.config(yscrollcommand=photoScroll.set)
-		photoScroll.grid(row=0, column=1, sticky="ns")
+			add = Tkinter.Button(canvasFrame, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0, sticky="nsew")
+			delete = Tkinter.Button(canvasFrame, text="Eliminar agente", width=25, command=deleteClient).grid(row=1, column=0,sticky="nsew")
+			#agentInfo = Tkinter.Button(canvasFrame, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0, sticky="nsew")
 
-		hsbar = Scrollbar(photoFrame, orient=HORIZONTAL, command=photoCanvas.xview)
-		photoCanvas.config(xscrollcommand=hsbar.set)
-		hsbar.grid(row=1, column=5, sticky="ew")
-        
-		canvasFrame.bind("<Configure>", update_scrollregion)
-		top.after(30000,getHostInfo)
-	except: 
-   		pass
+			#getHostInfo()
+
+			Label(canvasFrame, text='Dispositivos monitoreados', width=25, fg='black').grid(row=0, column=1, sticky="nsew")
+
+			title = ['Nombre del agente', 'Status', 'No. de interfaces', 'Nombre interfaz', 'Status interfaz']
+			col = 0
+			row = 3
+			for c in title:
+				Label(canvasFrame, text=c, width=20, fg='black').grid(row=row, column=col, sticky="nsew")
+				col = col + 1
+			
+			file = open("hosts.txt", "r")
+			agentCount = 0
+			for linea in file.readlines():
+				palabras = linea.split(" ")
+				agentCount = agentCount + 1 #Aqui esta mi contador
+				if palabras[3].endswith('\n'):
+					palabras[3] = palabras[3][:-1]
+					ip_comunnity.append({'ip' : str(palabras[0]), 'port' : str(palabras[2]), 'community' : str(palabras[3])})
+				else:
+					ip_comunnity.append({'ip' : str(palabras[0]), 'port' : str(palabras[2]), 'community' : str(palabras[3])})
+
+			getAgentInfo(ip_comunnity)
+			file.close()
+			photoScroll = Scrollbar(photoFrame, orient=VERTICAL)
+			photoScroll.config(command=photoCanvas.yview)
+			photoCanvas.config(yscrollcommand=photoScroll.set)
+			photoScroll.grid(row=0, column=1, sticky="ns")
+
+			hsbar = Scrollbar(photoFrame, orient=HORIZONTAL, command=photoCanvas.xview)
+			photoCanvas.config(xscrollcommand=hsbar.set)
+			hsbar.grid(row=1, column=5, sticky="ew")
+			
+			canvasFrame.bind("<Configure>", update_scrollregion)
+			top.after(30000,getHostInfo)
+	except Exception as error: 
+   		#pass
+		print error
 
 def ping(ip):
 	#response = os.system("ping -c 1 -q" + ip)
@@ -181,6 +203,8 @@ def consultaSNMP(comunidad,port,host,oid):
 		print error
 
 def eliminarAgente(ip):
+	global agentes_nombre
+	global canvasFrame
 	print 'ip a eliminar',ip
 	ip_Guardar = ''
 	try:
@@ -197,14 +221,15 @@ def eliminarAgente(ip):
 		file = open("hosts.txt", "w")
 		file.write(ip_Guardar)
 		file.close()
+		#photoCanvas.delete(agentes_nombre)
+		#photoCanvas.update()
+		#agentes.pack_forget()
+		canvasFrame.destroy()
+		canvasFrame = None
+		main()
 		showinfo('Agente eliminado!', 'Se ha eliminado correctamente el agente')
-		refresh()
 	except Exception as error: 
    		print error
-
-def refresh():
-        canvas_frame.weight_entry.delete(0, "end")
-        canvas_frame.text.delete("1.0", "end")
 
 def getAgentInfo(ip_community):
 	print 'getAgentInfo'
@@ -243,7 +268,7 @@ def getAgentInfo(ip_community):
 					Label(canvasFrame, text='Testing', width=20, fg='black').grid(row=ro, column=4, sticky="nsew")
 				ro = ro + 1
 			
-			Label(canvasFrame, text=agents, width=70, fg='black').grid(row=r, column=0, sticky="nsew")
+			agentes_nombre = Label(canvasFrame, text=agents, width=70, fg='black').grid(row=r, column=0, sticky="nsew")
 			Label(canvasFrame, text=status_received, width=10, fg='black').grid(row=r, column=1, sticky="nsew")
 			Label(canvasFrame, text=interfaces, width=10, fg='black').grid(row=r, column=2, sticky="nsew")
 			Tkinter.Button(canvasFrame, text ="Graficas",width=10, command= lambda  name = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)] : graphics(name)).grid(row=r, column=5, sticky="nsew")
@@ -281,21 +306,7 @@ def inicia_capturas():
 		
 
 def main():
-
-	add = Tkinter.Button(canvasFrame, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0, sticky="nsew")
-	delete = Tkinter.Button(canvasFrame, text="Eliminar agente", width=25, command=deleteClient).grid(row=1, column=0,sticky="nsew")
-	#agentInfo = Tkinter.Button(canvasFrame, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0, sticky="nsew")
-
-	#getHostInfo()
-
-	Label(canvasFrame, text='Dispositivos monitoreados', width=25, fg='black').grid(row=0, column=1, sticky="nsew")
-
-	title = ['Nombre del agente', 'Status', 'No. de interfaces', 'Nombre interfaz', 'Status interfaz']
-	col = 0
-	row = 3
-	for c in title:
-		Label(canvasFrame, text=c, width=20, fg='black').grid(row=row, column=col, sticky="nsew")
-		col = col + 1
+	print 'main'
 
 	top.after(0, getHostInfo)	
 	top.mainloop()
