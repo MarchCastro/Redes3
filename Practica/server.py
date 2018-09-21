@@ -1,17 +1,22 @@
 #!usr/bin/python
 
-#block_server.py
+# block_server.py
 
 import socket
-import Tkinter 
+import Tkinter
 import time
 import threading
 import os
+import ttk
+import tkMessageBox
 import subprocess
 from Tkinter import *
 from tkMessageBox import showinfo
 from pysnmp.hlapi import *
 from time import sleep
+
+import MigetSNMP
+from MigetSNMP import *
 from actualizarRRD import actualizar
 from graficarRRD import graficar
 from elegirGrafica import VentanaGraficas
@@ -35,6 +40,7 @@ photoCanvas.grid(row=0, column=5, sticky="nsew")
 
 #canvasFrame = Frame(photoCanvas,  width=1830, height=800)
 canvasFrame = None
+
 
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
@@ -83,15 +89,193 @@ def graphics(parametros): #Abre un recuadro a partir del recuadro principal y mu
    a = VentanaGraficas(top,parametros[2])
    #print comunidad, puerto, ip, oid
 
+
 def deleteClient():
-	Aplicacion()
+    ventana = Toplevel()
+    ventana.title('Lista de Agentes')
+    ventana.geometry('500x200+500+250')
+
+    # ttk.Style().configure("TButton", foreground='#0fbc74', background='#8c1f09')
+    # definicion de variables
+    IDborrar = IntVar()
+    Agentes = []
+
+    # definicion de widgets
+    btnEliminar = ttk.Button(ventana, command=lambda: Eliminar(IDborrar.get(), Agentes), text='Eliminar')
+    btnCerrar = ttk.Button(ventana, command=lambda: ventana.destroy(), text='Cerrar')
+
+    # definicion de radio Buttons
+    ruta = 'hosts.txt'
+    archivo = open(ruta, 'r')
+    while len(Agentes) > 0:
+        Agentes.pop()
+    while 1:
+        linea = archivo.readline()
+        if not linea:
+            break
+        else:
+            Agentes.append(linea)
+    archivo.close()
+    listaBorrar = []
+
+    for i in range(len(Agentes)):
+        nombre = Agentes[i].split(' ')[0]  # obtenemos el hostname
+        listaBorrar.append(ttk.Radiobutton(ventana, text=nombre, variable=IDborrar, value=i))
+    i = 0
+    for radio in listaBorrar:
+        radio.grid(column=1, row=i, sticky=W)
+        i = i + 1
+    i = i + 1
+
+    # establecer en pantalla los widgets
+    # Modificarlo-------------------------------------------------
+    btnEliminar.grid(column=0, row=i)
+    btnCerrar.grid(column=2, row=i)
+
+
+def Eliminar(idBorrar, Agentes):
+    print('Funcion eliminar')
+    pos = idBorrar
+    # funcion que manda a eliminar la carpeta de este dispositivo
+    ip = Agentes[pos].split(' ')[0]
+    print("esta es la ip " + ip)
+    os.system('rm ' + ip + '*')
+    Agentes.pop(pos)
+    tkMessageBox.showinfo(title='Eliminar',
+                          message='Agente Eliminado')
+
+    archivo = open("hosts.txt", "w")
+    for dispositivo in Agentes:
+        archivo.write(dispositivo)
+    archivo.close()
+
 
 def MostrarEstado(ip):
-    print( ip )
-	#Estado(info)
+	cadena = ''
+	f = open('hosts.txt', 'r')
+	while 1:
+		linea = f.readline()
+		if not linea:
+			break
+		else:
+			if linea.find(ip) >= 0:
+				print('Encontrado: ' + linea)
+				cadena = linea
+			else:
+				print('buscando')
+	f.close()
+
+	info = cadena
+	ventana = Tkinter.Toplevel(canvasFrame)
+	ventana.title('Reporte de Equipo')
+	ventana.geometry('370x300+300+0')
+
+	version = info.split(' ')[1]
+	print(version)
+	if version == str(1):
+		version = 'v1'
+	else:
+		version = 'v2c'
+
+	puerto = info.split(' ')[2]
+	comunidad = info.split(' ')[3]
+	ip = info.split(' ')[0]
+
+	if comunidad.endswith('\n'):
+		comunidad = comunidad[:-1]
+	
+	print('Recuperando informacion...')
+	sistema = consultaSNMP2(comunidad, ip, '1.3.6.1.2.1.1.1.0', int(puerto))
+	numInterfaces = MigetSNMP.consultaSNMP(comunidad, ip, '1.3.6.1.2.1.2.1.0', int(puerto))
+	# centecimas de segundo
+	reinicio = MigetSNMP.consultaSNMP(comunidad, ip, '1.3.6.1.2.1.1.3.0', int(puerto))
+	ubicacion = consultaSNMPcompleto(comunidad, ip, '1.3.6.1.2.1.1.6.0', int(puerto))
+	administrador = consultaSNMPcompleto(comunidad, ip, '1.3.6.1.2.1.1.5.0', int(puerto))
+
+	lcomunidad = ttk.Label(ventana, text='Comunidad')
+
+	if sistema.find('Linux', 0, len(sistema)) >= 0:
+		print('aqui: ' + sistema)
+		pic = PhotoImage(file="Logo/linux.png")
+	else:
+		pic = PhotoImage(file="Logo/windows.png")
+		print('aqui: ' + sistema)
+
+	logo = ttk.Label(ventana, image=pic)  # image= self.pic  text = 'Icono'
+	lip = ttk.Label(ventana, text='IP')
+	lnombre = ttk.Label(ventana, text='Sistema')
+	lversion = ttk.Label(ventana, text='Version')
+	lnumInterfaces = ttk.Label(ventana, text='Num. Interfaces')
+	lreinicio = ttk.Label(ventana, text='Ultimo reinicio')
+	lubicacion = ttk.Label(ventana, text='Ubicacion')
+	ladministrador = ttk.Label(ventana, text='Administrador')
+
+	txtcom = Text(ventana, width=15, height=1)
+	txtcom.insert("1.0", comunidad)
+	txtcom.config(state=DISABLED)
+
+	txtIP = Text(ventana, width=15, height=1)
+	txtIP.insert("1.0", ip)
+	txtIP.config(state=DISABLED)
+
+	txtNom = Text(ventana, width=15, height=1)
+	txtNom.insert("1.0", sistema)
+	txtNom.config(state=DISABLED)
+
+	txtVer = Text(ventana, width=15, height=1)
+	txtVer.insert("1.0", version)
+	txtVer.config(state=DISABLED)
+
+	txtInt = Text(ventana, width=15, height=1)
+	txtInt.insert("1.0", str(numInterfaces))
+	txtInt.config(state=DISABLED)
+
+	txtRe = Text(ventana, width=15, height=1)
+	txtRe.insert("1.0", str(reinicio))
+	txtRe.config(state=DISABLED)
+
+	txtUb = Text(ventana, width=15, height=1)
+	txtUb.insert("1.0", ubicacion)
+	txtUb.config(state=DISABLED)
+
+	txtadmin = Text(ventana, width=15, height=1)
+	txtadmin.insert("1.0", administrador)
+	txtadmin.config(state=DISABLED)
+
+	btnCerrar = ttk.Button(ventana, command=lambda: ventana.destroy(), text="Cerrar")
+
+	# primera fila
+	lcomunidad.grid(column=0, row=0, sticky=W, )
+	txtcom.grid(column=1, row=0)
+	logo.grid(column=2, row=0, rowspan=2, padx=15, sticky=W + E + N + S)
+	# segunda fila
+	lip.grid(column=0, row=1, sticky=W, pady=5)
+	txtIP.grid(column=1, row=1)
+	# tercera fila
+	lnombre.grid(column=0, row=2, sticky=W, pady=5)
+	txtNom.grid(column=1, row=2)
+	# cuarta fila
+	lversion.grid(column=0, row=3, sticky=W, pady=5)
+	txtVer.grid(column=1, row=3)
+	# quinta fila
+	lnumInterfaces.grid(column=0, row=4, sticky=W, pady=5)
+	txtInt.grid(column=1, row=4)
+	# sexta fila
+	lreinicio.grid(column=0, row=5, sticky=W, pady=5)
+	txtRe.grid(column=1, row=5)
+	# septima fila
+	lubicacion.grid(column=0, row=6, sticky=W, pady=5)
+	txtUb.grid(column=1, row=6)
+	# octava fila
+	ladministrador.grid(column=0, row=7, sticky=W, pady=5)
+	txtadmin.grid(column=1, row=7)
+	# novena fila
+	btnCerrar.grid(column=1, row=8)
+
 
 def update_scrollregion(event):
     photoCanvas.configure(scrollregion=photoCanvas.bbox("all"))
+
 
 def getHostInfo():
 	print 'holaaaaaa'
@@ -146,61 +330,64 @@ def getHostInfo():
    		#pass
 		print error
 
+
 def ping(ip):
-	#response = os.system("ping -c 1 -q" + ip)
-	with open(os.devnull, 'w') as DEVNULL:
-		try:
-			subprocess.check_call(
-			['ping', '-c', '1', ip],
-				stdout=DEVNULL,  # suppress output
-				stderr=DEVNULL
-			)
-			is_up = 'Activa'
-			alive_hosts.append(ip)
-		except subprocess.CalledProcessError:
-			is_up = 'Inactiva'
-	print is_up
-	return is_up
+    # response = os.system("ping -c 1 -q" + ip)
+    with open(os.devnull, 'w') as DEVNULL:
+        try:
+            subprocess.check_call(
+                ['ping', '-c', '1', ip],
+                stdout=DEVNULL,  # suppress output
+                stderr=DEVNULL
+            )
+            is_up = 'Activa'
+            alive_hosts.append(ip)
+        except subprocess.CalledProcessError:
+            is_up = 'Inactiva'
+    print is_up
+    return is_up
 
-def consultaSNMP(comunidad,port,host,oid):
-	global resultado_final
-	#print comunidad,port,host,oid
-	try:
-		errorIndication, errorStatus, errorIndex, varBinds = next(
-			getCmd(SnmpEngine(),
-					CommunityData(comunidad),
-					UdpTransportTarget((host, int(port)), timeout=0.25, retries=0),
-					ContextData(),
-					ObjectType(ObjectIdentity(oid))))
-		if errorIndication:
-			print(errorIndication),comunidad,host,oid
-			return None
-		elif errorStatus:
-			print('%s at %s' % (errorStatus.prettyPrint(),errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
-			return None
-		else:
-			for varBind in varBinds:
-				varB=(' = '.join([x.prettyPrint() for x in varBind]))
-				resultado= varB.split()
-				concat = []
-				valid = False
 
-				for palabra in resultado: 
-					if palabra == '=':
-						valid = True
-						continue 
-						
-					if valid:
-						concat.append(palabra)
-				resultado_final = ''
-				for palabra in concat:
-					if palabra == '-' or palabra == 'SMP':
-						resultado_final = resultado_final + ' ' + palabra + '\n'
-					else:
-						resultado_final = resultado_final + ' ' + palabra
-		return resultado_final
-	except Exception as error:
-		print error
+def consultaSNMP(comunidad, port, host, oid):
+    global resultado_final
+    # print comunidad,port,host,oid
+    try:
+        errorIndication, errorStatus, errorIndex, varBinds = next(
+            getCmd(SnmpEngine(),
+                   CommunityData(comunidad),
+                   UdpTransportTarget((host, int(port)), timeout=0.25, retries=0),
+                   ContextData(),
+                   ObjectType(ObjectIdentity(oid))))
+        if errorIndication:
+            print(errorIndication), comunidad, host, oid
+            return None
+        elif errorStatus:
+            print('%s at %s' % (errorStatus.prettyPrint(), errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
+            return None
+        else:
+            for varBind in varBinds:
+                varB = (' = '.join([x.prettyPrint() for x in varBind]))
+                resultado = varB.split()
+                concat = []
+                valid = False
+
+                for palabra in resultado:
+                    if palabra == '=':
+                        valid = True
+                        continue
+
+                    if valid:
+                        concat.append(palabra)
+                resultado_final = ''
+                for palabra in concat:
+                    if palabra == '-' or palabra == 'SMP':
+                        resultado_final = resultado_final + ' ' + palabra + '\n'
+                    else:
+                        resultado_final = resultado_final + ' ' + palabra
+        return resultado_final
+    except Exception as error:
+        print error
+
 
 def eliminarAgente(ip):
 	global agentes_nombre
@@ -288,28 +475,32 @@ def getAgentInfo(ip_community):
 	#Inicia actualizaciones de las BD de cada host encontrado y vivo
 	inicia_capturas()
 
+
 def inicia_capturas():
-	print "Iniciando..."
-	hilos = []
-	with open("hosts.txt",'r') as hosts:
-		for i in hosts.readlines():
-			datos = i.split(' ')
-			for j in alive_hosts:			
-				if j == datos[0] and datos[0] != "127.0.0.1": # Si esta vivo inicia un hilo con sus actualizaciones
-					thread = threading.Thread(target=actualizar, args=('Actualizando '+datos[0]+' '+datos[3][:-1],datos[3][:-1],datos[0],datos[2],datos[0]+'-net',))
-					thread.daemon = True
-					hilos.append(thread)
-					break
-			
-	for h in hilos:
-		h.start()
-		
+    print "Iniciando..."
+    hilos = []
+    with open("hosts.txt", 'r') as hosts:
+        for i in hosts.readlines():
+            datos = i.split(' ')
+            for j in alive_hosts:
+                if j == datos[0] and datos[0] != "127.0.0.1":  # Si esta vivo inicia un hilo con sus actualizaciones
+                    thread = threading.Thread(target=actualizar, args=(
+                    'Actualizando ' + datos[0] + ' ' + datos[3][:-1], datos[3][:-1], datos[0], datos[2],
+                    datos[0] + '-net',))
+                    thread.daemon = True
+                    hilos.append(thread)
+                    break
+
+    for h in hilos:
+        h.start()
+
 
 def main():
 	print 'main'
-
-	top.after(0, getHostInfo)	
+	top.after(0, getHostInfo)
 	top.mainloop()
 
-if __name__== '__main__': 
-	main()
+
+
+if __name__ == '__main__':
+    main()
