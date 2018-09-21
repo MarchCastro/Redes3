@@ -58,10 +58,11 @@ class Aplicacion():
     def Eliminar(self):
         print('Funcion eliminar')
         pos = self.IDborrar.get()
+        print pos
         # funcion que manda a eliminar la carpeta de este dispositivo
         ip=self.Agentes[pos].split(' ')[0]
         print("esta es la ip "+ip)
-        os.system('rm' +ip +'*')
+        os.system('rm ' +ip +'*')
         self.Agentes.pop(pos)
         tkMessageBox.showinfo(title='Eliminar',
                               message='Agente Eliminado')

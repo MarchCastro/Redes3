@@ -180,6 +180,32 @@ def consultaSNMP(comunidad,port,host,oid):
 	except Exception as error:
 		print error
 
+def eliminarAgente(ip):
+	print 'ip a eliminar',ip
+	ip_Guardar = ''
+	try:
+		file = open("hosts.txt", "r")
+		for linea in file.readlines():
+			#print 'Entre for'
+			palabras = linea.split(" ")
+			#print palabras[0]
+			if ip != palabras[0]:
+				ip_Guardar = ip_Guardar + linea
+			else:
+				pass
+		file.close()
+		file = open("hosts.txt", "w")
+		file.write(ip_Guardar)
+		file.close()
+		showinfo('Agente eliminado!', 'Se ha eliminado correctamente el agente')
+		refresh()
+	except Exception as error: 
+   		print error
+
+def refresh():
+        canvas_frame.weight_entry.delete(0, "end")
+        canvas_frame.text.delete("1.0", "end")
+
 def getAgentInfo(ip_community):
 	print 'getAgentInfo'
 	status_array = []
@@ -206,10 +232,8 @@ def getAgentInfo(ip_community):
 				if name_interfaces[1] == '0':
 					interface_name = name_interfaces[3:].decode('hex')
 					Label(canvasFrame, text=interface_name, width=100, fg='black').grid(row=ro, column=3, sticky="nsew")
-					Tkinter.Button(canvasFrame, text ="Graficas",width=10, command= lambda  name = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)] : graphics(name)).grid(row=ro, column=5, sticky="nsew")
 				else:
 					Label(canvasFrame, text=name_interfaces, width=100, fg='black').grid(row=ro, column=3, sticky="nsew")
-					Tkinter.Button(canvasFrame, text ="Graficas",width=10, command = lambda  name = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)] : graphics(name)).grid(row=ro, column=5, sticky="nsew")
 				
 				if int(status_inter) == 1:
 					Label(canvasFrame, text='Activo', width=20, fg='black').grid(row=ro, column=4, sticky="nsew")
@@ -222,12 +246,15 @@ def getAgentInfo(ip_community):
 			Label(canvasFrame, text=agents, width=70, fg='black').grid(row=r, column=0, sticky="nsew")
 			Label(canvasFrame, text=status_received, width=10, fg='black').grid(row=r, column=1, sticky="nsew")
 			Label(canvasFrame, text=interfaces, width=10, fg='black').grid(row=r, column=2, sticky="nsew")
+			Tkinter.Button(canvasFrame, text ="Graficas",width=10, command= lambda  name = [computer['community'], computer['port'], computer['ip'], '1.3.6.1.2.1.2.2.1.2.'+str(i)] : graphics(name)).grid(row=r, column=5, sticky="nsew")
 			Tkinter.Button(canvasFrame, text ="Estado",width=10, command = lambda name = computer['ip']: MostrarEstado(name)).grid(row=r, column=6, sticky="nsew")
+			Tkinter.Button(canvasFrame, text ="Eliminar",width=10, command = lambda  name = computer['ip'] : eliminarAgente(name)).grid(row=r, column=7, sticky="nsew")
 			r = r + int(interfaces)
 		else:
 			Label(canvasFrame, text = computer['ip'], width=70, fg='red').grid(row=r, column=0, sticky="nsew")
 			Label(canvasFrame, text=status_received, width=10, fg='red').grid(row=r, column=1, sticky="nsew")
 			Label(canvasFrame, text='Informacion no disponible', width=50, fg='red').grid(row=ro, column=3, sticky="nsew")
+			Tkinter.Button(canvasFrame, text ="Eliminar",width=10, command = lambda  name = computer['ip'] : eliminarAgente(name)).grid(row=r, column=7, sticky="nsew")
 			r = r + 1
 			ro = ro + 1
 
@@ -257,7 +284,7 @@ def main():
 
 	add = Tkinter.Button(canvasFrame, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0, sticky="nsew")
 	delete = Tkinter.Button(canvasFrame, text="Eliminar agente", width=25, command=deleteClient).grid(row=1, column=0,sticky="nsew")
-	agentInfo = Tkinter.Button(canvasFrame, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0, sticky="nsew")
+	#agentInfo = Tkinter.Button(canvasFrame, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0, sticky="nsew")
 
 	#getHostInfo()
 
