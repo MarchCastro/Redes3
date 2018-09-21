@@ -170,7 +170,7 @@ def MostrarEstado(ip):
 	info = cadena
 	ventana = Tkinter.Toplevel(canvasFrame)
 	ventana.title('Reporte de Equipo')
-	ventana.geometry('350x350')
+	ventana.geometry('600x350')
 
 	version = info.split(' ')[1]
 	print(version)
@@ -199,16 +199,20 @@ def MostrarEstado(ip):
 
 	if sistema.find('Linux', 0, len(sistema)) >= 0:
 		print('aqui: ' + sistema)
-		imagen = '/home/march/Documents/Redes3/Redes3/Practica/linux.png'
-		img = ImageTk.PhotoImage(Image.open(imagen))
+		pic = "Logo/linux.png"
 	else:
-		pic = PhotoImage(file="Logo/windows.png")
+		pic = "Logo/windows.png"
 		print('aqui: ' + sistema)
 	
-	
-	display = ttk.Label(ventana, image=img)  # image= self.pic  text = 'Icono'
-	#display.grid(column=1, row=9, rowspan=2, padx=15, sticky=W + E + N + S)
-	display.pack(side='bottom', fill="both", expand="yes")
+	bar = Frame(ventana, relief=RIDGE, borderwidth=5)
+	bar.grid(column=2, row=0, rowspan=2, padx=15, sticky=W)
+	iconPath = pic
+	icon = ImageTk.PhotoImage(Image.open(iconPath))
+	icon_size = Label(bar)
+	icon_size.image = icon
+	icon_size.configure(image=icon)
+	icon_size.pack(side=LEFT)
+
 	lip = ttk.Label(ventana, text='IP')
 	lnombre = ttk.Label(ventana, text='Sistema')
 	lversion = ttk.Label(ventana, text='Version')
@@ -217,35 +221,35 @@ def MostrarEstado(ip):
 	lubicacion = ttk.Label(ventana, text='Ubicacion')
 	ladministrador = ttk.Label(ventana, text='Administrador')
 
-	txtcom = Text(ventana, width=25, height=1)
+	txtcom = Text(ventana, width=50, height=1)
 	txtcom.insert("1.0", comunidad)
 	txtcom.config(state=DISABLED)
 
-	txtIP = Text(ventana, width=25, height=1)
+	txtIP = Text(ventana, width=50, height=1)
 	txtIP.insert("1.0", ip)
 	txtIP.config(state=DISABLED)
 
-	txtNom = Text(ventana, width=25, height=1)
+	txtNom = Text(ventana, width=50, height=1)
 	txtNom.insert("1.0", sistema)
 	txtNom.config(state=DISABLED)
 
-	txtVer = Text(ventana, width=25, height=1)
+	txtVer = Text(ventana, width=50, height=1)
 	txtVer.insert("1.0", version)
 	txtVer.config(state=DISABLED)
 
-	txtInt = Text(ventana, width=25, height=1)
+	txtInt = Text(ventana, width=50, height=1)
 	txtInt.insert("1.0", str(numInterfaces))
 	txtInt.config(state=DISABLED)
 
-	txtRe = Text(ventana, width=25, height=1)
+	txtRe = Text(ventana, width=50, height=1)
 	txtRe.insert("1.0", str(reinicio))
 	txtRe.config(state=DISABLED)
 
-	txtUb = Text(ventana, width=25, height=1)
+	txtUb = Text(ventana, width=50, height=1)
 	txtUb.insert("1.0", ubicacion)
 	txtUb.config(state=DISABLED)
 
-	txtadmin = Text(ventana, width=25, height=1)
+	txtadmin = Text(ventana, width=50, height=1)
 	txtadmin.insert("1.0", administrador)
 	txtadmin.config(state=DISABLED)
 
@@ -278,6 +282,7 @@ def MostrarEstado(ip):
 	txtadmin.grid(column=1, row=7)
 	# novena fila
 	btnCerrar.grid(column=1, row=8)
+
 
 
 def update_scrollregion(event):

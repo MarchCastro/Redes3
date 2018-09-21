@@ -60,8 +60,14 @@ while 1: #Monitorizamos los valores de entrada y salida de octetos de informacio
     valor = "N:" + total_input_traffic 
     print valor'''
 
-import PIL
-from PIL import Image
-img = Image.open('linux.png').convert('L')
-img.show()
-img.save('brick-house-gs','png')
+from Tkinter import *
+from PIL import Image, ImageTk
+
+root = Tk()
+root.geometry('1000x1000')
+canvas = Canvas(root,width=999,height=999)
+canvas.pack()
+pilImage = Image.open("linux.png")
+image = ImageTk.PhotoImage(pilImage)
+imagesprite = canvas.create_image(400,400,image=image)
+root.mainloop()
