@@ -14,7 +14,11 @@
 \contentsline {subsection}{\numberline {4.1.4}snmpset}{33}{subsection.4.1.4}
 \contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n de un modelo de administraci\IeC {\'o}n de red de SNMP}{36}{chapter.5}
 \contentsline {section}{\numberline {5.1}Pantalla de inicio}{36}{section.5.1}
-\contentsline {section}{\numberline {5.2}Agregar agente}{39}{section.5.2}
-\contentsline {section}{\numberline {5.3}Eliminar agente}{41}{section.5.3}
-\contentsline {section}{\numberline {5.4}Estado del dispositivo}{41}{section.5.4}
-\contentsline {section}{\numberline {5.5}Gr\IeC {\'a}ficas de dispositivos}{41}{section.5.5}
+\contentsline {section}{\numberline {5.2}Agregar agente}{41}{section.5.2}
+\contentsline {section}{\numberline {5.3}Eliminar agente}{43}{section.5.3}
+\contentsline {section}{\numberline {5.4}Estado del dispositivo}{45}{section.5.4}
+\contentsline {section}{\numberline {5.5}Gr\IeC {\'a}ficas de dispositivos}{45}{section.5.5}
+\contentsline {chapter}{\numberline {6}Conclusiones}{46}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Castro Flores Marcela}{46}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {6.0.2}S\IeC {\'a}nchez Cruz Rosa Mar\IeC {\'\i }a}{46}{subsection.6.0.2}
+\contentsline {subsection}{\numberline {6.0.3}Santiago Mancera Arturo Samuel}{46}{subsection.6.0.3}
