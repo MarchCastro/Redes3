@@ -5,15 +5,36 @@ En este capítulo, se observan las diferentes pantallas que responden a las cons
 \cfinput{Cuestionario/preguntasRosa}
 \cfinput{Cuestionario/preguntasSamuel}
 
-\item ¿Cuál es la interfaz que ha recibido el mayor número de octetos?
-\item Indica el número de octetos  de la interfaz que ha recibido el mayor número de octetos
-\item ¿Cuál es la MAC de esa interfaz?
-\item ¿Cuál es la ip de la Interfaz que ha recibido el mayor número de octetos?
-\item ¿Cuántos mensajes ICMP ha recibido el agente?
-\item ¿Cuántas entradas tiene la tabla de enrutamiento IP?
-\item ¿Cuántos datagramas UDP ha recibido el agente?
-\item ¿El agente ha recibido mensajes TCP? ¿Cuántos?
+
+\item ¿El agente ha recibido mensajes TCP? ¿Cuántos?\\
+\textbf{Comando: snmpget (figura \ref{image:tcpget})}
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+	\includegraphics[width=.9 \textwidth]{images/tcpget}
+		\caption{Número de mensajes TCP recibidos en Linux con comando snmpget.}		\label{image:tcpget}
+\end{figure}
+\FloatBarrier
+
+\textbf{Comando: snmpgetnext (figura \ref{image:tcpnext})}
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+	\includegraphics[width=.9 \textwidth]{images/tcpnext}
+		\caption{Número de mensajes TCP recibidos en Linux con comando snmpgetnext.}		\label{image:tcpnext}
+\end{figure}
+\FloatBarrier
+
+\textbf{Comando: snmpwalk (figura \ref{image:tcpwalk})}
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+	\includegraphics[width=.9 \textwidth]{images/tcpwalk}
+		\caption{Número de mensajes TCP recibidos en Linux con comando snmpwalk.}		\label{image:tcpwalk}
+\end{figure}
+\FloatBarrier
 \item ¿Cuántos mensajes EGP ha recibido el agente?
+
 \item Indica el Sistema Operativo que maneja el agente.
 \item Modifica el estatus administrativo (a down) de la interfaz que ha recibido más octetos.
 \item Genera una alerta para avisar cuando se reinicie el agente.

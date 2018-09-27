@@ -1,17 +1,20 @@
 \select@language {spanish}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{6}{chapter.1}
-\contentsline {chapter}{\numberline {2}Instalaci\IeC {\'o}n de gestor y agentes}{7}{chapter.2}
+\contentsline {chapter}{\numberline {2}Instalaci\IeC {\'o}n y configuraci\IeC {\'o}n de gestor y agentes}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Observium}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}Configuraci\IeC {\'o}n de agente en Linux}{9}{section.2.2}
 \contentsline {section}{\numberline {2.3}Configuraci\IeC {\'o}n de agente en Windows}{16}{section.2.3}
 \contentsline {chapter}{\numberline {3}Cuestionario}{20}{chapter.3}
 \contentsline {section}{\numberline {3.1}Cuestionario}{20}{section.3.1}
-\contentsline {chapter}{\numberline {4}An\IeC {\'a}lisis de tr\IeC {\'a}fico}{28}{chapter.4}
-\contentsline {section}{\numberline {4.1}An\IeC {\'a}lisis de tr\IeC {\'a}fico con Wireshark}{28}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}snmpget}{28}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}snmpgetnext}{30}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}snmpwalk}{31}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}snmpset}{32}{subsection.4.1.4}
-\contentsline {chapter}{\numberline {5}Marco te\IeC {\'o}rico}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}Seccion}{35}{section.5.1}
-\contentsline {subsubsection}{\numberline {5.1.0.1}Subseccion}{35}{subsubsection.5.1.0.1}
+\contentsline {chapter}{\numberline {4}An\IeC {\'a}lisis de tr\IeC {\'a}fico}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}An\IeC {\'a}lisis de tr\IeC {\'a}fico con Wireshark}{29}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}snmpget}{29}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}snmpgetnext}{31}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}snmpwalk}{32}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}snmpset}{33}{subsection.4.1.4}
+\contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n de un modelo de administraci\IeC {\'o}n de red de SNMP}{36}{chapter.5}
+\contentsline {section}{\numberline {5.1}Pantalla de inicio}{36}{section.5.1}
+\contentsline {section}{\numberline {5.2}Agregar agente}{39}{section.5.2}
+\contentsline {section}{\numberline {5.3}Eliminar agente}{41}{section.5.3}
+\contentsline {section}{\numberline {5.4}Estado del dispositivo}{41}{section.5.4}
+\contentsline {section}{\numberline {5.5}Gr\IeC {\'a}ficas de dispositivos}{41}{section.5.5}
