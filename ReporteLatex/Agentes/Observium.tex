@@ -1,7 +1,8 @@
 \section{Observium}
 
 Para llevar a cabo la comunicación de un Gestor-Agente, se necesitó se la configuración de 3 distintos Sistemas Operativos. 
-El Sistema Operativo que toma el rol de Gestor es Observium, el cual estará encargado de monitorear la comunicación entre los mismo Agentes y Gestor. El primer paso es crear una máquina virtual con dicho sistema operativo, es esencial que se le agregan los requerimientos necesarios como es la cantidad de memoria, tipo de archivo del disco duro, el tamaño en bits etc. Pero sobre todo una vez creada la máquina virtual entrar en su \textbf{configuración} y cambiar el adaptador de red para que se pueda conectar en \textbf{Adaptador Puente}.
+El Sistema Operativo que toma el rol de Gestor es Observium, el cual estará encargado de monitorear la comunicación entre los mismo Agentes y Gestor. El primer paso es crear una máquina virtual con dicho sistema operativo, es esencial que se le agregan los requerimientos necesarios como es la cantidad de memoria, tipo de archivo del disco duro, el tamaño en bits etc. Pero sobre todo una vez creada la máquina virtual fue necesario entrar en su \textbf{configuración} y cambiar el adaptador de red para que se pudiera conectar en \textbf{Adaptador Puente}.
+\\ \par
 Una vez que se configuró la máquina virtual se inicia para su instalación del sistema, que es básicamente aceptar el modo de instalación que se hace mediante un disco y finalmente el reinicio del sistema operativo como se muestra en la figura \ref{image:fin}.
 
 \FloatBarrier
@@ -26,7 +27,7 @@ Posteriormente se requiere ingresar un usuario con contraseña , después solo s
 \FloatBarrier
 
 En este momento podemos decir que ya terminamos el punto de las configuraciones y tenemos a nuestro \textbf{Gestor}.
-Si  se quiere comprobar la  conectividad se abre el navegador de nuestro SO nativo y se ingresa la \textbf{dirección IP} que muestra Observium e ingresamos en modo \textbf{administrador} con la contraseña que se  introdujo al inicio de la configuración \ref{image:observium}.
+Si  se quiere comprobar la  conectividad se abre el navegador de nuestro SO nativo y se ingresa la \textbf{dirección IP} que muestra Observium e ingresamos en modo \textbf{administrador} con la contraseña que se  introdujo al inicio de la configuración (figura \ref{image:observium}).
 
 \FloatBarrier
 \begin{figure}[htbp!]
@@ -37,7 +38,7 @@ Si  se quiere comprobar la  conectividad se abre el navegador de nuestro SO nati
 \end{figure}
 \FloatBarrier
 
-Como se observa en la pagina no se tiene ninguna conectividad de los agentes, esto debido a que no se han regitrado en Observium \ref{image:pag}.
+Como se observa en la pagina, la figura \ref{image:pag} muestra que no se tiene ninguna conectividad de los agentes, esto debido a que no se han regitrado en Observium.
 
 \FloatBarrier
 \begin{figure}[htbp!]
@@ -48,7 +49,7 @@ Como se observa en la pagina no se tiene ninguna conectividad de los agentes, es
 \end{figure}
 \FloatBarrier
 
-Para poder agregar un agente en Observium solo se necesita poner en la consola el comando \textbf{nano /etc/hosts} con esto ingresamos a nuestro editor de texto nano y solo ingresamos la direccion ip de nuestros sistemas operativos y el nombre de la comunidad que le asignamos a cada so \ref{image:agente}.
+Para poder agregar un agente en Observium solo se necesita poner en la consola el comando \textbf{nano /etc/hosts} con esto ingresamos a nuestro editor de texto nano y solo ingresamos la direccion ip de nuestros sistemas operativos y el nombre de la comunidad que le asignamos a cada S.O. (figura \ref{image:agente}).
 
 \FloatBarrier
 \begin{figure}[htbp!]
@@ -59,4 +60,4 @@ Para poder agregar un agente en Observium solo se necesita poner en la consola e
 \end{figure}
 \FloatBarrier
 
-Una vez finalizado todo este procedimeitno, tenemos listo el so Observium como agente.
+Una vez finalizado todo este procedimiento, tenemos listo el S.O. Observium como agente.

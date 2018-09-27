@@ -1,6 +1,6 @@
-\babel@toc {spanish}{}
+\select@language {spanish}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{6}{chapter.1}
-\contentsline {chapter}{\numberline {2}Gestor y agentes}{7}{chapter.2}
+\contentsline {chapter}{\numberline {2}Instalaci\IeC {\'o}n de gestor y agentes}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Observium}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}Configuraci\IeC {\'o}n de agente en Linux}{9}{section.2.2}
 \contentsline {section}{\numberline {2.3}Configuraci\IeC {\'o}n de agente en Windows}{16}{section.2.3}
