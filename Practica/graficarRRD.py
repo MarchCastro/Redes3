@@ -4,7 +4,7 @@ import time
 tiempo_actual = int(time.time())
 tiempo_final = tiempo_actual - 86400
 tiempo_inicial = tiempo_final -25920000
-tiempo_graficacion = str(1537404600) # tiempo del 19 de septiembre a las 18
+tiempo_graficacion = str( 1538157600) # tiempo del 28 de septiembre a las 18
 
 '''
 Este script genera una grafica en PNG a partir de la base de datos net3.rrd creada
