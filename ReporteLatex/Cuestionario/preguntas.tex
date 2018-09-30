@@ -7,7 +7,8 @@ En este capítulo, se observan las diferentes pantallas que responden a las cons
 
 
 \item ¿El agente ha recibido mensajes TCP? ¿Cuántos?\\
-\textbf{Comando: snmpget (figura \ref{image:tcpget})}
+El resultado para Linux se muestra en la figura \ref{image:tcpget} y en la figura \ref{image:tcpnext}, en la primera se muestra la ejecución con el comando snmpget y en la segunda se muestra el resultado que el comando snmpgetnext arroja, que es el valor del índice siguiente al solicitado en la consola.
+
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
@@ -16,7 +17,7 @@ En este capítulo, se observan las diferentes pantallas que responden a las cons
 \end{figure}
 \FloatBarrier
 
-\textbf{Comando: snmpgetnext (figura \ref{image:tcpnext})}
+
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
@@ -25,14 +26,25 @@ En este capítulo, se observan las diferentes pantallas que responden a las cons
 \end{figure}
 \FloatBarrier
 
-\textbf{Comando: snmpwalk (figura \ref{image:tcpwalk})}
+Por otro lado, el resultado para Windows se muestra en las figuras \ref{image:tcpgetW} y en la figura \ref{image:tcpnextW}, mostradas a continuación:
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
-	\includegraphics[width=.9 \textwidth]{images/tcpwalk}
-		\caption{Número de mensajes TCP recibidos en Linux con comando snmpwalk.}		\label{image:tcpwalk}
+	\includegraphics[width=.9 \textwidth]{images/tcpgetW}
+		\caption{Número de mensajes TCP recibidos en Windows con comando snmpget.}		\label{image:tcpgetW}
 \end{figure}
 \FloatBarrier
+
+
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+	\includegraphics[width=.9 \textwidth]{images/tcpnextW}
+		\caption{Número de mensajes TCP recibidos en Windows con comando snmpgetnext.}		\label{image:tcpnextW}
+\end{figure}
+\FloatBarrier
+
+
 \item ¿Cuántos mensajes EGP ha recibido el agente?
 
 Debido a que el grupo  \textbf{EGP} está asociado a la comunicació de la interconexión de redes externas. El alcance de la implementación se  \textbf{SNMP} se limita a equipos de la misma red, por esa razón no se encuentran mensajes EGP en ambos agentes.
@@ -59,10 +71,7 @@ Debido a que el grupo  \textbf{EGP} está asociado a la comunicació de la inter
 
 \item Indica el Sistema Operativo que maneja el agente.
 
-Con el grupo System de  la MIB SNMP encontramos la información relacionada a los agentes, con la \textbf{consulta SNMP sysDescr} podemos ver la información del agente tanto a nivel Hardware como Software, los puntos más importantes de la conuslta SNMP es el sistema operativo con el cual cuenta el agente y la versión.
- 
-
-\textbf{Consulta SNMP: sysDescr Windows OID: 1.3.6.1.2.1.1.1.0 (figura \ref{image:12-W})}
+Con el grupo System de  la MIB SNMP encontramos la información relacionada a los agentes, con la \textbf{consulta SNMP sysDescr} podemos ver la información del agente tanto a nivel Hardware como Software, los puntos más importantes de la conuslta SNMP es el sistema operativo con el cual cuenta el agente y la versión. (sysDescr Windows OID: 1.3.6.1.2.1.1.1.0 (figura \ref{image:12-W}))
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
@@ -71,7 +80,7 @@ Con el grupo System de  la MIB SNMP encontramos la información relacionada a lo
 \end{figure}
 \FloatBarrier
 
-\textbf{Consulta SNMP: sysDescr Linux OID: 1.3.6.1.2.1.1.1.0 (figura \ref{image:12-c})}
+En cuanto a la consulta SNMP realizada en Windows con el OID: 1.3.6.1.2.1.1.1.0, se muestra en la figura \ref{image:12-c}.
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
