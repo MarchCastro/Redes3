@@ -35,7 +35,7 @@ En este capítulo, se observan las diferentes pantallas que responden a las cons
 \FloatBarrier
 \item ¿Cuántos mensajes EGP ha recibido el agente?
 
-Debido a que el grupo  \textbf{EGP} está asociado a la comunicació de la interconexión de redes externas. El alcance de la implementación se  \textbf{SNMP} se limita a equipos de la misma red, por esa razón no se encuentran mensajes EGP en ambos agentes.
+Debido a que el grupo  \textbf{EGP} está asociado a la comunicació de la interconexión de redes externas. El alcance de la implementación se  \textbf{SNMP} se limita a equipos de la misma red, por esa razón no se encuentran mensajes EGP en ambos agentes, a continuación se muestran los resultados de la consulta egpInMsgs.
 
 
 \textbf{Consulta SNMP: egpInMsgs Windows OID: 1.3.6.1.2.1.8.1.0 (figura \ref{image:11-W})}
@@ -59,7 +59,8 @@ Debido a que el grupo  \textbf{EGP} está asociado a la comunicació de la inter
 
 \item Indica el Sistema Operativo que maneja el agente.
 
-Con el grupo System de  la MIB SNMP encontramos la información relacionada a los agentes, con la \textbf{consulta SNMP sysDescr} podemos ver la información del agente tanto a nivel Hardware como Software, los puntos más importantes de la conuslta SNMP es el sistema operativo con el cual cuenta el agente y la versión.
+Con el grupo System de  la MIB SNMP encontramos la información relacionada a los agentes, con la \textbf{consulta SNMP sysDescr} podemos ver la información del agente tanto a nivel Hardware como Software, los puntos más importantes de la conuslta SNMP es el sistema operativo con el cual cuenta el agente y la versión, como se puede ver en la imagen  \ref{image:12-W}  muestra la descripcion del Sistema Windows y en la imagen   \ref{image:12-C}   del Sistema Operativo Linux.
+ 
  
 
 \textbf{Consulta SNMP: sysDescr Windows OID: 1.3.6.1.2.1.1.1.0 (figura \ref{image:12-W})}
@@ -83,9 +84,11 @@ Con el grupo System de  la MIB SNMP encontramos la información relacionada a lo
 
 \item Modifica el nombre del contacto o la ubicación del sistema de un agente.
 
-Con la consulta snmpset podemos modificar el valor de un OID, esto se hace mediante el comando \textbf{snmpset versión -c comunidad localhost OID s "El nuevo valor"}
+Con la consulta snmpset podemos modificar el valor de un OID, esto se hace mediante el comando \textbf{snmpset versión -c comunidad localhost OID s "El nuevo valor"}. A continuación se muestran los resultados de la consulta en el Sistema Operativo Windows  \ref{image:131}  y Sistema Operativo Linux  \ref{image:13-c}
 
-\textbf{Consulta snmpset: sysContact(4) sysUbication(6) Windows (figura \ref{image:131}) y (figura \ref{image:132})}
+
+
+\textbf{Consulta snmpset: sysContact(4) sysUbication(6) Windows (figura   \ref{image:131}) y   (figura  \ref{image:132})}
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
@@ -98,6 +101,22 @@ Con la consulta snmpset podemos modificar el valor de un OID, esto se hace media
 		\caption{Se cambio el valor de sysContact "WindowsAgent" y se muestran los cambios hechos en sysContact y sysUbication}		\label{image:132}
 \end{figure}
 \FloatBarrier
+
+
+\textbf{Consulta snmpset: sysContact(4) sysUbication(6) Centos (figura  \ref{image:13-c}) y   (figura  \ref{image:13-c1})}
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+	\includegraphics[width=.9 \textwidth]{images/13-c}
+		\caption{Se cambio el valor de sysUbication(6) "LaptopAcer" y se muestran los cambios hechos del valor inicial al final}		\label{image:13-c}
+\end{figure}
+\begin{figure}[htbp!]
+		\centering
+	\includegraphics[width=.9 \textwidth]{images/13-c1}
+		\caption{Muestra el valor de sysContact(4) y se modifica por "CentOS" finalmente muestra el cambio.}		\label{image:13-c}
+\end{figure}
+\FloatBarrier
+
 
 
 \item Dibuja la MIB del agente.
