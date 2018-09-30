@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {5.3}Eliminar agente}{45}{section.5.3}
 \contentsline {section}{\numberline {5.4}Estado del dispositivo}{47}{section.5.4}
 \contentsline {section}{\numberline {5.5}Gr\IeC {\'a}ficas de dispositivos}{49}{section.5.5}
-\contentsline {chapter}{\numberline {6}Conclusiones}{54}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Castro Flores Marcela}{54}{subsection.6.0.1}
-\contentsline {subsection}{\numberline {6.0.2}S\IeC {\'a}nchez Cruz Rosa Mar\IeC {\'\i }a}{54}{subsection.6.0.2}
-\contentsline {subsection}{\numberline {6.0.3}Santiago Mancera Arturo Samuel}{54}{subsection.6.0.3}
+\contentsline {chapter}{\numberline {6}Conclusiones}{55}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Castro Flores Marcela}{55}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {6.0.2}S\IeC {\'a}nchez Cruz Rosa Mar\IeC {\'\i }a}{55}{subsection.6.0.2}
+\contentsline {subsection}{\numberline {6.0.3}Santiago Mancera Arturo Samuel}{55}{subsection.6.0.3}
