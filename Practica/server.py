@@ -170,7 +170,7 @@ def MostrarEstado(ip):
 	info = cadena
 	ventana = Tkinter.Toplevel(canvasFrame)
 	ventana.title('Reporte de Equipo')
-	ventana.geometry('600x350')
+	ventana.geometry('600x400')
 
 	version = info.split(' ')[1]
 	print(version)
@@ -425,8 +425,8 @@ def eliminarAgente(ip):
 		#agentes.pack_forget()
 		canvasFrame.destroy()
 		canvasFrame = None
-		main()
 		showinfo('Agente eliminado!', 'Se ha eliminado correctamente el agente')
+		main()
 	except Exception as error: 
    		print error
 
