@@ -1,11 +1,12 @@
 \item ¿Cuándo fue el último reinicio (Dia, hora y minuto)  de los agentes?
-\\ El resultado del último reinicio en Linux como se observa en la figura \ref{image:reinicio} fue:
+
+El resultado del último reinicio en Linux como se observa en la figura \ref{image:reinicio} fue:
 
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
-			\includegraphics[width=.9 \textwidth]{images/Pregunta1}
-		\caption{Último reinicio del agente en Linux.}
+	\includegraphics[width=.9 \textwidth]{images/Pregunta1}
+		\caption{Último reinicio del agente en Linux con comando snmpget.}
 		\label{image:reinicio}
 \end{figure}
 \FloatBarrier
@@ -22,17 +23,18 @@ Por otro lado, el resultado del último reinicio en Windows como se observa en l
 \FloatBarrier
 
 \item ¿Cuántas interfaces Ethernet tienen?
-\\ Se puede observar en la figura \ref{image:interfaces} resultado en Linux fue de una interfaz Ethernet.
+\\ El resultado en Linux mostrado en la figura \ref{image:interfaces} fue de una interfaz Ethernet.
+
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
-			\includegraphics[width=.9 \textwidth]{images/Pregunta2L}
-		\caption{Número de interfaces Ethernet en Linux.}
-		\label{image:interfaces}
+	\includegraphics[width=.9 \textwidth]{images/Pregunta2L}
+		\caption{Número de interfaces Ethernet en Linux con comando snmpwalk.}		\label{image:interfaces}
 \end{figure}
 \FloatBarrier
 
-De igual manera, se puede observar en la figura \ref{image:interfacesw} que el resultado en Windows fue de 4 interfaces Ethernet.
+De igual manera, se puede observar en la figura \ref{image:interfacesw} que el resultado en Windows fue de 4 interfaces Ethernet, mostradas a continuación:
+
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
@@ -49,15 +51,17 @@ De igual manera, se puede observar en la figura \ref{image:interfacesw} que el r
 \item Intel Corporation Device 24fd = 0 
 \item vboxnet0 = 100000000
 \end{itemize}
-Sin embargo, es importante recalcar que en este caso, aunque la interfaz Ethernet corresponder a la llamada ``Intel Corporation Device 24fd'', su velocidad aparece ser de 0 mbps debido a que esta está obteniendo el ancho de banda vía wi-fi y no de forma alámbrica.
+
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=.9 \textwidth]{images/Pregunta3L}
-		\caption{Velocidad de las interfaces en Linux.}
+		\caption{Velocidad de las interfaces en Linux con comando snmpwalk.}
 		\label{image:velocidadInterfaces}
 \end{figure}
 \FloatBarrier
+Es importante recalcar que en este caso, aunque la interfaz Ethernet corresponder a la llamada ``Intel Corporation Device 24fd'', su velocidad aparece ser de 0 mbps debido a que esta está obteniendo el ancho de banda vía wi-fi y no de forma alámbrica.
+
 
 En el caso de Windows, el resultado mostrado en la figura \ref{image:velocidadInterfacesw} fue:
 \begin{itemize}

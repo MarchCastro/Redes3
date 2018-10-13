@@ -1,5 +1,5 @@
 \BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Gestor y agentes}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Instalaci\363n y configuraci\363n de gestor y agentes}{}% 2
 \BOOKMARK [1][-]{section.2.1}{Observium}{chapter.2}% 3
 \BOOKMARK [1][-]{section.2.2}{Configuraci\363n de agente en Linux}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.3}{Configuraci\363n de agente en Windows}{chapter.2}% 5
@@ -11,6 +11,13 @@
 \BOOKMARK [2][-]{subsection.4.1.2}{snmpgetnext}{section.4.1}% 11
 \BOOKMARK [2][-]{subsection.4.1.3}{snmpwalk}{section.4.1}% 12
 \BOOKMARK [2][-]{subsection.4.1.4}{snmpset}{section.4.1}% 13
-\BOOKMARK [0][-]{chapter.5}{Marco te\363rico}{}% 14
-\BOOKMARK [1][-]{section.5.1}{Seccion}{chapter.5}% 15
-\BOOKMARK [2][-]{subsubsection.5.1.0.1}{Subseccion}{section.5.1}% 16
+\BOOKMARK [0][-]{chapter.5}{Implementaci\363n de un modelo de administraci\363n de red de SNMP}{}% 14
+\BOOKMARK [1][-]{section.5.1}{Pantalla de inicio}{chapter.5}% 15
+\BOOKMARK [1][-]{section.5.2}{Agregar agente}{chapter.5}% 16
+\BOOKMARK [1][-]{section.5.3}{Eliminar agente}{chapter.5}% 17
+\BOOKMARK [1][-]{section.5.4}{Estado del dispositivo}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.5}{Gr\341ficas de dispositivos}{chapter.5}% 19
+\BOOKMARK [0][-]{chapter.6}{Conclusiones}{}% 20
+\BOOKMARK [1][-]{subsection.6.0.1}{Castro Flores Marcela}{chapter.6}% 21
+\BOOKMARK [2][-]{subsection.6.0.2}{S\341nchez Cruz Rosa Mar\355a}{subsection.6.0.1}% 22
+\BOOKMARK [2][-]{subsection.6.0.3}{Santiago Mancera Arturo Samuel}{subsection.6.0.1}% 23

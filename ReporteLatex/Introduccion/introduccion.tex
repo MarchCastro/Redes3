@@ -1,3 +1,18 @@
-Aquí va la introducción 
+Para la realización de esta práctica se utilizó el protocolo SNMP(Simple Network Management Protocol)  el cuál permite a los administradores de red administrar dispositivos  y diagnosticar sus problemas \cite{ccm}.
 \\ \par
-BLABLABLABLABALA \cite{mitchell}.
+El protocolo SNMP está compuesto por dos elementos: el agente, y el gestor. Es una arquitectura cliente-servidor, en la cual el agente desempeña el papel de servidor y el gestor hace el de cliente.
+
+El agente es un programa que ha de ejecutase en cada nodo de red que se desea gestionar o monitorizar. Ofrece un interfaz de todos los elementos que se pueden configurar. Estos elementos se almacenan en unas estructuras de datos llamadas "Management Information Base" (MIB), se explicarán más adelante. Representa la parte del servidor, en la medida que tiene la información que se desea gestionar y espera comandos por parte del cliente. El gestor es el software que se ejecuta en la estación encargada de monitorizar la red, y su tarea consiste en consultar los diferentes agentes que se encuentran en los nodos de la red los datos que estos han ido obteniendo\cite{snmp}. 
+\\ \par
+Esta práctica se dividió en las tres partes siguientes:
+\begin{enumerate}
+\item La primera parte se enfocó a la instalación de dos sistemas operativos que pudo ser Linux o Windows en caso de no tener alguno de los dos de forma nativa y una máquina virtual para la instalación de Observium mediante los cuáles se manejaron dos agentes y un gestor.
+\item La segunda parte se enfocó a la utilización de ambos agentes y el gestor quien por medio del protocolo SNMP obtenían mediante el comando snmpget la diferente información de cada agente como por ejemplo el número de interfaces o la IP que corresponde a cierta interfaz en específico.
+\item Por último, la tercera parte fue enfocada a la persistencia de la información por medio del uso de la herramienta rrdtool con la cuál se generan gráficas y se almacena la información de cada punto medido en un cierto lapso de tiempo.
+\end{enumerate}
+
+En los capítulos mostrados a continuación se observa el desarrollo de la práctica desde la instalación del dichos S.O. hasta la implementación del código desarrollado.
+
+
+
+ 
