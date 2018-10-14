@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE rrd SYSTEM "http://oss.oetiker.ch/rrdtool/rrdtool.dtd">
+<!-- Round Robin Database Dump -->
+<rrd>
+	<version>0003</version>
+	<step>60</step> <!-- Seconds -->
+	<lastupdate>1539551650</lastupdate> <!-- 2018-10-14 16:14:10 CDT -->
+
+	<ds>
+		<name> inoctets </name>
+		<type> COUNTER </type>
+		<minimal_heartbeat>600</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>20325236</last_ds>
+		<value>3.1200000000e+02</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<ds>
+		<name> outoctets </name>
+		<type> COUNTER </type>
+		<minimal_heartbeat>600</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>2970739</last_ds>
+		<value>1.0600000000e+03</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<ds>
+		<name> establishedtcpconn </name>
+		<type> GAUGE </type>
+		<minimal_heartbeat>600</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>7</last_ds>
+		<value>7.5485375000e+01</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<ds>
+		<name> intcpsegs </name>
+		<type> COUNTER </type>
+		<minimal_heartbeat>600</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>21658</last_ds>
+		<value>2.0000000000e+00</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<ds>
+		<name> outtcpsegs </name>
+		<type> COUNTER </type>
+		<minimal_heartbeat>600</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>17309</last_ds>
+		<value>2.0000000000e+00</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<ds>
+		<name> inicmpmsgs </name>
+		<type> COUNTER </type>
+		<minimal_heartbeat>600</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>167</last_ds>
+		<value>0.0000000000e+00</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<ds>
+		<name> outicmpmsgs </name>
+		<type> COUNTER </type>
+		<minimal_heartbeat>600</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>0</last_ds>
+		<value>0.0000000000e+00</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<ds>
+		<name> insnmpresponses </name>
+		<type> COUNTER </type>
+		<minimal_heartbeat>600</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>22921</last_ds>
+		<value>8.1532711255e+01</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<ds>
+		<name> outsnmpresponses </name>
+		<type> COUNTER </type>
+		<minimal_heartbeat>600</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>23021</last_ds>
+		<value>8.1479440129e+01</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<!-- Round Robin Archives -->
+	<rra>
+		<cf>AVERAGE</cf>
+		<pdp_per_row>1</pdp_per_row> <!-- 60 seconds -->
+
+		<params>
+		<xff>5.0000000000e-01</xff>
+		</params>
+		<cdp_prep>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+		</cdp_prep>
+		<database>
+			<!-- 2018-10-14 15:55:00 CDT / 1539550500 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:56:00 CDT / 1539550560 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:57:00 CDT / 1539550620 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:58:00 CDT / 1539550680 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:59:00 CDT / 1539550740 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:00:00 CDT / 1539550800 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:01:00 CDT / 1539550860 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:02:00 CDT / 1539550920 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:03:00 CDT / 1539550980 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:04:00 CDT / 1539551040 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+		</database>
+	</rra>
+	<rra>
+		<cf>HWPREDICT</cf>
+		<pdp_per_row>1</pdp_per_row> <!-- 60 seconds -->
+
+		<params>
+		<hw_alpha>1.0000000000e-01</hw_alpha>
+		<hw_beta>3.5000000000e-03</hw_beta>
+		<dependent_rra_idx>2</dependent_rra_idx>
+		</params>
+		<cdp_prep>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<intercept>NaN</intercept>
+			<last_intercept>NaN</last_intercept>
+			<slope>NaN</slope>
+			<last_slope>NaN</last_slope>
+			<nan_count>1</nan_count>
+			<last_nan_count>1</last_nan_count>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<intercept>NaN</intercept>
+			<last_intercept>NaN</last_intercept>
+			<slope>NaN</slope>
+			<last_slope>NaN</last_slope>
+			<nan_count>1</nan_count>
+			<last_nan_count>1</last_nan_count>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<intercept>NaN</intercept>
+			<last_intercept>NaN</last_intercept>
+			<slope>NaN</slope>
+			<last_slope>NaN</last_slope>
+			<nan_count>1</nan_count>
+			<last_nan_count>1</last_nan_count>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<intercept>NaN</intercept>
+			<last_intercept>NaN</last_intercept>
+			<slope>NaN</slope>
+			<last_slope>NaN</last_slope>
+			<nan_count>1</nan_count>
+			<last_nan_count>1</last_nan_count>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<intercept>NaN</intercept>
+			<last_intercept>NaN</last_intercept>
+			<slope>NaN</slope>
+			<last_slope>NaN</last_slope>
+			<nan_count>1</nan_count>
+			<last_nan_count>1</last_nan_count>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<intercept>NaN</intercept>
+			<last_intercept>NaN</last_intercept>
+			<slope>NaN</slope>
+			<last_slope>NaN</last_slope>
+			<nan_count>1</nan_count>
+			<last_nan_count>1</last_nan_count>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<intercept>NaN</intercept>
+			<last_intercept>NaN</last_intercept>
+			<slope>NaN</slope>
+			<last_slope>NaN</last_slope>
+			<nan_count>1</nan_count>
+			<last_nan_count>1</last_nan_count>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<intercept>NaN</intercept>
+			<last_intercept>NaN</last_intercept>
+			<slope>NaN</slope>
+			<last_slope>NaN</last_slope>
+			<nan_count>1</nan_count>
+			<last_nan_count>1</last_nan_count>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<intercept>NaN</intercept>
+			<last_intercept>NaN</last_intercept>
+			<slope>NaN</slope>
+			<last_slope>NaN</last_slope>
+			<nan_count>1</nan_count>
+			<last_nan_count>1</last_nan_count>
+			</ds>
+		</cdp_prep>
+		<database>
+			<!-- 2018-10-14 15:25:00 CDT / 1539548700 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:26:00 CDT / 1539548760 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:27:00 CDT / 1539548820 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:28:00 CDT / 1539548880 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:29:00 CDT / 1539548940 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:30:00 CDT / 1539549000 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:31:00 CDT / 1539549060 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:32:00 CDT / 1539549120 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:33:00 CDT / 1539549180 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:34:00 CDT / 1539549240 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:35:00 CDT / 1539549300 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:36:00 CDT / 1539549360 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:37:00 CDT / 1539549420 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:38:00 CDT / 1539549480 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:39:00 CDT / 1539549540 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:40:00 CDT / 1539549600 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:41:00 CDT / 1539549660 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:42:00 CDT / 1539549720 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:43:00 CDT / 1539549780 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:44:00 CDT / 1539549840 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:45:00 CDT / 1539549900 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:46:00 CDT / 1539549960 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:47:00 CDT / 1539550020 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:48:00 CDT / 1539550080 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:49:00 CDT / 1539550140 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:50:00 CDT / 1539550200 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:51:00 CDT / 1539550260 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:52:00 CDT / 1539550320 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:53:00 CDT / 1539550380 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:54:00 CDT / 1539550440 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:55:00 CDT / 1539550500 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:56:00 CDT / 1539550560 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:57:00 CDT / 1539550620 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:58:00 CDT / 1539550680 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:59:00 CDT / 1539550740 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:00:00 CDT / 1539550800 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:01:00 CDT / 1539550860 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:02:00 CDT / 1539550920 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:03:00 CDT / 1539550980 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:04:00 CDT / 1539551040 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+		</database>
+	</rra>
+	<rra>
+		<cf>SEASONAL</cf>
+		<pdp_per_row>1</pdp_per_row> <!-- 60 seconds -->
+
+		<params>
+		<seasonal_gamma>1.0000000000e-01</seasonal_gamma>
+		<seasonal_smooth_idx>1</seasonal_smooth_idx>
+		<dependent_rra_idx>1</dependent_rra_idx>
+		</params>
+		<cdp_prep>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+		</cdp_prep>
+		<database>
+			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+		</database>
+	</rra>
+	<rra>
+		<cf>DEVSEASONAL</cf>
+		<pdp_per_row>1</pdp_per_row> <!-- 60 seconds -->
+
+		<params>
+		<seasonal_gamma>1.0000000000e-01</seasonal_gamma>
+		<seasonal_smooth_idx>1</seasonal_smooth_idx>
+		<dependent_rra_idx>1</dependent_rra_idx>
+		</params>
+		<cdp_prep>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>2</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+		</cdp_prep>
+		<database>
+			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+		</database>
+	</rra>
+	<rra>
+		<cf>DEVPREDICT</cf>
+		<pdp_per_row>1</pdp_per_row> <!-- 60 seconds -->
+
+		<params>
+		<dependent_rra_idx>3</dependent_rra_idx>
+		</params>
+		<cdp_prep>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			</ds>
+			<ds>
+			<primary_value>NaN</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			</ds>
+		</cdp_prep>
+		<database>
+			<!-- 2018-10-14 15:25:00 CDT / 1539548700 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:26:00 CDT / 1539548760 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:27:00 CDT / 1539548820 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:28:00 CDT / 1539548880 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:29:00 CDT / 1539548940 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:30:00 CDT / 1539549000 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:31:00 CDT / 1539549060 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:32:00 CDT / 1539549120 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:33:00 CDT / 1539549180 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:34:00 CDT / 1539549240 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:35:00 CDT / 1539549300 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:36:00 CDT / 1539549360 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:37:00 CDT / 1539549420 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:38:00 CDT / 1539549480 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:39:00 CDT / 1539549540 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:40:00 CDT / 1539549600 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:41:00 CDT / 1539549660 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:42:00 CDT / 1539549720 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:43:00 CDT / 1539549780 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:44:00 CDT / 1539549840 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:45:00 CDT / 1539549900 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:46:00 CDT / 1539549960 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:47:00 CDT / 1539550020 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:48:00 CDT / 1539550080 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:49:00 CDT / 1539550140 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:50:00 CDT / 1539550200 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:51:00 CDT / 1539550260 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:52:00 CDT / 1539550320 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:53:00 CDT / 1539550380 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:54:00 CDT / 1539550440 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:55:00 CDT / 1539550500 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:56:00 CDT / 1539550560 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:57:00 CDT / 1539550620 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:58:00 CDT / 1539550680 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:59:00 CDT / 1539550740 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:00:00 CDT / 1539550800 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:01:00 CDT / 1539550860 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:02:00 CDT / 1539550920 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:03:00 CDT / 1539550980 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:04:00 CDT / 1539551040 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+		</database>
+	</rra>
+	<rra>
+		<cf>FAILURES</cf>
+		<pdp_per_row>1</pdp_per_row> <!-- 60 seconds -->
+
+		<params>
+		<delta_pos>2.0000000000e+00</delta_pos>
+		<delta_neg>2.0000000000e+00</delta_neg>
+		<window_len>9</window_len>
+		<failure_threshold>7</failure_threshold>
+		<dependent_rra_idx>3</dependent_rra_idx>
+		</params>
+		<cdp_prep>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<history>000000000</history>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<history>000000000</history>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<history>000000000</history>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<history>000000000</history>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<history>000000000</history>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<history>000000000</history>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<history>000000000</history>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<history>000000000</history>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<history>000000000</history>
+			</ds>
+		</cdp_prep>
+		<database>
+			<!-- 2018-10-14 15:25:00 CDT / 1539548700 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:26:00 CDT / 1539548760 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:27:00 CDT / 1539548820 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:28:00 CDT / 1539548880 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:29:00 CDT / 1539548940 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:30:00 CDT / 1539549000 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:31:00 CDT / 1539549060 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:32:00 CDT / 1539549120 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:33:00 CDT / 1539549180 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:34:00 CDT / 1539549240 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:35:00 CDT / 1539549300 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:36:00 CDT / 1539549360 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:37:00 CDT / 1539549420 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:38:00 CDT / 1539549480 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:39:00 CDT / 1539549540 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:40:00 CDT / 1539549600 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:41:00 CDT / 1539549660 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:42:00 CDT / 1539549720 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:43:00 CDT / 1539549780 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:44:00 CDT / 1539549840 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:45:00 CDT / 1539549900 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:46:00 CDT / 1539549960 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:47:00 CDT / 1539550020 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:48:00 CDT / 1539550080 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:49:00 CDT / 1539550140 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:50:00 CDT / 1539550200 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:51:00 CDT / 1539550260 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:52:00 CDT / 1539550320 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:53:00 CDT / 1539550380 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:54:00 CDT / 1539550440 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:55:00 CDT / 1539550500 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:56:00 CDT / 1539550560 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:57:00 CDT / 1539550620 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:58:00 CDT / 1539550680 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 15:59:00 CDT / 1539550740 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:00:00 CDT / 1539550800 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:01:00 CDT / 1539550860 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:02:00 CDT / 1539550920 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:03:00 CDT / 1539550980 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:04:00 CDT / 1539551040 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+		</database>
+	</rra>
+</rrd>

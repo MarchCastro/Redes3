@@ -2,10 +2,7 @@
 
 import rrdtool
 '''
-Script que crea la base de datos rrdtool para almacenar las 5 variables eleginas por el equipo:
-	
-1537228800 = 18 DE SEPTIEMBRE DEL 2018 A LAS 00
-
+HW create 
 '''
 
 def crear(nombre):
@@ -24,6 +21,29 @@ def crear(nombre):
 		                 "RRA:AVERAGE:0.5:6:700",
 		                 "RRA:AVERAGE:0.5:1:600")
 
+	if ret:
+		print rrdtool.error()
+
+def crearHW(nombre):
+	print 'NOMBREEE '+nombre
+	ret = rrdtool.create(nombre,
+						"--start",'N',
+						"--step",'60',
+						"DS:inoctets:COUNTER:600:U:U",
+						"DS:outoctets:COUNTER:600:U:U",
+						"DS:establishedtcpconn:GAUGE:600:U:U",
+						"DS:intcpsegs:COUNTER:600:U:U",
+						"DS:outtcpsegs:COUNTER:600:U:U",
+						"DS:inicmpmsgs:COUNTER:600:U:U",
+						"DS:outicmpmsgs:COUNTER:600:U:U",
+						"DS:insnmpresponses:COUNTER:600:U:U",
+						"DS:outsnmpresponses:COUNTER:600:U:U",	
+						"RRA:AVERAGE:0.5:1:20",
+						"RRA:HWPREDICT:50:0.1:0.0035:10:3",                      
+						"RRA:SEASONAL:10:0.1:2", 
+						"RRA:DEVSEASONAL:10:0.1:2",
+						"RRA:DEVPREDICT:50:4",
+						"RRA:FAILURES:50:7:9:4") 
 	if ret:
 		print rrdtool.error()
 

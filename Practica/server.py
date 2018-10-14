@@ -18,11 +18,9 @@ from time import sleep
 
 import MigetSNMP
 from MigetSNMP import *
-from actualizarRRD import actualizar
+from actualizarRRD import actualizar, actualizarHW
 from graficarRRD import graficar
 from elegirGrafica import VentanaGraficas
-from Eliminar import Aplicacion
-from Reporte import Estado
 from PIL import Image, ImageTk
 
 agentCount = 0
@@ -489,22 +487,34 @@ def getAgentInfo(ip_community):
 
 
 def inicia_capturas():
-    print "Iniciando..."
-    hilos = []
-    with open("hosts.txt", 'r') as hosts:
-        for i in hosts.readlines():
-            datos = i.split(' ')
-            for j in alive_hosts:
-                if j == datos[0] and datos[0] != "127.0.0.1":  # Si esta vivo inicia un hilo con sus actualizaciones
-                    thread = threading.Thread(target=actualizar, args=(
-                    'Actualizando ' + datos[0] + ' ' + datos[3][:-1], datos[3][:-1], datos[0], datos[2],
-                    datos[0] + '-net',))
-                    thread.daemon = True
-                    hilos.append(thread)
-                    break
+	print "Iniciando..."
+	hilos = []
+	hilosHW = []
+	with open("hosts.txt", 'r') as hosts:
+		for i in hosts.readlines():
+			datos = i.split(' ')
+			for j in alive_hosts:
+				if j == datos[0] and datos[0] != "127.0.0.1":  # Si esta vivo inicia un hilo con sus actualizaciones
+					if datos[3].endswith('\n'):
+						datos[3] = datos[3][:-1]
+					thread = threading.Thread(target=actualizar, args=(
+					'Actualizando ' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
+					datos[0] + '-net',))
+					
+					threadHW = threading.Thread(target=actualizarHW, args=(
+					'Actualizando HW' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
+					datos[0]+'_HW',))
 
-    for h in hilos:
-        h.start()
+					thread.daemon = True
+					threadHW.daemon = True
+					hilos.append(thread)
+					hilosHW.append(threadHW)
+					break
+
+	for h in hilos:
+		h.start()
+	for h in hilosHW:
+		h.start()	
 
 
 def main():
