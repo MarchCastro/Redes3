@@ -2,8 +2,8 @@ import sys
 import rrdtool
 import time
 tiempo_actual = int(time.time())
-tiempo_final = tiempo_actual - 86400
-tiempo_inicial = tiempo_final -25920000
+tiempo_final = tiempo_actual + 1800
+tiempo_inicial = tiempo_actual - 1800
 tiempo_graficacion = str( 1538157600) # tiempo del 28 de septiembre a las 18
 
 '''
@@ -25,8 +25,8 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		while 1:
 			print cadena
 			ret = rrdtool.graph( image_name,
-				             "--start",tiempo_graficacion, 
-		 #                    "--end","N",
+				             "--start",str(tiempo_inicial),
+		                     "--end",str(tiempo_final),
 				             "--vertical-label=Bytes/s",
 				             "DEF:inoctets="+rrd+":inoctets:AVERAGE",
 				             "DEF:outoctets="+rrd+":outoctets:AVERAGE",
@@ -38,8 +38,8 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		while 1:
 			print cadena
 			ret = rrdtool.graph( image_name,
-				             "--start",tiempo_graficacion,
-		 #                    "--end","N",
+				             "--start",str(tiempo_inicial),
+		                     "--end",str(tiempo_final),
 				             "--vertical-label=Numero de conexiones",
 				             "DEF:establishedtcpconn="+rrd+":establishedtcpconn:AVERAGE",
 				             "LINE1:establishedtcpconn#0000FF:Conexiones TCP establecidas\r")
@@ -49,8 +49,8 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		while 1:
 			print cadena
 			ret = rrdtool.graph( image_name,
-				             "--start",tiempo_graficacion,
-		 #                    "--end","N",
+				             "--start",str(tiempo_inicial),
+		                     "--end",str(tiempo_final),
 				             "--vertical-label=TCP Segs/s",
 				             "DEF:intcpsegs="+rrd+":intcpsegs:AVERAGE",
 				             "DEF:outtcpsegs="+rrd+":outtcpsegs:AVERAGE",
@@ -62,8 +62,8 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		while 1:
 			print cadena
 			ret = rrdtool.graph( image_name,
-				             "--start",tiempo_graficacion,
-		 #                    "--end","N",
+				             "--start",str(tiempo_inicial),
+		                     "--end",str(tiempo_final),
 				             "--vertical-label=ICMP msgs/s",
 				             "DEF:inicmpmsgs="+rrd+":inicmpmsgs:AVERAGE",
 				             "DEF:outicmpmsgs="+rrd+":outicmpmsgs:AVERAGE",
@@ -75,8 +75,8 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		while 1:
 			print cadena
 			ret = rrdtool.graph( image_name,
-				             "--start",tiempo_graficacion,
-		 #                    "--end","N",
+				             "--start",str(tiempo_inicial),
+		                     "--end",str(tiempo_final),
 				             "--vertical-label=SNMP PDUs/s",
 				             "DEF:insnmpresponses="+rrd+":insnmpresponses:AVERAGE",
 				             "DEF:outsnmpresponses="+rrd+":outsnmpresponses:AVERAGE",

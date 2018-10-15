@@ -18,7 +18,7 @@ from time import sleep
 
 import MigetSNMP
 from MigetSNMP import *
-from actualizarRRD import actualizar, actualizarHW
+from actualizarRRD import actualizar, actualizarLB, actualizarHW
 from graficarRRD import graficar
 from elegirGrafica import VentanaGraficas
 from PIL import Image, ImageTk
@@ -41,7 +41,10 @@ photoCanvas.grid(row=0, column=5, sticky="nsew")
 #canvasFrame = Frame(photoCanvas,  width=1830, height=800)
 canvasFrame = None
 
-
+#La siguiente lista contiene los limites para linea base y notificaciones
+#Corresponde a: [octetos de entrada (bytes por segundo), numero de conexiones tcp, segmentos tcp de entrada por segundo,
+#mensajes icmp de entrada por segundo, respuestas snmp de entrada por segundo]
+limites = [25,30,25,5,5]
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
@@ -489,6 +492,7 @@ def getAgentInfo(ip_community):
 def inicia_capturas():
 	print "Iniciando..."
 	hilos = []
+	hilosLB = []
 	hilosHW = []
 	with open("hosts.txt", 'r') as hosts:
 		for i in hosts.readlines():
@@ -497,22 +501,34 @@ def inicia_capturas():
 				if j == datos[0] and datos[0] != "127.0.0.1":  # Si esta vivo inicia un hilo con sus actualizaciones
 					if datos[3].endswith('\n'):
 						datos[3] = datos[3][:-1]
+						
+					# Hilos de actualizacion de rrd primer parcial
 					thread = threading.Thread(target=actualizar, args=(
 					'Actualizando ' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
 					datos[0] + '-net',))
 					
+					# Hilos de actualizacion de rrd con Linea Base
+					threadLB = threading.Thread(target=actualizarLB, args=(
+					'Actualizando LB' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
+					datos[0] + '-net',limites,))
+
+					# Hilos de actualizacion de rrd con Holt Winters
 					threadHW = threading.Thread(target=actualizarHW, args=(
 					'Actualizando HW' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
 					datos[0]+'_HW',))
 
 					thread.daemon = True
+					threadLB.daemon = True
 					threadHW.daemon = True
 					hilos.append(thread)
+					hilosLB.append(threadLB)
 					hilosHW.append(threadHW)
 					break
 
 	for h in hilos:
 		h.start()
+	for h in hilosLB:
+		h.start()		
 	for h in hilosHW:
 		h.start()	
 
