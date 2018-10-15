@@ -134,7 +134,7 @@ class Grafica_HW(object):
 		self.img = ImageTk.PhotoImage(Image.open(self.imagen))
 		self.display.config(image=self.img)
 		self.window1.after(1000, self.actualiza_imagen)
-		print "Actualizacion img..." + rrd_name
+		print "Actualizacion img..."
 
 if __name__ == '__main__':
 	#Este hilo debe inciar desde la pantalla principal

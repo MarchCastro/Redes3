@@ -4,7 +4,7 @@
 <rrd>
 	<version>0003</version>
 	<step>60</step> <!-- Seconds -->
-	<lastupdate>1539551650</lastupdate> <!-- 2018-10-14 16:14:10 CDT -->
+	<lastupdate>1539567250</lastupdate> <!-- 2018-10-14 20:34:10 CDT -->
 
 	<ds>
 		<name> inoctets </name>
@@ -14,8 +14,8 @@
 		<max>NaN</max>
 
 		<!-- PDP Status -->
-		<last_ds>20325236</last_ds>
-		<value>3.1200000000e+02</value>
+		<last_ds>29730647</last_ds>
+		<value>3.2635718735e+05</value>
 		<unknown_sec> 0 </unknown_sec>
 	</ds>
 
@@ -27,8 +27,8 @@
 		<max>NaN</max>
 
 		<!-- PDP Status -->
-		<last_ds>2970739</last_ds>
-		<value>1.0600000000e+03</value>
+		<last_ds>4739483</last_ds>
+		<value>2.2220547217e+04</value>
 		<unknown_sec> 0 </unknown_sec>
 	</ds>
 
@@ -40,8 +40,8 @@
 		<max>NaN</max>
 
 		<!-- PDP Status -->
-		<last_ds>7</last_ds>
-		<value>7.5485375000e+01</value>
+		<last_ds>27</last_ds>
+		<value>2.9019184200e+02</value>
 		<unknown_sec> 0 </unknown_sec>
 	</ds>
 
@@ -53,8 +53,8 @@
 		<max>NaN</max>
 
 		<!-- PDP Status -->
-		<last_ds>21658</last_ds>
-		<value>2.0000000000e+00</value>
+		<last_ds>31688</last_ds>
+		<value>2.8468410269e+02</value>
 		<unknown_sec> 0 </unknown_sec>
 	</ds>
 
@@ -66,8 +66,8 @@
 		<max>NaN</max>
 
 		<!-- PDP Status -->
-		<last_ds>17309</last_ds>
-		<value>2.0000000000e+00</value>
+		<last_ds>25661</last_ds>
+		<value>1.7768828587e+02</value>
 		<unknown_sec> 0 </unknown_sec>
 	</ds>
 
@@ -79,7 +79,7 @@
 		<max>NaN</max>
 
 		<!-- PDP Status -->
-		<last_ds>167</last_ds>
+		<last_ds>123</last_ds>
 		<value>0.0000000000e+00</value>
 		<unknown_sec> 0 </unknown_sec>
 	</ds>
@@ -105,8 +105,8 @@
 		<max>NaN</max>
 
 		<!-- PDP Status -->
-		<last_ds>22921</last_ds>
-		<value>8.1532711255e+01</value>
+		<last_ds>7207</last_ds>
+		<value>3.5248954205e+01</value>
 		<unknown_sec> 0 </unknown_sec>
 	</ds>
 
@@ -118,8 +118,8 @@
 		<max>NaN</max>
 
 		<!-- PDP Status -->
-		<last_ds>23021</last_ds>
-		<value>8.1479440129e+01</value>
+		<last_ds>7208</last_ds>
+		<value>3.5846234527e+01</value>
 		<unknown_sec> 0 </unknown_sec>
 	</ds>
 
@@ -133,81 +133,81 @@
 		</params>
 		<cdp_prep>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>3.4232188915e+04</primary_value>
+			<secondary_value>5.0419731850e+03</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>3.2631588752e+03</primary_value>
+			<secondary_value>1.5460200931e+03</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>3.0148932733e+01</primary_value>
+			<secondary_value>1.6257542112e+01</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>3.0021931622e+01</primary_value>
+			<secondary_value>6.6340928178e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>2.0821861902e+01</primary_value>
+			<secondary_value>5.7606445320e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>2.1124455729e-02</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
 			<value>NaN</value>
 			<unknown_datapoints>0</unknown_datapoints>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<primary_value>3.9822773714e+00</primary_value>
+			<secondary_value>7.9366497266e-01</secondary_value>
 			<value>NaN</value>
 			<unknown_datapoints>0</unknown_datapoints>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<value>NaN</value>
-			<unknown_datapoints>0</unknown_datapoints>
-			</ds>
-			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<value>NaN</value>
-			<unknown_datapoints>0</unknown_datapoints>
-			</ds>
-			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<value>NaN</value>
-			<unknown_datapoints>0</unknown_datapoints>
-			</ds>
-			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<value>NaN</value>
-			<unknown_datapoints>0</unknown_datapoints>
-			</ds>
-			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<value>NaN</value>
-			<unknown_datapoints>0</unknown_datapoints>
-			</ds>
-			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<value>NaN</value>
-			<unknown_datapoints>0</unknown_datapoints>
-			</ds>
-			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<primary_value>3.9801796637e+00</primary_value>
+			<secondary_value>7.9533816040e-01</secondary_value>
 			<value>NaN</value>
 			<unknown_datapoints>0</unknown_datapoints>
 			</ds>
 		</cdp_prep>
 		<database>
-			<!-- 2018-10-14 15:55:00 CDT / 1539550500 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:56:00 CDT / 1539550560 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:57:00 CDT / 1539550620 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:58:00 CDT / 1539550680 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:59:00 CDT / 1539550740 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:00:00 CDT / 1539550800 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:01:00 CDT / 1539550860 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:02:00 CDT / 1539550920 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:03:00 CDT / 1539550980 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:04:00 CDT / 1539551040 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:15:00 CDT / 1539566100 --> <row><v>5.0419731850e+03</v><v>1.5460200931e+03</v><v>1.6257542112e+01</v><v>6.6340928178e+00</v><v>5.7606445320e+00</v><v>2.1124455729e-02</v><v>0.0000000000e+00</v><v>7.9366497266e-01</v><v>7.9533816040e-01</v></row>
+			<!-- 2018-10-14 20:16:00 CDT / 1539566160 --> <row><v>5.0419731850e+03</v><v>1.5460200931e+03</v><v>1.6257542112e+01</v><v>6.6340928178e+00</v><v>5.7606445320e+00</v><v>2.1124455729e-02</v><v>0.0000000000e+00</v><v>7.9366497266e-01</v><v>7.9533816040e-01</v></row>
+			<!-- 2018-10-14 20:17:00 CDT / 1539566220 --> <row><v>5.0419731850e+03</v><v>1.5460200931e+03</v><v>1.6257542112e+01</v><v>6.6340928178e+00</v><v>5.7606445320e+00</v><v>2.1124455729e-02</v><v>0.0000000000e+00</v><v>7.9366497266e-01</v><v>7.9533816040e-01</v></row>
+			<!-- 2018-10-14 20:18:00 CDT / 1539566280 --> <row><v>5.0419731850e+03</v><v>1.5460200931e+03</v><v>1.6257542112e+01</v><v>6.6340928178e+00</v><v>5.7606445320e+00</v><v>2.1124455729e-02</v><v>0.0000000000e+00</v><v>7.9366497266e-01</v><v>7.9533816040e-01</v></row>
+			<!-- 2018-10-14 20:19:00 CDT / 1539566340 --> <row><v>5.0419731850e+03</v><v>1.5460200931e+03</v><v>1.6257542112e+01</v><v>6.6340928178e+00</v><v>5.7606445320e+00</v><v>2.1124455729e-02</v><v>0.0000000000e+00</v><v>7.9366497266e-01</v><v>7.9533816040e-01</v></row>
+			<!-- 2018-10-14 20:20:00 CDT / 1539566400 --> <row><v>5.0419731850e+03</v><v>1.5460200931e+03</v><v>1.6257542112e+01</v><v>6.6340928178e+00</v><v>5.7606445320e+00</v><v>2.1124455729e-02</v><v>0.0000000000e+00</v><v>7.9366497266e-01</v><v>7.9533816040e-01</v></row>
+			<!-- 2018-10-14 20:21:00 CDT / 1539566460 --> <row><v>7.2574718337e+02</v><v>3.4359242859e+02</v><v>1.5387832517e+01</v><v>1.3837955537e+00</v><v>1.1656221097e+00</v><v>2.1288098985e-03</v><v>0.0000000000e+00</v><v>6.0475017177e+00</v><v>6.0399158631e+00</v></row>
+			<!-- 2018-10-14 20:22:00 CDT / 1539566520 --> <row><v>5.1245604249e+02</v><v>4.2059275793e+02</v><v>1.5174352350e+01</v><v>2.0608880548e+00</v><v>2.0765328329e+00</v><v>1.6666666667e-02</v><v>0.0000000000e+00</v><v>6.8873044843e+00</v><v>6.8888742097e+00</v></row>
+			<!-- 2018-10-14 20:23:00 CDT / 1539566580 --> <row><v>4.8456808277e+02</v><v>3.6253427117e+02</v><v>1.1106854867e+01</v><v>1.7333333333e+00</v><v>1.6333333333e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>7.6691018241e+00</v><v>7.6736785362e+00</v></row>
+			<!-- 2018-10-14 20:24:00 CDT / 1539566640 --> <row><v>1.9294858390e+02</v><v>1.4196572883e+02</v><v>8.3159658833e+00</v><v>7.5000000000e-01</v><v>6.1666666667e-01</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>7.5913432372e+00</v><v>7.5869766325e+00</v></row>
+			<!-- 2018-10-14 20:25:00 CDT / 1539566700 --> <row><v>4.9938060355e+02</v><v>3.1767056222e+02</v><v>8.0840945667e+00</v><v>1.5500000000e+00</v><v>1.4592076141e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>7.4070464872e+00</v><v>7.4044642833e+00</v></row>
+			<!-- 2018-10-14 20:26:00 CDT / 1539566760 --> <row><v>2.6093865697e+02</v><v>1.7711620272e+02</v><v>7.1904874000e+00</v><v>8.5000000000e-01</v><v>7.0745905260e-01</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>6.2837238481e+00</v><v>6.2758954103e+00</v></row>
+			<!-- 2018-10-14 20:27:00 CDT / 1539566820 --> <row><v>4.4390746649e+02</v><v>4.0568129845e+02</v><v>9.5109878500e+00</v><v>1.7148499428e+00</v><v>1.5815166095e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>7.1222882943e+00</v><v>7.1270248066e+00</v></row>
+			<!-- 2018-10-14 20:28:00 CDT / 1539566880 --> <row><v>1.6833898676e+02</v><v>1.8196526994e+02</v><v>1.0914735533e+01</v><v>7.0181672383e-01</v><v>7.1848339050e-01</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>6.5954110589e+00</v><v>6.6061470252e+00</v></row>
+			<!-- 2018-10-14 20:29:00 CDT / 1539566940 --> <row><v>4.7331239449e+02</v><v>2.5985268090e+03</v><v>1.1458611783e+01</v><v>2.8500000000e+00</v><v>2.8833333333e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>6.5344895169e+00</v><v>6.5275800585e+00</v></row>
+			<!-- 2018-10-14 20:30:00 CDT / 1539567000 --> <row><v>3.4330522507e+02</v><v>3.6040652437e+02</v><v>1.2199094833e+01</v><v>1.7666666667e+00</v><v>1.7000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>6.9306743626e+00</v><v>6.9377875990e+00</v></row>
+			<!-- 2018-10-14 20:31:00 CDT / 1539567060 --> <row><v>2.9003266407e+02</v><v>1.9627862370e+02</v><v>9.6060024833e+00</v><v>1.0833333333e+00</v><v>8.5000000000e-01</v><v>1.6666666667e-02</v><v>0.0000000000e+00</v><v>6.5140647785e+00</v><v>6.5096228617e+00</v></row>
+			<!-- 2018-10-14 20:32:00 CDT / 1539567120 --> <row><v>8.9210810441e+03</v><v>1.1948800833e+03</v><v>1.1763014767e+01</v><v>9.2833333333e+00</v><v>7.4549835773e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>6.8624467016e+00</v><v>6.8550264755e+00</v></row>
+			<!-- 2018-10-14 20:33:00 CDT / 1539567180 --> <row><v>3.7265977588e+04</v><v>3.4941066308e+03</v><v>2.5496896550e+01</v><v>3.1833333333e+01</v><v>2.3261683089e+01</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>5.2905205734e+00</v><v>5.2953026934e+00</v></row>
+			<!-- 2018-10-14 20:34:00 CDT / 1539567240 --> <row><v>3.4232188915e+04</v><v>3.2631588752e+03</v><v>3.0148932733e+01</v><v>3.0021931622e+01</v><v>2.0821861902e+01</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>3.9822773714e+00</v><v>3.9801796637e+00</v></row>
 		</database>
 	</rra>
 	<rra>
@@ -221,147 +221,147 @@
 		</params>
 		<cdp_prep>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<intercept>NaN</intercept>
-			<last_intercept>NaN</last_intercept>
-			<slope>NaN</slope>
-			<last_slope>NaN</last_slope>
+			<primary_value>4.5997762489e+03</primary_value>
+			<secondary_value>NaN</secondary_value>
+			<intercept>8.0922530100e+03</intercept>
+			<last_intercept>5.1132892352e+03</last_intercept>
+			<slope>2.6093852625e+01</slope>
+			<last_slope>1.5722508192e+01</last_slope>
 			<nan_count>1</nan_count>
 			<last_nan_count>1</last_nan_count>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<intercept>NaN</intercept>
-			<last_intercept>NaN</last_intercept>
-			<slope>NaN</slope>
-			<last_slope>NaN</last_slope>
+			<primary_value>6.4721559361e+02</primary_value>
+			<secondary_value>NaN</secondary_value>
+			<intercept>1.3025113348e+03</intercept>
+			<last_intercept>1.0389988102e+03</last_intercept>
+			<slope>2.8337766040e+00</slope>
+			<last_slope>1.9181964554e+00</last_slope>
 			<nan_count>1</nan_count>
 			<last_nan_count>1</last_nan_count>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<intercept>NaN</intercept>
-			<last_intercept>NaN</last_intercept>
-			<slope>NaN</slope>
-			<last_slope>NaN</last_slope>
+			<primary_value>8.5495628319e+00</primary_value>
+			<secondary_value>NaN</secondary_value>
+			<intercept>1.5835388771e+01</intercept>
+			<last_intercept>1.3672339689e+01</last_intercept>
+			<slope>1.0671871533e-02</slope>
+			<last_slope>3.1120920678e-03</last_slope>
 			<nan_count>1</nan_count>
 			<last_nan_count>1</last_nan_count>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<intercept>NaN</intercept>
-			<last_intercept>NaN</last_intercept>
-			<slope>NaN</slope>
-			<last_slope>NaN</last_slope>
+			<primary_value>4.5959642378e+00</primary_value>
+			<secondary_value>NaN</secondary_value>
+			<intercept>7.9838122496e+00</intercept>
+			<last_intercept>5.4269418046e+00</last_intercept>
+			<slope>2.3172795218e-02</slope>
+			<last_slope>1.4273706634e-02</last_slope>
 			<nan_count>1</nan_count>
 			<last_nan_count>1</last_nan_count>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<intercept>NaN</intercept>
-			<last_intercept>NaN</last_intercept>
-			<slope>NaN</slope>
-			<last_slope>NaN</last_slope>
+			<primary_value>3.4738292866e+00</primary_value>
+			<secondary_value>NaN</secondary_value>
+			<intercept>6.0058500073e+00</intercept>
+			<last_intercept>4.2602921756e+00</last_intercept>
+			<slope>1.6826381530e-02</slope>
+			<last_slope>1.0754570115e-02</last_slope>
 			<nan_count>1</nan_count>
 			<last_nan_count>1</last_nan_count>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<intercept>NaN</intercept>
-			<last_intercept>NaN</last_intercept>
-			<slope>NaN</slope>
-			<last_slope>NaN</last_slope>
+			<primary_value>4.6612110151e-04</primary_value>
+			<secondary_value>NaN</secondary_value>
+			<intercept>2.0983993937e-03</intercept>
+			<last_intercept>2.1376871223e-03</last_intercept>
+			<slope>7.1612390716e-06</slope>
+			<last_slope>7.3243814571e-06</last_slope>
 			<nan_count>1</nan_count>
 			<last_nan_count>1</last_nan_count>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<intercept>NaN</intercept>
-			<last_intercept>NaN</last_intercept>
-			<slope>NaN</slope>
-			<last_slope>NaN</last_slope>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>NaN</secondary_value>
+			<intercept>0.0000000000e+00</intercept>
+			<last_intercept>0.0000000000e+00</last_intercept>
+			<slope>0.0000000000e+00</slope>
+			<last_slope>0.0000000000e+00</last_slope>
 			<nan_count>1</nan_count>
 			<last_nan_count>1</last_nan_count>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<intercept>NaN</intercept>
-			<last_intercept>NaN</last_intercept>
-			<slope>NaN</slope>
-			<last_slope>NaN</last_slope>
+			<primary_value>7.2836944250e+00</primary_value>
+			<secondary_value>NaN</secondary_value>
+			<intercept>5.4882974604e+00</intercept>
+			<last_intercept>5.8199134571e+00</last_intercept>
+			<slope>-2.6297873301e-03</slope>
+			<last_slope>-1.4742913614e-03</last_slope>
 			<nan_count>1</nan_count>
 			<last_nan_count>1</last_nan_count>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<intercept>NaN</intercept>
-			<last_intercept>NaN</last_intercept>
-			<slope>NaN</slope>
-			<last_slope>NaN</last_slope>
+			<primary_value>7.2808518351e+00</primary_value>
+			<secondary_value>NaN</secondary_value>
+			<intercept>5.4859021220e+00</intercept>
+			<last_intercept>5.8174349913e+00</last_intercept>
+			<slope>-2.6208873830e-03</slope>
+			<last_slope>-1.4656521230e-03</last_slope>
 			<nan_count>1</nan_count>
 			<last_nan_count>1</last_nan_count>
 			</ds>
 		</cdp_prep>
 		<database>
-			<!-- 2018-10-14 15:25:00 CDT / 1539548700 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:26:00 CDT / 1539548760 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:27:00 CDT / 1539548820 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:28:00 CDT / 1539548880 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:29:00 CDT / 1539548940 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:30:00 CDT / 1539549000 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:31:00 CDT / 1539549060 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:32:00 CDT / 1539549120 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:33:00 CDT / 1539549180 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:34:00 CDT / 1539549240 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:35:00 CDT / 1539549300 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:36:00 CDT / 1539549360 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:37:00 CDT / 1539549420 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:38:00 CDT / 1539549480 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:39:00 CDT / 1539549540 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:40:00 CDT / 1539549600 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:41:00 CDT / 1539549660 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:42:00 CDT / 1539549720 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:43:00 CDT / 1539549780 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:44:00 CDT / 1539549840 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:45:00 CDT / 1539549900 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:46:00 CDT / 1539549960 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:47:00 CDT / 1539550020 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:48:00 CDT / 1539550080 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:49:00 CDT / 1539550140 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:50:00 CDT / 1539550200 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:51:00 CDT / 1539550260 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:52:00 CDT / 1539550320 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:53:00 CDT / 1539550380 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:54:00 CDT / 1539550440 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:55:00 CDT / 1539550500 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:56:00 CDT / 1539550560 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:57:00 CDT / 1539550620 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:58:00 CDT / 1539550680 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:59:00 CDT / 1539550740 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:00:00 CDT / 1539550800 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:01:00 CDT / 1539550860 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:02:00 CDT / 1539550920 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:03:00 CDT / 1539550980 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:04:00 CDT / 1539551040 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:45:00 CDT / 1539564300 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:46:00 CDT / 1539564360 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:47:00 CDT / 1539564420 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:48:00 CDT / 1539564480 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:49:00 CDT / 1539564540 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:50:00 CDT / 1539564600 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:51:00 CDT / 1539564660 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:52:00 CDT / 1539564720 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:53:00 CDT / 1539564780 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:54:00 CDT / 1539564840 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:55:00 CDT / 1539564900 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:56:00 CDT / 1539564960 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:57:00 CDT / 1539565020 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:58:00 CDT / 1539565080 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:59:00 CDT / 1539565140 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:00:00 CDT / 1539565200 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:01:00 CDT / 1539565260 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:02:00 CDT / 1539565320 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:03:00 CDT / 1539565380 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:04:00 CDT / 1539565440 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:05:00 CDT / 1539565500 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:06:00 CDT / 1539565560 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:07:00 CDT / 1539565620 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:08:00 CDT / 1539565680 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:09:00 CDT / 1539565740 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:10:00 CDT / 1539565800 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:11:00 CDT / 1539565860 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:12:00 CDT / 1539565920 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:13:00 CDT / 1539565980 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:14:00 CDT / 1539566040 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:15:00 CDT / 1539566100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:16:00 CDT / 1539566160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:17:00 CDT / 1539566220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:18:00 CDT / 1539566280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:19:00 CDT / 1539566340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:20:00 CDT / 1539566400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:21:00 CDT / 1539566460 --> <row><v>1.0467904151e+02</v><v>1.1790333860e+02</v><v>1.0958245707e+01</v><v>5.0000000000e-01</v><v>3.9655172414e-01</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>7.2134346330e+00</v><v>7.2102070575e+00</v></row>
+			<!-- 2018-10-14 20:22:00 CDT / 1539566520 --> <row><v>2.0233328459e+02</v><v>2.1514388587e+02</v><v>1.2180699003e+01</v><v>8.8868888381e-01</v><v>9.4173877306e-01</v><v>2.1362607332e-04</v><v>0.0000000000e+00</v><v>7.7821232505e+00</v><v>7.7688405890e+00</v></row>
+			<!-- 2018-10-14 20:23:00 CDT / 1539566580 --> <row><v>3.6823135633e+02</v><v>3.1546530128e+02</v><v>1.1957863205e+01</v><v>1.2399617324e+00</v><v>1.1934260785e+00</v><v>1.8654337803e-03</v><v>0.0000000000e+00</v><v>6.7926857601e+00</v><v>6.7977537676e+00</v></row>
+			<!-- 2018-10-14 20:24:00 CDT / 1539566640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:25:00 CDT / 1539566700 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:26:00 CDT / 1539566760 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:27:00 CDT / 1539566820 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:28:00 CDT / 1539566880 --> <row><v>7.2255071306e+02</v><v>5.3583451433e+02</v><v>1.3444155113e+01</v><v>1.5961435517e+00</v><v>1.4147044459e+00</v><v>1.6847411481e-03</v><v>0.0000000000e+00</v><v>6.1256734605e+00</v><v>6.1216831200e+00</v></row>
+			<!-- 2018-10-14 20:29:00 CDT / 1539566940 --> <row><v>7.6180201912e+02</v><v>5.3859909355e+02</v><v>1.2498979195e+01</v><v>1.7513377517e+00</v><v>1.5504208878e+00</v><v>1.5215281198e-03</v><v>0.0000000000e+00</v><v>7.4476212605e+00</v><v>7.4454059855e+00</v></row>
+			<!-- 2018-10-14 20:30:00 CDT / 1539567000 --> <row><v>5.9746617091e+02</v><v>7.1024156937e+02</v><v>2.0443066313e+01</v><v>1.6446880974e+00</v><v>1.4233731806e+00</v><v>1.3741038594e-03</v><v>0.0000000000e+00</v><v>6.8009580398e+00</v><v>6.7993393771e+00</v></row>
+			<!-- 2018-10-14 20:31:00 CDT / 1539567060 --> <row><v>1.5677871518e+02</v><v>3.2350571609e+02</v><v>1.0839835931e+01</v><v>8.7158038372e-01</v><v>7.9599268337e-01</v><v>1.4325339796e-03</v><v>0.0000000000e+00</v><v>6.9558113501e+00</v><v>6.9550995973e+00</v></row>
+			<!-- 2018-10-14 20:32:00 CDT / 1539567120 --> <row><v>1.7747845231e+02</v><v>3.8415155548e+02</v><v>1.1362896458e+01</v><v>1.2197926059e+00</v><v>1.3034782655e+00</v><v>4.2547075725e-03</v><v>0.0000000000e+00</v><v>7.6210480359e+00</v><v>7.6120832568e+00</v></row>
+			<!-- 2018-10-14 20:33:00 CDT / 1539567180 --> <row><v>1.1720474804e+03</v><v>5.3147712311e+02</v><v>1.0529963136e+01</v><v>2.2022883716e+00</v><v>1.9969424420e+00</v><v>2.1886645357e-03</v><v>0.0000000000e+00</v><v>6.8044202601e+00</v><v>6.8111000656e+00</v></row>
+			<!-- 2018-10-14 20:34:00 CDT / 1539567240 --> <row><v>4.5997762489e+03</v><v>6.4721559361e+02</v><v>8.5495628319e+00</v><v>4.5959642378e+00</v><v>3.4738292866e+00</v><v>4.6612110151e-04</v><v>0.0000000000e+00</v><v>7.2836944250e+00</v><v>7.2808518351e+00</v></row>
 		</database>
 	</rra>
 	<rra>
@@ -375,80 +375,80 @@
 		</params>
 		<cdp_prep>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>2.1376816454e+03</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<seasonal>NaN</seasonal>
-			<last_seasonal>NaN</last_seasonal>
+			<seasonal>-2.2280347484e+02</seasonal>
+			<last_seasonal>-5.2923549449e+02</last_seasonal>
+			<init_flag>4</init_flag>
+			</ds>
+			<ds>
+			<primary_value>-1.5826651772e+02</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>-2.1799657968e+02</seasonal>
+			<last_seasonal>-3.9370141307e+02</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>-3.1819456575e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<seasonal>NaN</seasonal>
-			<last_seasonal>NaN</last_seasonal>
+			<seasonal>-5.3577602653e+00</seasonal>
+			<last_seasonal>-5.1258889486e+00</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>1.4430857911e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<seasonal>NaN</seasonal>
-			<last_seasonal>NaN</last_seasonal>
+			<seasonal>-4.5251273443e-02</seasonal>
+			<last_seasonal>-8.4525127344e-01</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>7.6410547628e-01</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<seasonal>NaN</seasonal>
-			<last_seasonal>NaN</last_seasonal>
+			<seasonal>4.5323488288e-02</seasonal>
+			<last_seasonal>-7.9721745911e-01</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>-1.7208413014e-03</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<seasonal>NaN</seasonal>
-			<last_seasonal>NaN</last_seasonal>
+			<seasonal>-1.6788904023e-03</seasonal>
+			<last_seasonal>-1.6788904023e-03</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>0.0000000000e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<seasonal>NaN</seasonal>
-			<last_seasonal>NaN</last_seasonal>
+			<seasonal>0.0000000000e+00</seasonal>
+			<last_seasonal>0.0000000000e+00</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>1.1681277245e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<seasonal>NaN</seasonal>
-			<last_seasonal>NaN</last_seasonal>
+			<seasonal>1.2809585093e+00</seasonal>
+			<last_seasonal>1.4652552593e+00</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>1.1678220005e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<seasonal>NaN</seasonal>
-			<last_seasonal>NaN</last_seasonal>
-			<init_flag>1</init_flag>
-			</ds>
-			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<seasonal>NaN</seasonal>
-			<last_seasonal>NaN</last_seasonal>
+			<seasonal>1.2823701468e+00</seasonal>
+			<last_seasonal>1.4648824960e+00</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 		</cdp_prep>
 		<database>
-			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:25:00 CDT / 1539566700 --> <row><v>-2.2280347484e+02</v><v>-2.1799657968e+02</v><v>-5.3577602653e+00</v><v>-4.5251273443e-02</v><v>4.5323488288e-02</v><v>-1.6788904023e-03</v><v>0.0000000000e+00</v><v>1.2809585093e+00</v><v>1.2823701468e+00</v></row>
+			<!-- 2018-10-14 20:26:00 CDT / 1539566760 --> <row><v>-4.6124542142e+02</v><v>-3.5855093918e+02</v><v>-6.2513674320e+00</v><v>-7.4525127344e-01</v><v>-7.0642507318e-01</v><v>-1.6788904023e-03</v><v>0.0000000000e+00</v><v>1.5763587011e-01</v><v>1.5380127377e-01</v></row>
+			<!-- 2018-10-14 20:27:00 CDT / 1539566820 --> <row><v>-2.7827661190e+02</v><v>-1.2998584346e+02</v><v>-3.9308669820e+00</v><v>1.1959866939e-01</v><v>1.6763248372e-01</v><v>-1.6788904023e-03</v><v>0.0000000000e+00</v><v>9.9620031639e-01</v><v>1.0049306701e+00</v></row>
+			<!-- 2018-10-14 20:28:00 CDT / 1539566880 --> <row><v>-4.9879055367e+01</v><v>-3.1848231995e+01</v><v>-2.2764776218e-01</v><v>-8.0489414505e-02</v><v>-6.2659894984e-02</v><v>-1.5162670333e-04</v><v>0.0000000000e+00</v><v>4.2276383858e-02</v><v>4.3601751461e-02</v></row>
+			<!-- 2018-10-14 20:29:00 CDT / 1539566940 --> <row><v>6.8535751907e+01</v><v>2.2350147986e+02</v><v>-7.8728201113e-01</v><v>3.4292722139e-01</v><v>3.2472402486e-01</v><v>-1.3693753078e-04</v><v>0.0000000000e+00</v><v>1.1930422925e+00</v><v>1.1929135957e+00</v></row>
+			<!-- 2018-10-14 20:30:00 CDT / 1539567000 --> <row><v>-6.3933241942e+01</v><v>-2.8491957192e+01</v><v>6.6114666257e+00</v><v>3.7546015486e-02</v><v>-3.1723795316e-02</v><v>-1.2366934735e-04</v><v>0.0000000000e+00</v><v>7.3211827762e-01</v><v>7.3425694650e-01</v></row>
+			<!-- 2018-10-14 20:31:00 CDT / 1539567060 --> <row><v>-4.4431999543e+02</v><v>-3.6085164086e+02</v><v>-1.5346196512e+00</v><v>-7.4068634899e-01</v><v>-7.0794271124e-01</v><v>1.5626648327e-03</v><v>0.0000000000e+00</v><v>8.2309259987e-01</v><v>8.2413333471e-01</v></row>
+			<!-- 2018-10-14 20:32:00 CDT / 1539567120 --> <row><v>3.3795635292e+02</v><v>-2.0366460756e+02</v><v>-7.3885374504e-01</v><v>2.9193087657e-01</v><v>3.4175807475e-01</v><v>1.0978499719e-03</v><v>0.0000000000e+00</v><v>1.5046659301e+00</v><v>1.4982926168e+00</v></row>
+			<!-- 2018-10-14 20:33:00 CDT / 1539567180 --> <row><v>2.9166049656e+03</v><v>5.5377919356e+01</v><v>-2.9865920391e-01</v><v>2.4052451097e+00</v><v>1.7769509894e+00</v><v>-3.6486884844e-04</v><v>0.0000000000e+00</v><v>6.9686586252e-01</v><v>7.0566357360e-01</v></row>
+			<!-- 2018-10-14 20:34:00 CDT / 1539567240 --> <row><v>2.1376816454e+03</v><v>-1.5826651772e+02</v><v>-3.1819456575e+00</v><v>1.4430857911e+00</v><v>7.6410547628e-01</v><v>-1.7208413014e-03</v><v>0.0000000000e+00</v><v>1.1681277245e+00</v><v>1.1678220005e+00</v></row>
 		</database>
 	</rra>
 	<rra>
@@ -462,63 +462,63 @@
 		</params>
 		<cdp_prep>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>2.9632412666e+04</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
 			<seasonal>NaN</seasonal>
 			<last_seasonal>NaN</last_seasonal>
-			<init_flag>2</init_flag>
+			<init_flag>4</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
-			<seasonal>NaN</seasonal>
-			<last_seasonal>NaN</last_seasonal>
-			<init_flag>1</init_flag>
-			</ds>
-			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>2.6159432816e+03</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
 			<seasonal>NaN</seasonal>
 			<last_seasonal>NaN</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>2.1599369901e+01</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
 			<seasonal>NaN</seasonal>
 			<last_seasonal>NaN</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>2.5425967384e+01</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
 			<seasonal>NaN</seasonal>
 			<last_seasonal>NaN</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>1.7348032615e+01</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
 			<seasonal>NaN</seasonal>
 			<last_seasonal>NaN</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>4.6612110151e-04</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
 			<seasonal>NaN</seasonal>
 			<last_seasonal>NaN</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>0.0000000000e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
 			<seasonal>NaN</seasonal>
 			<last_seasonal>NaN</last_seasonal>
 			<init_flag>1</init_flag>
 			</ds>
 			<ds>
-			<primary_value>NaN</primary_value>
+			<primary_value>3.3014170536e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<seasonal>NaN</seasonal>
+			<last_seasonal>NaN</last_seasonal>
+			<init_flag>1</init_flag>
+			</ds>
+			<ds>
+			<primary_value>3.3006721714e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
 			<seasonal>NaN</seasonal>
 			<last_seasonal>NaN</last_seasonal>
@@ -526,16 +526,16 @@
 			</ds>
 		</cdp_prep>
 		<database>
-			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:25:00 CDT / 1539566700 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:26:00 CDT / 1539566760 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:27:00 CDT / 1539566820 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:28:00 CDT / 1539566880 --> <row><v>5.5421172630e+02</v><v>3.5386924438e+02</v><v>2.5294195798e+00</v><v>8.9432682783e-01</v><v>6.9622105538e-01</v><v>1.6847411481e-03</v><v>0.0000000000e+00</v><v>4.6973759842e-01</v><v>4.8446390512e-01</v></row>
+			<!-- 2018-10-14 20:29:00 CDT / 1539566940 --> <row><v>2.8848962463e+02</v><v>2.0599277154e+03</v><v>1.0403674120e+00</v><v>1.0986622483e+00</v><v>1.3329124455e+00</v><v>1.5215281198e-03</v><v>0.0000000000e+00</v><v>9.1313174351e-01</v><v>9.1782592701e-01</v></row>
+			<!-- 2018-10-14 20:30:00 CDT / 1539567000 --> <row><v>2.5416094584e+02</v><v>3.4983504500e+02</v><v>8.2439714794e+00</v><v>1.2197856928e-01</v><v>2.7662681936e-01</v><v>1.3741038594e-03</v><v>0.0000000000e+00</v><v>1.2971632273e-01</v><v>1.3844822191e-01</v></row>
+			<!-- 2018-10-14 20:31:00 CDT / 1539567060 --> <row><v>5.7228672256e+02</v><v>2.1584289023e+02</v><v>4.1100114735e+00</v><v>8.1659129328e-01</v><v>6.9756407867e-01</v><v>3.4393421774e-03</v><v>0.0000000000e+00</v><v>1.0935142809e+00</v><v>1.0978097485e+00</v></row>
+			<!-- 2018-10-14 20:32:00 CDT / 1539567120 --> <row><v>1.1534707413e+03</v><v>2.6597683764e+02</v><v>2.7342998431e+00</v><v>1.8613333266e+00</v><v>1.6364651850e+00</v><v>1.5233207291e-02</v><v>0.0000000000e+00</v><v>8.8119702302e-01</v><v>8.6767541959e-01</v></row>
+			<!-- 2018-10-14 20:33:00 CDT / 1539567180 --> <row><v>3.7140960645e+03</v><v>3.3862502367e+02</v><v>2.2626008460e+00</v><v>3.4071389370e+00</v><v>2.5223905941e+00</v><v>1.8977568559e-03</v><v>0.0000000000e+00</v><v>9.4016442623e-01</v><v>9.3991202896e-01</v></row>
+			<!-- 2018-10-14 20:34:00 CDT / 1539567240 --> <row><v>2.9632412666e+04</v><v>2.6159432816e+03</v><v>2.1599369901e+01</v><v>2.5425967384e+01</v><v>1.7348032615e+01</v><v>4.6612110151e-04</v><v>0.0000000000e+00</v><v>3.3014170536e+00</v><v>3.3006721714e+00</v></row>
 		</database>
 	</rra>
 	<rra>
@@ -548,92 +548,92 @@
 		<cdp_prep>
 			<ds>
 			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<secondary_value>NaN</secondary_value>
 			</ds>
 			<ds>
 			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<secondary_value>NaN</secondary_value>
 			</ds>
 			<ds>
 			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<secondary_value>NaN</secondary_value>
 			</ds>
 			<ds>
 			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<secondary_value>NaN</secondary_value>
 			</ds>
 			<ds>
 			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<secondary_value>NaN</secondary_value>
 			</ds>
 			<ds>
 			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<secondary_value>NaN</secondary_value>
 			</ds>
 			<ds>
 			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<secondary_value>NaN</secondary_value>
 			</ds>
 			<ds>
 			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<secondary_value>NaN</secondary_value>
 			</ds>
 			<ds>
 			<primary_value>NaN</primary_value>
-			<secondary_value>0.0000000000e+00</secondary_value>
+			<secondary_value>NaN</secondary_value>
 			</ds>
 		</cdp_prep>
 		<database>
-			<!-- 2018-10-14 15:25:00 CDT / 1539548700 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:26:00 CDT / 1539548760 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:27:00 CDT / 1539548820 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:28:00 CDT / 1539548880 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:29:00 CDT / 1539548940 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:30:00 CDT / 1539549000 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:31:00 CDT / 1539549060 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:32:00 CDT / 1539549120 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:33:00 CDT / 1539549180 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:34:00 CDT / 1539549240 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:35:00 CDT / 1539549300 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:36:00 CDT / 1539549360 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:37:00 CDT / 1539549420 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:38:00 CDT / 1539549480 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:39:00 CDT / 1539549540 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:40:00 CDT / 1539549600 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:41:00 CDT / 1539549660 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:42:00 CDT / 1539549720 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:43:00 CDT / 1539549780 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:44:00 CDT / 1539549840 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:45:00 CDT / 1539549900 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:46:00 CDT / 1539549960 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:47:00 CDT / 1539550020 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:48:00 CDT / 1539550080 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:49:00 CDT / 1539550140 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:50:00 CDT / 1539550200 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:51:00 CDT / 1539550260 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:52:00 CDT / 1539550320 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:53:00 CDT / 1539550380 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:54:00 CDT / 1539550440 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:55:00 CDT / 1539550500 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:56:00 CDT / 1539550560 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:57:00 CDT / 1539550620 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:58:00 CDT / 1539550680 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:59:00 CDT / 1539550740 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:00:00 CDT / 1539550800 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:01:00 CDT / 1539550860 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:02:00 CDT / 1539550920 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:03:00 CDT / 1539550980 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:04:00 CDT / 1539551040 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:45:00 CDT / 1539564300 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:46:00 CDT / 1539564360 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:47:00 CDT / 1539564420 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:48:00 CDT / 1539564480 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:49:00 CDT / 1539564540 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:50:00 CDT / 1539564600 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:51:00 CDT / 1539564660 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:52:00 CDT / 1539564720 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:53:00 CDT / 1539564780 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:54:00 CDT / 1539564840 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:55:00 CDT / 1539564900 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:56:00 CDT / 1539564960 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:57:00 CDT / 1539565020 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:58:00 CDT / 1539565080 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 19:59:00 CDT / 1539565140 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:00:00 CDT / 1539565200 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:01:00 CDT / 1539565260 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:02:00 CDT / 1539565320 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:03:00 CDT / 1539565380 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:04:00 CDT / 1539565440 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:05:00 CDT / 1539565500 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:06:00 CDT / 1539565560 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:07:00 CDT / 1539565620 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:08:00 CDT / 1539565680 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:09:00 CDT / 1539565740 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:10:00 CDT / 1539565800 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:11:00 CDT / 1539565860 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:12:00 CDT / 1539565920 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:13:00 CDT / 1539565980 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:14:00 CDT / 1539566040 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:15:00 CDT / 1539566100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:16:00 CDT / 1539566160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:17:00 CDT / 1539566220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:18:00 CDT / 1539566280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:19:00 CDT / 1539566340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:20:00 CDT / 1539566400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:21:00 CDT / 1539566460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:22:00 CDT / 1539566520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:23:00 CDT / 1539566580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:24:00 CDT / 1539566640 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:25:00 CDT / 1539566700 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:26:00 CDT / 1539566760 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:27:00 CDT / 1539566820 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:28:00 CDT / 1539566880 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:29:00 CDT / 1539566940 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:30:00 CDT / 1539567000 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
+			<!-- 2018-10-14 20:31:00 CDT / 1539567060 --> <row><v>6.2106814186e+02</v><v>2.2568908999e+02</v><v>4.4295868098e+00</v><v>8.8379555369e-01</v><v>7.6907038556e-01</v><v>2.1288098985e-03</v><v>0.0000000000e+00</v><v>1.1659329153e+00</v><v>1.1702911944e+00</v></row>
+			<!-- 2018-10-14 20:32:00 CDT / 1539567120 --> <row><v>3.1012275789e+02</v><v>2.0544887206e+02</v><v>2.9936533470e+00</v><v>1.1721991710e+00</v><v>1.1347940598e+00</v><v>1.6453040593e-02</v><v>0.0000000000e+00</v><v>8.9481876621e-01</v><v>8.7996637940e-01</v></row>
+			<!-- 2018-10-14 20:33:00 CDT / 1539567180 --> <row><v>1.1633672644e+02</v><v>4.7068969886e+01</v><v>8.5100833845e-01</v><v>4.9337160094e-01</v><v>4.3990725481e-01</v><v>1.8654337803e-03</v><v>0.0000000000e+00</v><v>8.7641606396e-01</v><v>8.7592476860e-01</v></row>
+			<!-- 2018-10-14 20:34:00 CDT / 1539567240 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
 		</database>
 	</rra>
 	<rra>
@@ -651,32 +651,32 @@
 			<ds>
 			<primary_value>0.0000000000e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<history>000000000</history>
+			<history>011000000</history>
 			</ds>
 			<ds>
 			<primary_value>0.0000000000e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<history>000000000</history>
+			<history>011000000</history>
 			</ds>
 			<ds>
 			<primary_value>0.0000000000e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<history>000000000</history>
+			<history>010000000</history>
 			</ds>
 			<ds>
 			<primary_value>0.0000000000e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<history>000000000</history>
+			<history>011000000</history>
 			</ds>
 			<ds>
 			<primary_value>0.0000000000e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<history>000000000</history>
+			<history>011000000</history>
 			</ds>
 			<ds>
 			<primary_value>0.0000000000e+00</primary_value>
 			<secondary_value>0.0000000000e+00</secondary_value>
-			<history>000000000</history>
+			<history>000100000</history>
 			</ds>
 			<ds>
 			<primary_value>0.0000000000e+00</primary_value>
@@ -695,56 +695,56 @@
 			</ds>
 		</cdp_prep>
 		<database>
-			<!-- 2018-10-14 15:25:00 CDT / 1539548700 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:26:00 CDT / 1539548760 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:27:00 CDT / 1539548820 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:28:00 CDT / 1539548880 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:29:00 CDT / 1539548940 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:30:00 CDT / 1539549000 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:31:00 CDT / 1539549060 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:32:00 CDT / 1539549120 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:33:00 CDT / 1539549180 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:34:00 CDT / 1539549240 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:35:00 CDT / 1539549300 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:36:00 CDT / 1539549360 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:37:00 CDT / 1539549420 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:38:00 CDT / 1539549480 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:39:00 CDT / 1539549540 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:40:00 CDT / 1539549600 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:41:00 CDT / 1539549660 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:42:00 CDT / 1539549720 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:43:00 CDT / 1539549780 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:44:00 CDT / 1539549840 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:45:00 CDT / 1539549900 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:46:00 CDT / 1539549960 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:47:00 CDT / 1539550020 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:48:00 CDT / 1539550080 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:49:00 CDT / 1539550140 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:50:00 CDT / 1539550200 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:51:00 CDT / 1539550260 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:52:00 CDT / 1539550320 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:53:00 CDT / 1539550380 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:54:00 CDT / 1539550440 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:55:00 CDT / 1539550500 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:56:00 CDT / 1539550560 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:57:00 CDT / 1539550620 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:58:00 CDT / 1539550680 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 15:59:00 CDT / 1539550740 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:00:00 CDT / 1539550800 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:01:00 CDT / 1539550860 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:02:00 CDT / 1539550920 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:03:00 CDT / 1539550980 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:04:00 CDT / 1539551040 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:05:00 CDT / 1539551100 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:06:00 CDT / 1539551160 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:07:00 CDT / 1539551220 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:08:00 CDT / 1539551280 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:09:00 CDT / 1539551340 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:10:00 CDT / 1539551400 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:11:00 CDT / 1539551460 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:12:00 CDT / 1539551520 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:13:00 CDT / 1539551580 --> <row><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v><v>NaN</v></row>
-			<!-- 2018-10-14 16:14:00 CDT / 1539551640 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:45:00 CDT / 1539564300 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:46:00 CDT / 1539564360 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:47:00 CDT / 1539564420 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:48:00 CDT / 1539564480 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:49:00 CDT / 1539564540 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:50:00 CDT / 1539564600 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:51:00 CDT / 1539564660 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:52:00 CDT / 1539564720 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:53:00 CDT / 1539564780 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:54:00 CDT / 1539564840 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:55:00 CDT / 1539564900 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:56:00 CDT / 1539564960 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:57:00 CDT / 1539565020 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:58:00 CDT / 1539565080 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 19:59:00 CDT / 1539565140 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:00:00 CDT / 1539565200 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:01:00 CDT / 1539565260 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:02:00 CDT / 1539565320 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:03:00 CDT / 1539565380 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:04:00 CDT / 1539565440 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:05:00 CDT / 1539565500 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:06:00 CDT / 1539565560 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:07:00 CDT / 1539565620 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:08:00 CDT / 1539565680 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:09:00 CDT / 1539565740 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:10:00 CDT / 1539565800 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:11:00 CDT / 1539565860 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:12:00 CDT / 1539565920 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:13:00 CDT / 1539565980 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:14:00 CDT / 1539566040 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:15:00 CDT / 1539566100 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:16:00 CDT / 1539566160 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:17:00 CDT / 1539566220 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:18:00 CDT / 1539566280 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:19:00 CDT / 1539566340 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:20:00 CDT / 1539566400 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:21:00 CDT / 1539566460 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:22:00 CDT / 1539566520 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:23:00 CDT / 1539566580 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:24:00 CDT / 1539566640 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:25:00 CDT / 1539566700 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:26:00 CDT / 1539566760 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:27:00 CDT / 1539566820 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:28:00 CDT / 1539566880 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:29:00 CDT / 1539566940 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:30:00 CDT / 1539567000 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:31:00 CDT / 1539567060 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:32:00 CDT / 1539567120 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:33:00 CDT / 1539567180 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2018-10-14 20:34:00 CDT / 1539567240 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
 		</database>
 	</rra>
 </rrd>

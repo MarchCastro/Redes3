@@ -113,8 +113,8 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
                         "CDEF:scaledpred=pred,8,*",
                         "LINE1:scaledobs#00FF00:In traffic",
                         "LINE1:outoctets#0000FF:Out traffic",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average bits out",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average bits out",
+                        "LINE1:scaledupper#00e4ef:Upper Bound Average out bits",
+                        "LINE1:scaledlower#ff0000:Lower Bound Average out bits",
                         "TICK:fail#FDD017:1.0:  Fallas",
                         "LINE1:scaledpred#FF00FF:Prediccion")
     		time.sleep(1)
@@ -182,9 +182,9 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
                         #Declaro cada valor que quiero mostrar en grafica
 						"DEF:inicmpmsgs="+rrd+":inicmpmsgs:AVERAGE",
 				        "DEF:outicmpmsgs="+rrd+":outicmpmsgs:AVERAGE",
-                        "DEF:pred="+rrd+":inoctets:HWPREDICT",
-                        "DEF:dev="+rrd+":inoctets:DEVPREDICT",
-                        "DEF:fail="+rrd+":inoctets:FAILURES",
+                        "DEF:pred="+rrd+":inicmpmsgs:HWPREDICT",
+                        "DEF:dev="+rrd+":inicmpmsgs:DEVPREDICT",
+                        "DEF:fail="+rrd+":inicmpmsgs:FAILURES",
 
                         "CDEF:scaledobs=inicmpmsgs,8,*", #los valores obsevados, los multiplico *8
                         "CDEF:upper=pred,dev,2,*,+",#limite superior                        
@@ -192,10 +192,11 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
                         "CDEF:scaledupper=upper,8,*",
                         "CDEF:scaledlower=lower,8,*",
                         "CDEF:scaledpred=pred,8,*",
-                        "LINE1:scaledobs#00FF00:In traffic",
-                        "LINE1:outoctets#0000FF:Out traffic",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average msgs. out",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average msgs. out",
+
+                        "LINE1:scaledobs#00FF00:In ICMP msgs",
+                        "LINE1:outicmpmsgs#0000FF:Out ICMP msgs",
+                        "LINE1:scaledupper#00e4ef:Upper Bound Average out msgs.",
+                        "LINE1:scaledlower#ff0000:Lower Bound Average out msgs.",
                         "TICK:fail#FDD017:1.0:  Fallas",
                         "LINE1:scaledpred#FF00FF:Prediccion")
     		time.sleep(1)
@@ -210,9 +211,9 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
                         #Declaro cada valor que quiero mostrar en grafica
 						"DEF:insnmpresponses="+rrd+":insnmpresponses:AVERAGE",
 				        "DEF:outsnmpresponses="+rrd+":outsnmpresponses:AVERAGE",
-                        "DEF:pred="+rrd+":inoctets:HWPREDICT",
-                        "DEF:dev="+rrd+":inoctets:DEVPREDICT",
-                        "DEF:fail="+rrd+":inoctets:FAILURES",
+                        "DEF:pred="+rrd+":insnmpresponses:HWPREDICT",
+                        "DEF:dev="+rrd+":insnmpresponses:DEVPREDICT",
+                        "DEF:fail="+rrd+":insnmpresponses:FAILURES",
 
                         "CDEF:scaledobs=insnmpresponses,8,*", #los valores obsevados, los multiplico *8
                         "CDEF:upper=pred,dev,2,*,+",#limite superior                        
@@ -220,10 +221,11 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
                         "CDEF:scaledupper=upper,8,*",
                         "CDEF:scaledlower=lower,8,*",
                         "CDEF:scaledpred=pred,8,*",
-                        "LINE1:scaledobs#00FF00:In traffic",
-                        "LINE1:outoctets#0000FF:Out traffic",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average PDU's out",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average PDU's out",
+						
+                        "LINE1:scaledobs#00FF00:Solicitudes",
+                        "LINE1:outsnmpresponses#0000FF:Respuestas",
+                        "LINE1:scaledupper#00e4ef:Upper Bound Average respuestas",
+                        "LINE1:scaledlower#ff0000:Lower Bound Average respuestas",
                         "TICK:fail#FDD017:1.0:  Fallas",
                         "LINE1:scaledpred#FF00FF:Prediccion")
     		time.sleep(1)
