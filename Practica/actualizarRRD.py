@@ -73,74 +73,8 @@ def actualizar(cadena,comunidad,host,puerto,rrd):
 		rrdtool.update(rrd+'.rrd', valor) # actualizamos el archivo previamente creado en rrd1.py
 		rrdtool.dump(rrd+'.rrd',rrd+'.xml') # ver el contenido de la bd opcional
 		time.sleep(1)
-
-	if ret:
-		print rrdtool.error()
-		time.sleep(300)
 		
-def actualizarLB(cadena,comunidad,host,puerto,rrd,limites):
-	total_input_traffic = 0
-	total_output_traffic = 0
-	
-	#Verifica que exista una rrd asociada al host, en caso de no existir crea una rrd nueva
-	archivo_rrd = Path(rrd+"-LB.rrd")
-	if archivo_rrd.is_file() == False:
-		crearRRD.crear(rrd+"-LB.rrd")
-		print "rrd-LB creada"
-	else:
-		print "Abriendo rrd-LB..."
-
-	#Inicia proceso de adquisicion de datos
-	while 1:
-		print cadena
-		#octetos de entrada de la interfaz eth
-		total_input_traffic = int(
-			consultaSNMP(comunidad,host,puerto,
-						 '1.3.6.1.2.1.2.2.1.10.2'))
-	 	#octetos de salida de la interfaz eth
-		total_output_traffic = int(
-		    consultaSNMP(comunidad,host,puerto,
-		                 '1.3.6.1.2.1.2.2.1.16.2'))
-		#----------------------------------------------
-	 	#numero de conexiones tcp establecidas
-		total_tcp_established = int(
-		    consultaSNMP(comunidad,host,puerto,
-		                 '1.3.6.1.2.1.6.9.0'))
-		#----------------------------------------------
-		#segmentos tcp de entrada
-		input_tcp_segs = int(
-			consultaSNMP(comunidad,host,puerto,
-						 '1.3.6.1.2.1.6.10.0'))
-	 	#segmentos tcp de salida
-		output_tcp_segs = int(
-		    consultaSNMP(comunidad,host,puerto,
-		                 '1.3.6.1.2.1.6.11.0'))
-		#----------------------------------------------
-		#segmentos tcp de entrada
-		input_icmp_msgs = int(
-			consultaSNMP(comunidad,host,puerto,
-						 '1.3.6.1.2.1.5.1.0'))
-	 	#segmentos tcp de salida
-		output_icmp_msgs = int(
-		    consultaSNMP(comunidad,host,puerto,
-		                 '1.3.6.1.2.1.5.14.0'))
-		#----------------------------------------------
-	 	#PDUs de tipo Get-Requests generados - solicitudes generadas
-		input_snmp_getReq = int(
-		    consultaSNMP(comunidad,host,puerto,
-		                 '1.3.6.1.2.1.11.15.0'))		
-		#PDUs de tipo Get-Response generados - respuestas generadas
-		output_snmp_getResp = int(
-			consultaSNMP(comunidad,host,puerto,
-						 '1.3.6.1.2.1.11.28.0'))
-
-		valor = "N:" + str(total_input_traffic) + ':' + str(total_output_traffic) + ':' + str(total_tcp_established) + ':' + str(input_tcp_segs) + ':' + str(output_tcp_segs) + ':' + str(input_icmp_msgs) + ':' + str(output_icmp_msgs) + ':' + str(input_snmp_getReq) + ':' + str(output_snmp_getResp)
-
-		print "LB - "+valor
-		rrdtool.update(rrd+'-LB.rrd', valor) # actualizamos el archivo previamente creado en rrd1.py
-		rrdtool.dump(rrd+'-LB.rrd',rrd+'-LB.xml') # ver el contenido de la bd opcional
-		
-		#Verifica limites
+		#Verifica limites para enviar notificaciones notificaciones
 		if total_input_traffic >= limites[0]:
 			notificar(host,comunidad,'Bytes de entrada por segundo',limites[0])
 		if total_tcp_established >= limites[1]:
@@ -150,13 +84,50 @@ def actualizarLB(cadena,comunidad,host,puerto,rrd,limites):
 		if input_icmp_msgs >= limites[3]:
 			notificar(host,comunidad,'mensajes ICMP de entrada por segundo',limites[3])
 		if input_snmp_getReq >= limites[4]:
-			notificar(host,comunidad,'solicitudes SNMP de entrada por segundo',limites[4])
-		
-		time.sleep(1)
+			notificar(host,comunidad,'solicitudes SNMP de entrada por segundo',limites[4])		
 
 	if ret:
 		print rrdtool.error()
 		time.sleep(300)
+
+def actualizarLB(cadena,comunidad,host,puerto,rrd,max_ram):
+	ram_used = 0
+	
+	#Verifica que exista una rrd asociada al host, en caso de no existir crea una rrd nueva
+	archivo_rrd = Path(rrd+".rrd")
+	if archivo_rrd.is_file() == False:
+		crearRRD.crearLB(rrd+".rrd")
+		print "rrd LB creada"
+	else:
+		print "Abriendo rrd LB..."
+
+	#Inicia proceso de adquisicion de datos
+	while 1:
+		print cadena
+		#octetos de entrada de la interfaz eth
+		ram_used = int(
+			consultaSNMP(comunidad,host,puerto,
+						 '1.3.6.1.4.1.2021.4.6.0'))
+		porcentaje = ram_used*100/max_ram
+		valor = "N:" + str(porcentaje)
+
+		print valor
+		rrdtool.update(rrd+'.rrd', valor) # actualizamos el archivo previamente creado en rrd1.py
+		rrdtool.dump(rrd+'.rrd',rrd+'.xml') # ver el contenido de la bd opcional
+		time.sleep(1)
+		
+		#Verifica limites para enviar notificaciones notificaciones
+		if porcentaje >= limites[0]:
+			notificar(host,comunidad,'% de RAM - umbral ready',limites[0])
+		if porcentaje >= limites[1]:
+			notificar(host,comunidad,'% de RAM - umbral set',limites[0])	
+		if porcentaje >= limites[2]:
+			notificar(host,comunidad,'% de RAM - umbral go',limites[0])							
+
+	if ret:
+		print rrdtool.error()
+		time.sleep(300)
+
 
 def actualizarHW(cadena,comunidad,host,puerto,rrd):
 	total_input_traffic = 0
@@ -202,7 +173,7 @@ def actualizarHW(cadena,comunidad,host,puerto,rrd):
 
 def notificar(host,comunidad,unidad,limite):
 	#Implementa envio de correo electronico
-	print "Notificacion importante - mini Observium\nEl host "+host+" perteneciente a la comunidad "+comunidad+" ha sobrepasado el limite de "+str(limite)+" "+unidad+" permitidos."
+	print "Notificacion importante - mini Observium\nEl host "+host+" perteneciente a la comunidad "+comunidad+" ha sobrepasado el limite de "+str(limite)+" "+unidad+" permitida."
 
 
 if __name__ == '__main__':
