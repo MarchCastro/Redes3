@@ -233,12 +233,9 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
 		print "Error en la graficacion"
 		
 def graficar_LB(cadena,rrd,image_name,id_grafica,limites):
-	print cadena
-	print rrd
-	print image_name
-	print id_grafica
-	if id_grafica == 1:
+	if id_grafica == 2:
 		while 1:
+			print cadena
 			ret = rrdtool.graphv(image_name,
 				"--title","Uso de RAM",
 				"--start",str(tiempo_inicial),
@@ -247,7 +244,7 @@ def graficar_LB(cadena,rrd,image_name,id_grafica,limites):
 				'--lower-limit', '0',
 				'--upper-limit', '100',
 				"DEF:ramused="+rrd+":ramused:AVERAGE",
-				"CDEF:ramA=ramused,0.00005,*", # Ajuste de escala
+				"CDEF:ramA=ramused,0.10000,*", # Ajuste de escala
 				"CDEF:ramU1=ramA,"+str(limites[0])+",GT,0,ramA,IF", #Si ramA es mayor que el primer umbral regresa 0, si no regresa ramA
 				"VDEF:ramMAX=ramA,MAXIMUM", # Toma el maximo valor entre todos los datos de ramA
 				"VDEF:ramMIN=ramA,MINIMUM", # Toma el minimo valor entre todos los datos de ramA
@@ -260,7 +257,7 @@ def graficar_LB(cadena,rrd,image_name,id_grafica,limites):
 				"GPRINT:ramMIN:%6.2lf %SMIN", # Etiqueta
 				"GPRINT:ramSTDEV:%6.2lf %SSTDEV", # Etiqueta
 				"GPRINT:ramLAST:%6.2lf %SLAST" ) # Etiqueta
-    		time.sleep(1)
+			time.sleep(1)
 	else:
 		print "Error en la graficacion"		
 

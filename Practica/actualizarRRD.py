@@ -99,7 +99,7 @@ def actualizarLB(cadena,comunidad,host,puerto,rrd,limites):
 		ram_used = int(
 			consultaSNMP(comunidad,host,puerto,
 						 '1.3.6.1.4.1.2021.4.6.0'))
-		porcentaje = ram_used*100/max_ram
+		porcentaje = (ram_used*100)/max_ram
 		valor = "N:" + str(porcentaje)
 
 		print valor
@@ -108,12 +108,12 @@ def actualizarLB(cadena,comunidad,host,puerto,rrd,limites):
 		time.sleep(1)
 		
 		#Verifica limites para enviar notificaciones notificaciones
-		if porcentaje >= limites[0]:
-			notificar(host,comunidad,'% de RAM - umbral ready',limites[0])
-		if porcentaje >= limites[1]:
-			notificar(host,comunidad,'% de RAM - umbral set',limites[1])
 		if porcentaje >= limites[2]:
 			notificar(host,comunidad,'% de RAM - umbral go',limites[2])
+		elif porcentaje >= limites[1]:
+			notificar(host,comunidad,'% de RAM - umbral set',limites[1])
+		elif porcentaje >= limites[0]:
+			notificar(host,comunidad,'% de RAM - umbral ready',limites[0])
 
 	if ret:
 		print rrdtool.error()
@@ -164,7 +164,8 @@ def actualizarHW(cadena,comunidad,host,puerto,rrd):
 
 def notificar(host,comunidad,unidad,limite):
 	#Implementa envio de correo electronico
-	print "Notificacion importante - mini Observium\nEl host "+host+" perteneciente a la comunidad "+comunidad+" ha sobrepasado el limite de "+str(limite)+" "+unidad+" permitida."
+	#print "Notificacion importante - mini Observium\nEl host "+host+" perteneciente a la comunidad "+comunidad+" ha sobrepasado el limite de "+str(limite)+" "+unidad+" permitida."
+	pass
 
 
 if __name__ == '__main__':

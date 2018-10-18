@@ -15,7 +15,7 @@ class VentanaGraficas(object):
 
 		self.rrd_name = host+"-net.rrd"
 		#variables HW
-		self.rrd_name_LB = host+"_LB.rrd"
+		self.rrd_name_LB = host+"-LB.rrd"
 		#variables HW
 		self.rrd_name_HW = host+"_HW.rrd"
 		#self.rrd_name = "net3.rrd" # Nombre de la rrd del host
@@ -30,13 +30,13 @@ class VentanaGraficas(object):
 		tk.Label(self.window, text='Servicio', fg='black').grid(row=0, column=0)
 		tk.Label(self.window, text='Algoritmos', fg='black').grid(row=0, column=1)
 		tk.Button(self.window, text='Trafico de la interfaz', command= lambda: self.inicia_ventana_grafica(1)).grid(row=1, column=0)
-		tk.Button(self.window, text='Linea de base - CPU', command= lambda: self.inicia_ventana_grafica_LB(1)).grid(row=1, column=1)
+		tk.Button(self.window, text='Linea de base - CPU', command= lambda: self.inicia_ventana_grafica_LB(2)).grid(row=1, column=1)
 		tk.Button(self.window, text='Holt Winters', command= lambda: self.inicia_ventana_grafica_holtW(1)).grid(row=1, column=2)
 		tk.Button(self.window, text='Conexiones TCP establecidas', command= lambda: self.inicia_ventana_grafica(2)).grid(row=2, column=0)
-		tk.Button(self.window, text='Linea de base - RAM', command= lambda: self.inicia_ventana_grafica_LB(1)).grid(row=2, column=1)
+		tk.Button(self.window, text='Linea de base - RAM', command= lambda: self.inicia_ventana_grafica_LB(2)).grid(row=2, column=1)
 		tk.Button(self.window, text='Holt Winters', command= lambda: self.inicia_ventana_grafica_holtW(2)).grid(row=2, column=2)
 		tk.Button(self.window, text='Segmentos TCP', command= lambda: self.inicia_ventana_grafica(3)).grid(row=3, column=0)
-		tk.Button(self.window, text='Linea de base - HDD', command= lambda: self.inicia_ventana_grafica_LB(1)).grid(row=3, column=1)
+		tk.Button(self.window, text='Linea de base - HDD', command= lambda: self.inicia_ventana_grafica_LB(2)).grid(row=3, column=1)
 		tk.Button(self.window, text='Holt Winters', command= lambda: self.inicia_ventana_grafica_holtW(3)).grid(row=3, column=2)
 		tk.Button(self.window, text='Estadisticas ICMP', command= lambda: self.inicia_ventana_grafica(4)).grid(row=4, column=0)
 		tk.Button(self.window, text='Holt Winters', command= lambda: self.inicia_ventana_grafica_holtW(4)).grid(row=4, column=2)
@@ -46,7 +46,7 @@ class VentanaGraficas(object):
 	def inicia_ventana_grafica(self,id_grafica):
 		a = Grafica(self.root,self.rrd_name,self.host+"-"+str(id_grafica)+".png",id_grafica)
 	def inicia_ventana_grafica_LB(self,id_grafica):
-		a = Grafica_LB(self.root,self.rrd_name_LB,self.host+"-"+str(id_grafica)+"_LB.png",id_grafica,self.limites_LB)
+		a = Grafica_LB(self.root,self.rrd_name_LB,self.host+"-"+str(id_grafica)+"-LB.png",id_grafica,self.limites_LB)
 	def inicia_ventana_grafica_holtW(self,id_grafica):
 		a = Grafica_HW(self.root,self.rrd_name_HW,self.host+"_"+str(id_grafica)+"_HW.png",id_grafica)	
 		
@@ -154,7 +154,7 @@ class Grafica_LB(object):
 		self.display = None	
 	
 		#Debe ser un hilo por cada grafica iniciada
-		t2 = threading.Thread(target=graficar_LB, args=("Graficando...",self.rrd_name,self.imagen,self.id_grafica,limites,))
+		t2 = threading.Thread(target=graficar_LB, args=("Graficando LB...",self.rrd_name,self.imagen,self.id_grafica,limites,))
 		t2.daemon = True
 		t2.start()
 	
@@ -178,7 +178,7 @@ class Grafica_LB(object):
 		self.img = ImageTk.PhotoImage(Image.open(self.imagen))
 		self.display.config(image=self.img)
 		self.window1.after(1000, self.actualiza_imagen)
-		print "Actualizacion img..."
+		print "Actualizacion img LB..."
 
 if __name__ == '__main__':
 	#Este hilo debe inciar desde la pantalla principal

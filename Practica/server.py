@@ -507,8 +507,8 @@ def inicia_capturas():
 					
 					# Hilos de actualizacion de rrd con Linea Base (ram, cpu, disco)
 					threadLB = threading.Thread(target=actualizarLB, args=(
-					'Actualizando LB' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
-					datos[0]+'_LB',limites_LB,))
+					'Actualizando LB ' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
+					datos[0]+'-LB',limites_LB,))
 
 					# Hilos de actualizacion de rrd con Holt Winters
 					threadHW = threading.Thread(target=actualizarHW, args=(
