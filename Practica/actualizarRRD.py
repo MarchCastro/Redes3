@@ -73,24 +73,12 @@ def actualizar(cadena,comunidad,host,puerto,rrd):
 		rrdtool.update(rrd+'.rrd', valor) # actualizamos el archivo previamente creado en rrd1.py
 		rrdtool.dump(rrd+'.rrd',rrd+'.xml') # ver el contenido de la bd opcional
 		time.sleep(1)
-		
-		#Verifica limites para enviar notificaciones notificaciones
-		if total_input_traffic >= limites[0]:
-			notificar(host,comunidad,'Bytes de entrada por segundo',limites[0])
-		if total_tcp_established >= limites[1]:
-			notificar(host,comunidad,'conexiones TCP establecidas',limites[1])
-		if input_tcp_segs >= limites[2]:
-			notificar(host,comunidad,'segmentos TCP de entrada por segundo',limites[2])
-		if input_icmp_msgs >= limites[3]:
-			notificar(host,comunidad,'mensajes ICMP de entrada por segundo',limites[3])
-		if input_snmp_getReq >= limites[4]:
-			notificar(host,comunidad,'solicitudes SNMP de entrada por segundo',limites[4])		
 
 	if ret:
 		print rrdtool.error()
 		time.sleep(300)
 
-def actualizarLB(cadena,comunidad,host,puerto,rrd,max_ram):
+def actualizarLB(cadena,comunidad,host,puerto,rrd,limites):
 	ram_used = 0
 	
 	#Verifica que exista una rrd asociada al host, en caso de no existir crea una rrd nueva
@@ -100,6 +88,9 @@ def actualizarLB(cadena,comunidad,host,puerto,rrd,max_ram):
 		print "rrd LB creada"
 	else:
 		print "Abriendo rrd LB..."
+
+	# Obtiene max ram del host
+	max_ram = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.4.1.2021.4.5.0'))
 
 	#Inicia proceso de adquisicion de datos
 	while 1:
@@ -120,9 +111,9 @@ def actualizarLB(cadena,comunidad,host,puerto,rrd,max_ram):
 		if porcentaje >= limites[0]:
 			notificar(host,comunidad,'% de RAM - umbral ready',limites[0])
 		if porcentaje >= limites[1]:
-			notificar(host,comunidad,'% de RAM - umbral set',limites[0])	
+			notificar(host,comunidad,'% de RAM - umbral set',limites[1])
 		if porcentaje >= limites[2]:
-			notificar(host,comunidad,'% de RAM - umbral go',limites[0])							
+			notificar(host,comunidad,'% de RAM - umbral go',limites[2])
 
 	if ret:
 		print rrdtool.error()

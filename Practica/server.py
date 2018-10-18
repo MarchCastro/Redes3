@@ -42,7 +42,7 @@ photoCanvas.grid(row=0, column=5, sticky="nsew")
 canvasFrame = None
 
 #La siguiente lista contiene los limites para linea base y notificaciones
-limites = [30,50,60]
+limites_LB = [30,50,60]
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
@@ -87,7 +87,7 @@ def graphics(parametros): #Abre un recuadro a partir del recuadro principal y mu
    #graphic_window = Tkinter.Toplevel(top)
    #graphic_window.title("Graficos")
    #print parametros
-   a = VentanaGraficas(top,parametros[2])
+   a = VentanaGraficas(top,parametros[2],limites_LB)
    #print comunidad, puerto, ip, oid
 
 
@@ -506,11 +506,9 @@ def inicia_capturas():
 					datos[0] + '-net',))
 					
 					# Hilos de actualizacion de rrd con Linea Base (ram, cpu, disco)
-					# Obtiene max ram del host
-					max_ram = int(consultaSNMP(datos[3],datos[0],datos[2],'1.3.6.1.4.1.2021.4.5.0'))
 					threadLB = threading.Thread(target=actualizarLB, args=(
 					'Actualizando LB' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
-					datos[0]+'_LB',max_ram))
+					datos[0]+'_LB',limites_LB,))
 
 					# Hilos de actualizacion de rrd con Holt Winters
 					threadHW = threading.Thread(target=actualizarHW, args=(
