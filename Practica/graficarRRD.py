@@ -95,7 +95,7 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
 	if id_grafica == 1:	
 		while 1:
 			ret = rrdtool.graph(image_name,
-                        "--start", str(rrdtool.last(rrd)-1800),#'1479434100',
+                        "--start", str(rrdtool.last(rrd)-3600),
                         "--end",str(rrdtool.last(rrd)),
                         "--vertical-label=Bytes/s",
                         #Declaro cada valor que quiero mostrar en grafica
@@ -106,19 +106,20 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
                         "DEF:fail="+rrd+":inoctets:FAILURES",
 
                         "CDEF:scaledobs=obs,8,*", #los valores obsevados, los multiplico *8
+						"CDEF:scaledout=outoctets,8,*", #los valores obsevados, los multiplico *8
                         "CDEF:upper=pred,dev,2,*,+",#limite superior                        
                         "CDEF:lower=pred,dev,2,*,-",#limite inferior
                         "CDEF:scaledupper=upper,8,*",
                         "CDEF:scaledlower=lower,8,*",
                         "CDEF:scaledpred=pred,8,*",
                         "LINE1:scaledobs#00FF00:In traffic",
-                        "LINE1:outoctets#0000FF:Out traffic",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average out bits",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average out bits",
+                        "LINE1:scaledout#0000FF:Out traffic",
                         "TICK:fail#FDD017:1.0:  Fallas",
-                        "LINE1:scaledpred#FF00FF:Prediccion")
+                        "LINE1:scaledpred#FF00FF:Prediccion",
+						"LINE1:scaledupper#00e4ef:Upper Bound Average out bits",
+                        "LINE1:scaledlower#ff0000:Lower Bound Average out bits")
     		time.sleep(1)
-	elif id_grafica == 2:	
+	"""elif id_grafica == 2:	
 		while 1:
 			ret = rrdtool.graph(image_name,
                         "--start", str(rrdtool.last(rrd)-1800),#'1479434100',
@@ -138,10 +139,10 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
                         "CDEF:scaledpred=pred,8,*",
 
                         "LINE1:scaledobs#00FF00:Conexiones TCP establecidas",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average connections",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average connections",
                         "TICK:fail#FDD017:1.0:  Fallas",
-                        "LINE1:scaledpred#FF00FF:Prediccion")
+                        "LINE1:scaledpred#FF00FF:Prediccion",
+						"LINE1:scaledupper#00e4ef:Upper Bound Average connections",
+                        "LINE1:scaledlower#ff0000:Lower Bound Average connections")
     		time.sleep(1)
 
 	elif id_grafica == 3:
@@ -167,10 +168,10 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
 
                         "LINE1:intcpsegs#00FF00:In TCP traffic",
                         "LINE1:outtcpsegs#0000FF:Out TCP traffic",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average s. out",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average s. out",
                         "TICK:fail#FDD017:1.0:  Fallas",
-                        "LINE1:scaledpred#FF00FF:Prediccion")
+                        "LINE1:scaledpred#FF00FF:Prediccion",
+						"LINE1:scaledupper#00e4ef:Upper Bound Average s. out",
+                        "LINE1:scaledlower#ff0000:Lower Bound Average s. out")
 			time.sleep(1)
 	elif id_grafica == 4:
 		while 1:
@@ -195,10 +196,10 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
 
                         "LINE1:scaledobs#00FF00:In ICMP msgs",
                         "LINE1:outicmpmsgs#0000FF:Out ICMP msgs",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average out msgs.",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average out msgs.",
                         "TICK:fail#FDD017:1.0:  Fallas",
-                        "LINE1:scaledpred#FF00FF:Prediccion")
+                        "LINE1:scaledpred#FF00FF:Prediccion",
+						"LINE1:scaledupper#00e4ef:Upper Bound Average out msgs.",
+                        "LINE1:scaledlower#ff0000:Lower Bound Average out msgs.")
     		time.sleep(1)
 			
 	elif id_grafica == 5:
@@ -224,13 +225,13 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
 						
                         "LINE1:scaledobs#00FF00:Solicitudes",
                         "LINE1:outsnmpresponses#0000FF:Respuestas",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average respuestas",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average respuestas",
                         "TICK:fail#FDD017:1.0:  Fallas",
-                        "LINE1:scaledpred#FF00FF:Prediccion")
+                        "LINE1:scaledpred#FF00FF:Prediccion",
+						"LINE1:scaledupper#00e4ef:Upper Bound Average respuestas",
+                        "LINE1:scaledlower#ff0000:Lower Bound Average respuestas")
     		time.sleep(1)
 	else:
-		print "Error en la graficacion"	
+		print "Error en la graficacion"	"""
 
 if __name__ == '__main__':
 	graficar("Graficando...")

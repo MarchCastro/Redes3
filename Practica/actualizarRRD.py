@@ -175,7 +175,7 @@ def actualizarHW(cadena,comunidad,host,puerto,rrd):
 		total_input_traffic = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.2.2.1.10.3'))
 		total_output_traffic = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.2.2.1.16.3'))
 
-		total_tcp_established = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.6.9.0'))
+		"""total_tcp_established = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.6.9.0'))
 		
 		input_tcp_segs = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.6.10.0'))
 		output_tcp_segs = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.6.11.0'))
@@ -184,17 +184,17 @@ def actualizarHW(cadena,comunidad,host,puerto,rrd):
 		output_icmp_msgs = int( consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.5.14.0'))
 		
 		input_snmp_getReq = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.11.15.0'))
-		output_snmp_getResp = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.11.28.0'))
+		output_snmp_getResp = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.11.28.0'))"""
 
-		valor = "N:" + str(total_input_traffic) + ':' + str(total_output_traffic) + ':' + str(total_tcp_established) + ':' + str(input_tcp_segs) + ':' + str(output_tcp_segs) + ':' + str(input_icmp_msgs) + ':' + str(output_icmp_msgs) + ':' + str(input_snmp_getReq) + ':' + str(output_snmp_getResp)
+		#valor = str(rrdtool.last(rrd+".rrd")+60) + str(total_input_traffic) + ':' + str(total_output_traffic) + ':' + str(total_tcp_established) + ':' + str(input_tcp_segs) + ':' + str(output_tcp_segs) + ':' + str(input_icmp_msgs) + ':' + str(output_icmp_msgs) + ':' + str(input_snmp_getReq) + ':' + str(output_snmp_getResp)
 
-		#valor = str(rrdtool.last(rrd+".rrd")+60)+":" + str(total_input_traffic) + ':' + str(total_output_traffic)
+		valor = str(rrdtool.last(rrd+".rrd")+60)+":" + str(total_input_traffic) + ':' + str(total_output_traffic)
 		#valor = "N:" + str(total_input_traffic) + ':' + str(total_output_traffic)
 		print valor
 		
 		rrdtool.update(rrd+'.rrd', valor)
 		rrdtool.dump(rrd+'.rrd',rrd+'.xml')
-    	time.sleep(1)
+    	#time.sleep(1)
 
 	if ret:
 		print rrdtool.error()
