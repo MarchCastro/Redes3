@@ -15,7 +15,7 @@ from Tkinter import *
 from tkMessageBox import showinfo
 from pysnmp.hlapi import *
 from time import sleep
-
+from getSNMP import consultaSNMP
 import MigetSNMP
 from MigetSNMP import *
 from actualizarRRD import actualizar, actualizarLB, actualizarHW
@@ -42,9 +42,7 @@ photoCanvas.grid(row=0, column=5, sticky="nsew")
 canvasFrame = None
 
 #La siguiente lista contiene los limites para linea base y notificaciones
-#Corresponde a: [octetos de entrada (bytes por segundo), numero de conexiones tcp, segmentos tcp de entrada por segundo,
-#mensajes icmp de entrada por segundo, respuestas snmp de entrada por segundo]
-limites = [25,30,25,5,5]
+limites_LB = [30,50,60]
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
@@ -89,7 +87,7 @@ def graphics(parametros): #Abre un recuadro a partir del recuadro principal y mu
    #graphic_window = Tkinter.Toplevel(top)
    #graphic_window.title("Graficos")
    #print parametros
-   a = VentanaGraficas(top,parametros[2])
+   a = VentanaGraficas(top,parametros[2],limites_LB)
    #print comunidad, puerto, ip, oid
 
 
@@ -502,15 +500,15 @@ def inicia_capturas():
 					if datos[3].endswith('\n'):
 						datos[3] = datos[3][:-1]
 						
-					# Hilos de actualizacion de rrd primer parcial
+					# Hilos de actualizacion de rrd primer parcial y linea base
 					thread = threading.Thread(target=actualizar, args=(
 					'Actualizando ' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
 					datos[0] + '-net',))
 					
-					# Hilos de actualizacion de rrd con Linea Base
+					# Hilos de actualizacion de rrd con Linea Base (ram, cpu, disco)
 					threadLB = threading.Thread(target=actualizarLB, args=(
-					'Actualizando LB' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
-					datos[0] + '-net',limites,))
+					'Actualizando LB ' + datos[0] + ' ' + datos[3], datos[3], datos[0], datos[2],
+					datos[0]+'-LB',limites_LB,))
 
 					# Hilos de actualizacion de rrd con Holt Winters
 					threadHW = threading.Thread(target=actualizarHW, args=(

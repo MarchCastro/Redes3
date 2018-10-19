@@ -231,7 +231,37 @@ def graficar_HW(cadena,rrd,image_name,id_grafica):
                         "LINE1:scaledlower#ff0000:Lower Bound Average respuestas")
     		time.sleep(1)
 	else:
-		print "Error en la graficacion"	"""
+		print "Error en la graficacion"""
+		
+def graficar_LB(cadena,rrd,image_name,id_grafica,limites):
+	if id_grafica == 2:
+		while 1:
+			print cadena
+			ret = rrdtool.graphv(image_name,
+				"--title","Uso de RAM",
+				"--start",str(tiempo_inicial),
+				"--end",str(tiempo_final),
+				"--vertical-label=Uso %",
+				'--lower-limit', '0',
+				'--upper-limit', '100',
+				"DEF:ramused="+rrd+":ramused:AVERAGE",
+				"CDEF:ramA=ramused,0.10000,*", # Ajuste de escala
+				"CDEF:ramU1=ramA,"+str(limites[0])+",GT,0,ramA,IF", #Si ramA es mayor que el primer umbral regresa 0, si no regresa ramA
+				"VDEF:ramMAX=ramA,MAXIMUM", # Toma el maximo valor entre todos los datos de ramA
+				"VDEF:ramMIN=ramA,MINIMUM", # Toma el minimo valor entre todos los datos de ramA
+				"VDEF:ramSTDEV=ramA,STDEV", # Toma la desviacion estandar de todos los datos de ramA
+				"VDEF:ramLAST=ramA,LAST", # Toma el ultimo valor existente en los datos de ramA
+				"AREA:ramA#00FF00:Uso de RAM", # Dibuja a ram con verde
+				"AREA:ramU1#FF9F00:Uso de RAM menor al "+str(limites[0])+"%", # Dibuja el trafico menor al primer umbral
+				"HRULE:"+str(limites[0])+"#FF0000:Umbral 1", # Dibuja un umbral
+				"GPRINT:ramMAX:%6.2lf %SMAX", # Etiqueta
+				"GPRINT:ramMIN:%6.2lf %SMIN", # Etiqueta
+				"GPRINT:ramSTDEV:%6.2lf %SSTDEV", # Etiqueta
+				"GPRINT:ramLAST:%6.2lf %SLAST" ) # Etiqueta
+			time.sleep(1)
+	else:
+		print "Error en la graficacion"		
+
 
 if __name__ == '__main__':
 	graficar("Graficando...")
