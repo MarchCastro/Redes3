@@ -244,7 +244,7 @@ def graficar_LB(cadena,rrd,image_name,id_grafica,limites):
 				'--lower-limit', '0',
 				'--upper-limit', '100',
 				"DEF:ramused="+rrd+":ramused:AVERAGE",
-				"CDEF:ramA=ramused,0.10000,*", # Ajuste de escala
+				"CDEF:ramA=ramused,1,*", # Ajuste de escala
 				"CDEF:ramU1=ramA,"+str(limites[0])+",GT,0,ramA,IF", #Si ramA es mayor que el primer umbral regresa 0, si no regresa ramA
 				"VDEF:ramMAX=ramA,MAXIMUM", # Toma el maximo valor entre todos los datos de ramA
 				"VDEF:ramMIN=ramA,MINIMUM", # Toma el minimo valor entre todos los datos de ramA
@@ -252,7 +252,9 @@ def graficar_LB(cadena,rrd,image_name,id_grafica,limites):
 				"VDEF:ramLAST=ramA,LAST", # Toma el ultimo valor existente en los datos de ramA
 				"AREA:ramA#00FF00:Uso de RAM", # Dibuja a ram con verde
 				"AREA:ramU1#FF9F00:Uso de RAM menor al "+str(limites[0])+"%", # Dibuja el trafico menor al primer umbral
-				"HRULE:"+str(limites[0])+"#FF0000:Umbral 1", # Dibuja un umbral
+				"HRULE:"+str(limites[0])+"#088A08:Umbral 1 "+str(limites[0])+"%", # Dibuja un umbral
+				"HRULE:"+str(limites[1])+"#B18904:Umbral 2 "+str(limites[1])+"%", # Dibuja un umbral
+				"HRULE:"+str(limites[2])+"#FF0000:Umbral 3 "+str(limites[2])+"%", # Dibuja un umbral
 				"GPRINT:ramMAX:%6.2lf %SMAX", # Etiqueta
 				"GPRINT:ramMIN:%6.2lf %SMIN", # Etiqueta
 				"GPRINT:ramSTDEV:%6.2lf %SSTDEV", # Etiqueta

@@ -1,6 +1,7 @@
 import time
 import rrdtool
 import crearRRD
+from correos import enviaCorreo_LB
 from getSNMP import consultaSNMP
 from pathlib2 import Path
 
@@ -10,6 +11,8 @@ Este script importa la funcion consultaSNMP de getSNMP y la ejecuta. Genera un v
 las respuestas y actualiza la base de datos creada con rrd1.py.
 Finalemente genera un respaldo en xml. Esto lo hace cada segundo.
 '''
+#Un valor de 0 significa que no se ha sobrepasado ese limite, un valor de 1 indica que ese limite ya fue sobrepasado
+estados_limites = [0,0,0]
 
 def actualizar(cadena,comunidad,host,puerto,rrd):
 	total_input_traffic = 0
@@ -98,8 +101,9 @@ def actualizarLB(cadena,comunidad,host,puerto,rrd,limites):
 		#octetos de entrada de la interfaz eth
 		ram_used = int(
 			consultaSNMP(comunidad,host,puerto,
-						 '1.3.6.1.4.1.2021.4.6.0'))
-		porcentaje = (ram_used*100)/max_ram
+						 '1.3.6.1.4.1.2021.4.6.0')) #Memoria libre
+		porcentaje = (ram_used*100)/max_ram # Porcentaje de RAM libre
+		porcentaje = 100 - porcentaje; # Porcentaje de RAM usada
 		valor = "N:" + str(porcentaje)
 
 		print valor
@@ -108,11 +112,14 @@ def actualizarLB(cadena,comunidad,host,puerto,rrd,limites):
 		time.sleep(1)
 		
 		#Verifica limites para enviar notificaciones notificaciones
-		if porcentaje >= limites[2]:
+		if porcentaje >= limites[2] and estados_limites[2] == 0:
+			estados_limites[2] = 1
 			notificar(host,comunidad,'% de RAM - umbral go',limites[2])
-		elif porcentaje >= limites[1]:
+		elif porcentaje >= limites[1] and estados_limites[1] == 0:
+			estados_limites[1] = 1
 			notificar(host,comunidad,'% de RAM - umbral set',limites[1])
-		elif porcentaje >= limites[0]:
+		elif porcentaje >= limites[0] and estados_limites[0] == 0:
+			estados_limites[0] = 1
 			notificar(host,comunidad,'% de RAM - umbral ready',limites[0])
 
 	if ret:
@@ -164,8 +171,9 @@ def actualizarHW(cadena,comunidad,host,puerto,rrd):
 
 def notificar(host,comunidad,unidad,limite):
 	#Implementa envio de correo electronico
-	#print "Notificacion importante - mini Observium\nEl host "+host+" perteneciente a la comunidad "+comunidad+" ha sobrepasado el limite de "+str(limite)+" "+unidad+" permitida."
-	pass
+	cad = "Notificacion importante - mini Observium\nEl host "+host+" perteneciente a la comunidad "+comunidad+" ha sobrepasado el limite de "+str(limite)+" "+unidad+" permitida."
+	print cad
+	enviaCorreo_LB(cad)
 
 
 if __name__ == '__main__':
