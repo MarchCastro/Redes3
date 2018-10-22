@@ -16,7 +16,7 @@ def enviaCorreo_LB(mensaje):
 	
 	msg['Subject']="Alerta - MiniObservium"
 	msg.attach(MIMEText(mensaje))
-	png_file = '192.168.1.66-2-LB.png'
+	png_file = '10.100.71.106-2-LB.png'
     #print png_file
 	fp = open(png_file, 'rb')
 	img = MIMEImage(fp.read())
