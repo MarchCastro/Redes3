@@ -1,7 +1,7 @@
 import time
 import rrdtool
 import crearRRD
-from correos import enviaCorreo_LB
+from correos import enviaCorreo_LB, send_alert_attached, check_aberration
 from getSNMP import consultaSNMP
 from pathlib2 import Path
 
@@ -128,23 +128,30 @@ def actualizarLB(cadena,comunidad,host,puerto,rrd,limites):
 
 
 def actualizarHW(cadena,comunidad,host,puerto,rrd):
+	print 'Entro actualizarHW ',cadena,comunidad,host,puerto,rrd
+	
 	total_input_traffic = 0
 	total_output_traffic = 0
-	
+	rrdpath="./RRD_HW/"
+	pngpath="./IMG_HW/"
+	fname=rrd+".rrd"
+	pngfname=rrd+".png"
 	#Verifica que exista una rrd asociada al host, en caso de no existir crea una rrd nueva
-	archivo_rrd = Path(rrd+".rrd")
+	archivo_rrd = Path(rrdpath+fname)
 	if archivo_rrd.is_file() == False:
-		crearRRD.crearHW(rrd+".rrd")
-		print "rrd HW Creada..."
+		crearRRD.crearHW(rrdpath+fname)
+		print "rrd HW Creada... en",rrdpath,fname
 	else:
 		print "Abriendo rrd HW..."
 
+	endDate = rrdtool.last(rrdpath+fname) #ultimo valor del XML
+	begDate = endDate - 3600
 	#Inicia proceso de adquisicion de datos HW
 	while 1:		
 		total_input_traffic = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.2.2.1.10.3'))
 		total_output_traffic = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.2.2.1.16.3'))
-
-		"""total_tcp_established = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.6.9.0'))
+		
+		'''total_tcp_established = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.6.9.0'))
 		
 		input_tcp_segs = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.6.10.0'))
 		output_tcp_segs = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.6.11.0'))
@@ -153,18 +160,18 @@ def actualizarHW(cadena,comunidad,host,puerto,rrd):
 		output_icmp_msgs = int( consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.5.14.0'))
 		
 		input_snmp_getReq = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.11.15.0'))
-		output_snmp_getResp = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.11.28.0'))"""
-
-		#valor = str(rrdtool.last(rrd+".rrd")+60) + str(total_input_traffic) + ':' + str(total_output_traffic) + ':' + str(total_tcp_established) + ':' + str(input_tcp_segs) + ':' + str(output_tcp_segs) + ':' + str(input_icmp_msgs) + ':' + str(output_icmp_msgs) + ':' + str(input_snmp_getReq) + ':' + str(output_snmp_getResp)
-
-		valor = str(rrdtool.last(rrd+".rrd")+60)+":" + str(total_input_traffic) + ':' + str(total_output_traffic)
-		#valor = "N:" + str(total_input_traffic) + ':' + str(total_output_traffic)
-		print valor
+		output_snmp_getResp = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.11.28.0'))'''
 		
-		rrdtool.update(rrd+'.rrd', valor)
-		rrdtool.dump(rrd+'.rrd',rrd+'.xml')
-    	#time.sleep(1)
-
+		#valor = str(rrdtool.last(rrdpath+fname)+30) + str(total_input_traffic) + ':' + str(total_output_traffic) + ':' + str(total_tcp_established) + ':' + str(input_tcp_segs) + ':' + str(output_tcp_segs) + ':' + str(input_icmp_msgs) + ':' + str(output_icmp_msgs) + ':' + str(input_snmp_getReq) + ':' + str(output_snmp_getResp)
+		
+		#valor = str(rrdtool.last(rrdpath+fname)+30)+":" + str(total_input_traffic) + ':' + str(total_output_traffic) + ':' + str(total_tcp_established) + ':' + str(input_tcp_segs) + ':' + str(output_tcp_segs) + ':' + str(input_icmp_msgs) + ':' + str(output_icmp_msgs) + ':' + str(input_snmp_getReq) + ':' + str(output_snmp_getResp)
+		valor = str(rrdtool.last(rrdpath+fname)+30)+":" + str(total_input_traffic) + ':' + str(total_output_traffic)
+		print 'Valor: ',valor
+		rrdtool.update(rrdpath+fname,valor)
+		rrdtool.dump(rrdpath+fname,rrd+'.xml')
+		#print "actualizar: ",rrdpath,fname, rrd
+		rrdtool.tune(rrdpath+fname,'--alpha','0.1')
+		#time.sleep(1)			
 	if ret:
 		print rrdtool.error()
 		time.sleep(300)

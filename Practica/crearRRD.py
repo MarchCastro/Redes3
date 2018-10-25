@@ -36,17 +36,18 @@ def crearLB(nombre):
 
 def crearHW(nombre):
 	print 'NOMBREEE '+nombre
+
 	ret = rrdtool.create(nombre,
 						"--start",'N',
 						"--step",'60',
 						"DS:inoctets:COUNTER:600:U:U",
-						"DS:outoctets:COUNTER:600:U:U",	
-						"RRA:AVERAGE:0.5:1:20",
-						"RRA:HWPREDICT:50:0.1:0.0035:10:3",                      
-						"RRA:SEASONAL:10:0.1:2", 
-						"RRA:DEVSEASONAL:10:0.1:2",
-						"RRA:DEVPREDICT:50:4",
-						"RRA:FAILURES:50:7:9:4") 
+						"DS:outoctets:COUNTER:600:U:U",
+						"RRA:AVERAGE:0.5:1:1209",
+						"RRA:HWPREDICT:600:0.9:0.0035:172:3",
+						"RRA:SEASONAL:172:0.9:2",
+						"RRA:DEVSEASONAL:172:0.9:2",
+						"RRA:DEVPREDICT:600:4",
+						"RRA:FAILURES:172:7:9:4") 
 	if ret:
 		print rrdtool.error()
 

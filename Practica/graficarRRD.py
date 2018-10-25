@@ -1,6 +1,7 @@
 import sys
 import rrdtool
 import time
+from correos import send_alert_attached, check_aberration
 tiempo_actual = int(time.time())
 tiempo_final = tiempo_actual + 1800
 tiempo_inicial = tiempo_actual - 1800
@@ -88,147 +89,229 @@ def graficar(cadena,rrd,image_name,id_grafica):
 		print "Error en la graficacion"				
 
 def graficar_HW(cadena,rrd,image_name,id_grafica):
-	print cadena
-	print rrd
-	print image_name
-	print id_grafica
+	print "GRAFICAR ",rrd,image_name
+	rrdpath="./RRD_HW/"
+	pngpath="./IMG_HW/"
+	title="Deteccion de comportamiento anomalo"
+	var = 0
 	if id_grafica == 1:	
 		while 1:
-			ret = rrdtool.graph(image_name,
-                        "--start", str(rrdtool.last(rrd)-1800),#'1479434100',
-                        "--end",str(rrdtool.last(rrd)),
-                        "--vertical-label=Bytes/s",
-                        #Declaro cada valor que quiero mostrar en grafica
-						"DEF:obs="+rrd+":inoctets:AVERAGE",
-                        "DEF:outoctets="+rrd+":outoctets:AVERAGE",
-                        "DEF:pred="+rrd+":inoctets:HWPREDICT",
-                        "DEF:dev="+rrd+":inoctets:DEVPREDICT",
-                        "DEF:fail="+rrd+":inoctets:FAILURES",
+			ret = rrdtool.graph(pngpath+image_name,
+									'--start', str(rrdtool.last(rrdpath+rrd)-25800),
+									#'--start', str(rrdtool.last(fname)-51600),
+									'--end', str(rrdtool.last(rrdpath+rrd)),
+									'--title=' + title,
+									"--vertical-label=Bytes/s",
+									'--slope-mode',
+									"DEF:obs="       + rrdpath+rrd + ":inoctets:AVERAGE",
+									"DEF:outoctets=" + rrdpath+rrd + ":outoctets:AVERAGE",
+									"DEF:pred="      + rrdpath+rrd + ":inoctets:HWPREDICT",
+									"DEF:dev="       + rrdpath+rrd + ":inoctets:DEVPREDICT",
+									"DEF:fail="      + rrdpath+rrd + ":inoctets:FAILURES",
 
-                        "CDEF:scaledobs=obs,8,*", #los valores obsevados, los multiplico *8
-                        "CDEF:upper=pred,dev,2,*,+",#limite superior                        
-                        "CDEF:lower=pred,dev,2,*,-",#limite inferior
-                        "CDEF:scaledupper=upper,8,*",
-                        "CDEF:scaledlower=lower,8,*",
-                        "CDEF:scaledpred=pred,8,*",
-                        "LINE1:scaledobs#00FF00:In traffic",
-                        "LINE1:outoctets#0000FF:Out traffic",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average out bits",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average out bits",
-                        "TICK:fail#FDD017:1.0:  Fallas",
-                        "LINE1:scaledpred#FF00FF:Prediccion")
-    		time.sleep(1)
+									"CDEF:scaledobs=obs,8,*",
+									"CDEF:upper=pred,dev,2,*,+",
+									"CDEF:lower=pred,dev,2,*,-",
+									"CDEF:scaledupper=upper,8,*",
+									"CDEF:scaledlower=lower,8,*",
+									"CDEF:scaledpred=pred,8,*",
+									
+									"TICK:fail#FDD017:1.0:  Fallas",
+									"LINE3:scaledobs#00FF00:In traffic",
+									"LINE1:scaledpred#FF00FF:Prediccion\\n",
+									#"LINE1:outoctets#0000FF:Out traffic",
+									"LINE1:scaledupper#ff0000:Upper Bound Average bits in\\n",
+									"LINE1:scaledlower#0000FF:Lower Bound Average bits in")
+    		
+			time.sleep(1)
+			returned_value = check_aberration(rrdpath,rrd)
+			print returned_value
+			
+			if var == returned_value:
+				pass
+			else:    
+				if var == 0 and returned_value == 1 or var == 2 and returned_value == 1:
+					send_alert_attached('New aberrations detected',pngpath+image_name)
+					var = returned_value
+				elif var == 1 and returned_value == 2:
+					send_alert_attached('Abberations gone',pngpath+image_name)
+					var = returned_value
+
 	elif id_grafica == 2:	
 		while 1:
-			ret = rrdtool.graph(image_name,
-                        "--start", str(rrdtool.last(rrd)-1800),#'1479434100',
-                        "--end",str(rrdtool.last(rrd)),
-                        "--vertical-label=Numero de conexiones",
-                        #Declaro cada valor que quiero mostrar en grafica
-						"DEF:establishedtcpconn="+rrd+":establishedtcpconn:AVERAGE",
-                        "DEF:pred="+rrd+":establishedtcpconn:HWPREDICT",
-                        "DEF:dev="+rrd+":establishedtcpconn:DEVPREDICT",
-                        "DEF:fail="+rrd+":establishedtcpconn:FAILURES",
+			ret = rrdtool.graph(pngpath+image_name,
+									'--start', str(rrdtool.last(rrdpath+rrd)-25800),
+									#'--start', str(rrdtool.last(fname)-51600),
+									'--end', str(rrdtool.last(rrdpath+rrd)),
+									'--title=' + title,
+									"--vertical-label=Numero de conexiones",
+									'--slope-mode',
 
-                        "CDEF:scaledobs=establishedtcpconn,8,*", #los valores obsevados, los multiplico *8
-                        "CDEF:upper=pred,dev,2,*,+",#limite superior                        
-                        "CDEF:lower=pred,dev,2,*,-",#limite inferior
-                        "CDEF:scaledupper=upper,8,*",
-                        "CDEF:scaledlower=lower,8,*",
-                        "CDEF:scaledpred=pred,8,*",
+									"DEF:establishedtcpconn="+rrdpath+rrd+":establishedtcpconn:AVERAGE",
+									"DEF:pred="+rrdpath+rrd+":establishedtcpconn:HWPREDICT",
+									"DEF:dev="+rrdpath+rrd+":establishedtcpconn:DEVPREDICT",
+									"DEF:fail="+rrdpath+rrd+":establishedtcpconn:FAILURES",
 
-                        "LINE1:scaledobs#00FF00:Conexiones TCP establecidas",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average connections",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average connections",
-                        "TICK:fail#FDD017:1.0:  Fallas",
-                        "LINE1:scaledpred#FF00FF:Prediccion")
-    		time.sleep(1)
+									"CDEF:scaledobs=establishedtcpconn,8,*", #los valores obsevados, los multiplico *8
+									"CDEF:upper=pred,dev,2,*,+",#limite superior                        
+									"CDEF:lower=pred,dev,2,*,-",#limite inferior
+									"CDEF:scaledupper=upper,8,*",
+									"CDEF:scaledlower=lower,8,*",
+									"CDEF:scaledpred=pred,8,*",
+									
+									"TICK:fail#FDD017:1.0:  Fallas",
+									"LINE3:scaledobs#00FF00:Conexiones TCP establecidas",								
+									"LINE1:scaledpred#FF00FF:Prediccion\\n",
+									"LINE1:scaledupper#ff0000:Upper Bound Average connections\\n",
+									"LINE1:scaledlower#0000FF:Lower Bound Average connections")
+    		
+			time.sleep(1)
+			returned_value = check_aberration(rrdpath,rrd)
+			print returned_value
+			
+			if var == returned_value:
+				pass
+			else:    
+				if var == 0 and returned_value == 1 or var == 2 and returned_value == 1:
+					send_alert_attached('New aberrations detected',pngpath+image_name)
+					var = returned_value
+				elif var == 1 and returned_value == 2:
+					send_alert_attached('Abberations gone',pngpath+image_name)
+					var = returned_value
 
 	elif id_grafica == 3:
 		while 1:
-			print cadena
-			ret = rrdtool.graph(image_name,
-                        "--start", str(rrdtool.last(rrd)-1800),#'1479434100',
-                        "--end",str(rrdtool.last(rrd)),
-                        "--vertical-label=TCP Segs/s",
-                        #Declaro cada valor que quiero mostrar en grafica
-						"DEF:intcpsegs="+rrd+":intcpsegs:AVERAGE",
-				        "DEF:outtcpsegs="+rrd+":outtcpsegs:AVERAGE",
-                        "DEF:pred="+rrd+":intcpsegs:HWPREDICT",
-                        "DEF:dev="+rrd+":intcpsegs:DEVPREDICT",
-                        "DEF:fail="+rrd+":intcpsegs:FAILURES",
+			ret = rrdtool.graph(pngpath+image_name,
+									'--start', str(rrdtool.last(rrdpath+rrd)-25800),
+									#'--start', str(rrdtool.last(fname)-51600),
+									'--end', str(rrdtool.last(rrdpath+rrd)),
+									'--title=' + title,
+									"--vertical-label=TCP Segs/s",
+									'--slope-mode',								
 
-                        "CDEF:scaledobs=intcpsegs,8,*", #los valores obsevados, los multiplico *8
-                        "CDEF:upper=pred,dev,2,*,+",#limite superior                        
-                        "CDEF:lower=pred,dev,2,*,-",#limite inferior
-                        "CDEF:scaledupper=upper,8,*",
-                        "CDEF:scaledlower=lower,8,*",
-                        "CDEF:scaledpred=pred,8,*",
+									"DEF:intcpsegs="+rrdpath+rrd+":intcpsegs:AVERAGE",
+									"DEF:outtcpsegs="+rrdpath+rrd+":outtcpsegs:AVERAGE",
+									"DEF:pred="+rrdpath+rrd+":intcpsegs:HWPREDICT",
+									"DEF:dev="+rrdpath+rrd+":intcpsegs:DEVPREDICT",
+									"DEF:fail="+rrdpath+rrd+":intcpsegs:FAILURES",
+									
+									"CDEF:scaledobs=intcpsegs,8,*", #los valores obsevados, los multiplico *8
+									"CDEF:upper=pred,dev,2,*,+",#limite superior                        
+									"CDEF:lower=pred,dev,2,*,-",#limite inferior
+									"CDEF:scaledupper=upper,8,*",
+									"CDEF:scaledlower=lower,8,*",
+									"CDEF:scaledpred=pred,8,*",
 
-                        "LINE1:intcpsegs#00FF00:In TCP traffic",
-                        "LINE1:outtcpsegs#0000FF:Out TCP traffic",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average s. out",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average s. out",
-                        "TICK:fail#FDD017:1.0:  Fallas",
-                        "LINE1:scaledpred#FF00FF:Prediccion")
+									"TICK:fail#FDD017:1.0:  Fallas",
+									"LINE3:intcpsegs#00FF00:In TCP traffic",
+									#"LINE1:outtcpsegs#0000FF:Out TCP traffic",
+									"LINE1:scaledpred#FF00FF:Prediccion\\n",
+									#"LINE1:outoctets#0000FF:Out traffic",
+									"LINE1:scaledupper#ff0000:Upper Bound Average s. in\\n",
+									"LINE1:scaledlower#0000FF:Lower Bound Average s. in")
+    		
 			time.sleep(1)
+			returned_value = check_aberration(rrdpath,rrd)
+			print returned_value
+			
+			if var == returned_value:
+				pass
+			else:    
+				if var == 0 and returned_value == 1 or var == 2 and returned_value == 1:
+					send_alert_attached('New aberrations detected',pngpath+image_name)
+					var = returned_value
+				elif var == 1 and returned_value == 2:
+					send_alert_attached('Abberations gone',pngpath+image_name)
+					var = returned_value
+
 	elif id_grafica == 4:
 		while 1:
-			print cadena
-			ret = rrdtool.graph(image_name,
-                        "--start", str(rrdtool.last(rrd)-1800),#'1479434100',
-                        "--end",str(rrdtool.last(rrd)),
-                        "--vertical-label=ICMP msgs/s",
-                        #Declaro cada valor que quiero mostrar en grafica
-						"DEF:inicmpmsgs="+rrd+":inicmpmsgs:AVERAGE",
-				        "DEF:outicmpmsgs="+rrd+":outicmpmsgs:AVERAGE",
-                        "DEF:pred="+rrd+":inicmpmsgs:HWPREDICT",
-                        "DEF:dev="+rrd+":inicmpmsgs:DEVPREDICT",
-                        "DEF:fail="+rrd+":inicmpmsgs:FAILURES",
+			ret = rrdtool.graph(pngpath+image_name,
+									'--start', str(rrdtool.last(rrdpath+rrd)-25800),
+									#'--start', str(rrdtool.last(fname)-51600),
+									'--end', str(rrdtool.last(rrdpath+rrd)),
+									'--title=' + title,
+									"--vertical-label=ICMP msgs/s",
+									'--slope-mode',
+									
+									"DEF:inicmpmsgs="+rrdpath+rrd+":inicmpmsgs:AVERAGE",
+									"DEF:outicmpmsgs="+rrdpath+rrd+":outicmpmsgs:AVERAGE",
+									"DEF:pred="+rrdpath+rrd+":inicmpmsgs:HWPREDICT",
+									"DEF:dev="+rrdpath+rrd+":inicmpmsgs:DEVPREDICT",
+									"DEF:fail="+rrdpath+rrd+":inicmpmsgs:FAILURES",
+									
+									"CDEF:scaledobs=inicmpmsgs,8,*", #los valores obsevados, los multiplico *8
+									"CDEF:upper=pred,dev,2,*,+",#limite superior                        
+									"CDEF:lower=pred,dev,2,*,-",#limite inferior
+									"CDEF:scaledupper=upper,8,*",
+									"CDEF:scaledlower=lower,8,*",
+									"CDEF:scaledpred=pred,8,*",
 
-                        "CDEF:scaledobs=inicmpmsgs,8,*", #los valores obsevados, los multiplico *8
-                        "CDEF:upper=pred,dev,2,*,+",#limite superior                        
-                        "CDEF:lower=pred,dev,2,*,-",#limite inferior
-                        "CDEF:scaledupper=upper,8,*",
-                        "CDEF:scaledlower=lower,8,*",
-                        "CDEF:scaledpred=pred,8,*",
-
-                        "LINE1:scaledobs#00FF00:In ICMP msgs",
-                        "LINE1:outicmpmsgs#0000FF:Out ICMP msgs",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average out msgs.",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average out msgs.",
-                        "TICK:fail#FDD017:1.0:  Fallas",
-                        "LINE1:scaledpred#FF00FF:Prediccion")
-    		time.sleep(1)
+									"TICK:fail#FDD017:1.0:  Fallas",
+									"LINE3:scaledobs#00FF00:In ICMP msgs",
+                        			#"LINE3:outicmpmsgs#0000FF:Out ICMP msgs",
+									"LINE1:scaledpred#FF00FF:Prediccion\\n",
+									#"LINE1:outoctets#0000FF:Out traffic",
+									"LINE1:scaledupper#ff0000:Upper Bound Average in msgs.\\n",
+									"LINE1:scaledlower#0000FF:Lower Bound Average in msgs.")
+			time.sleep(1)
+			returned_value = check_aberration(rrdpath,rrd)
+			print returned_value
+			
+			if var == returned_value:
+				pass
+			else:    
+				if var == 0 and returned_value == 1 or var == 2 and returned_value == 1:
+					send_alert_attached('New aberrations detected',pngpath+image_name)
+					var = returned_value
+				elif var == 1 and returned_value == 2:
+					send_alert_attached('Abberations gone',pngpath+image_name)
+					var = returned_value
 			
 	elif id_grafica == 5:
 		while 1:
-			print cadena
-			ret = rrdtool.graph(image_name,
-                        "--start", str(rrdtool.last(rrd)-1800),#'1479434100',
-                        "--end",str(rrdtool.last(rrd)),
-                        "--vertical-label=SNMP PDUs/s",
-                        #Declaro cada valor que quiero mostrar en grafica
-						"DEF:insnmpresponses="+rrd+":insnmpresponses:AVERAGE",
-				        "DEF:outsnmpresponses="+rrd+":outsnmpresponses:AVERAGE",
-                        "DEF:pred="+rrd+":insnmpresponses:HWPREDICT",
-                        "DEF:dev="+rrd+":insnmpresponses:DEVPREDICT",
-                        "DEF:fail="+rrd+":insnmpresponses:FAILURES",
+			ret = rrdtool.graph(pngpath+image_name,
+									'--start', str(rrdtool.last(rrdpath+rrd)-25800),
+									#'--start', str(rrdtool.last(fname)-51600),
+									'--end', str(rrdtool.last(rrdpath+rrd)),
+									'--title=' + title,
+									"--vertical-label=SNMP PDUs/s",
+									'--slope-mode',
+									
+									"DEF:insnmpresponses="+rrdpath+rrd+":insnmpresponses:AVERAGE",
+									"DEF:outsnmpresponses="+rrdpath+rrd+":outsnmpresponses:AVERAGE",
+									"DEF:pred="+rrdpath+rrd+":insnmpresponses:HWPREDICT",
+									"DEF:dev="+rrdpath+rrd+":insnmpresponses:DEVPREDICT",
+									"DEF:fail="+rrdpath+rrd+":insnmpresponses:FAILURES",
 
-                        "CDEF:scaledobs=insnmpresponses,8,*", #los valores obsevados, los multiplico *8
-                        "CDEF:upper=pred,dev,2,*,+",#limite superior                        
-                        "CDEF:lower=pred,dev,2,*,-",#limite inferior
-                        "CDEF:scaledupper=upper,8,*",
-                        "CDEF:scaledlower=lower,8,*",
-                        "CDEF:scaledpred=pred,8,*",
-						
-                        "LINE1:scaledobs#00FF00:Solicitudes",
-                        "LINE1:outsnmpresponses#0000FF:Respuestas",
-                        "LINE1:scaledupper#00e4ef:Upper Bound Average respuestas",
-                        "LINE1:scaledlower#ff0000:Lower Bound Average respuestas",
-                        "TICK:fail#FDD017:1.0:  Fallas",
-                        "LINE1:scaledpred#FF00FF:Prediccion")
-    		time.sleep(1)
+									"CDEF:scaledobs=insnmpresponses,8,*", #los valores obsevados, los multiplico *8
+									"CDEF:upper=pred,dev,2,*,+",#limite superior                        
+									"CDEF:lower=pred,dev,2,*,-",#limite inferior
+									"CDEF:scaledupper=upper,8,*",
+									"CDEF:scaledlower=lower,8,*",
+									"CDEF:scaledpred=pred,8,*",
+
+									"TICK:fail#FDD017:1.0:  Fallas",
+									"LINE3:scaledobs#00FF00:Solicitudes",
+									#"LINE1:outsnmpresponses#0000FF:Respuestas",
+									"LINE1:scaledpred#FF00FF:Prediccion\\n",
+									#"LINE1:outoctets#0000FF:Out traffic",
+									"LINE1:scaledupper#ff0000:Upper Bound Average in responses\\n",
+									"LINE1:scaledlower#0000FF:Lower Bound Average in responses")
+    		
+			time.sleep(1)
+			returned_value = check_aberration(rrdpath,rrd)
+			print returned_value
+			
+			if var == returned_value:
+				pass
+			else:    
+				if var == 0 and returned_value == 1 or var == 2 and returned_value == 1:
+					send_alert_attached('New aberrations detected',pngpath+image_name)
+					var = returned_value
+				elif var == 1 and returned_value == 2:
+					send_alert_attached('Abberations gone',pngpath+image_name)
+					var = returned_value
 	else:
 		print "Error en la graficacion"
 		
