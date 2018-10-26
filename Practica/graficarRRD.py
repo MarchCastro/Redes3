@@ -374,8 +374,8 @@ def graficar_LB(cadena,rrd,image_name,id_grafica,limites,num_cores):
 		while 1:
 			for i in range(1,num_cores+1):
 				print cadena
-				ret = rrdtool.graphv(image_name+"-"+str(i),
-					"--title","Uso de CPU del nucleo "+str(i),
+				ret = rrdtool.graphv(image_name+"-"+str(i), # se le concatena al final el numero del nucleo
+					"--title","Uso de CPU del nucleo "+str(i), #Una imagen por nucleo
 					"--start",str(tiempo_inicial),
 					"--end",str(tiempo_final),
 					"--vertical-label=Uso %",

@@ -74,6 +74,31 @@ def makeform(root, fields): #Acomoda label en ventana de agregar agente
       entries.append((field, ent))
    return entries
 
+def mostrarInventario():
+	inv = []
+	ventana_inventario = Tkinter.Toplevel(top)
+	ventana_inventario.title("Inventario")
+	Tkinter.Label(ventana_inventario, text='IP del dispositivo    ', fg='black').grid(row=0, column=0)
+	Tkinter.Label(ventana_inventario, text='Nombre del dispositivo    ', fg='black').grid(row=0, column=1)
+	Tkinter.Label(ventana_inventario, text='Version de SO    ', fg='black').grid(row=0, column=2)
+	Tkinter.Label(ventana_inventario, text='Tiempo de actividad    ', fg='black').grid(row=0, column=3)
+	Tkinter.Label(ventana_inventario, text='Fecha y hora del host    ', fg='black').grid(row=0, column=4)
+	Tkinter.Label(ventana_inventario, text='Procesos en ejecucion    ', fg='black').grid(row=0, column=5)
+	with open("hosts.txt", 'r') as hosts:
+		for i in hosts.readlines():
+			datos = i.split(' ')
+			for j in alive_hosts:
+				if j == datos[0] and datos[0] != "127.0.0.1":  # Si esta vivo inicia un hilo con sus actualizaciones
+					if datos[3].endswith('\n'):
+						datos[3] = datos[3][:-1]
+						inv.append([datos[0], #IP del disp
+									consultaSNMP(datos[3],''+datos[0]+'',int(datos[2]),'1.3.6.1.2.1.1.5.0'), #nombre del host
+									consultaSNMP(datos[3],datos[0],int(datos[2]),'1.3.6.1.2.1.1.1.0'), #version del SO
+									consultaSNMP(datos[3],datos[0],int(datos[2]),'1.3.6.1.2.1.1.3.0'), #tiempo de actividad
+									consultaSNMP(datos[3],datos[0],int(datos[2]),'1.3.6.1.2.1.25.1.2.0'), #fecha y hora del host en hex
+									len(consultaSNMPwalk(datos[3],datos[0],int(datos[2]),'1.3.6.1.2.1.25.3.3.1.1'))]) #procesos en ejecucion
+	print inv
+	
 def addClient(): #Abre un recuadro a partir del recuadro principal y muestra su propio boton para 
 	#llamar a la funcion fetch
    root = Tkinter.Toplevel(canvasFrame)
@@ -302,6 +327,7 @@ def getHostInfo():
 
 			add = Tkinter.Button(canvasFrame, text ="Agregar agente", width=25, command = addClient).grid(row=0, column=0, sticky="nsew")
 			delete = Tkinter.Button(canvasFrame, text="Eliminar agente", width=25, command=deleteClient).grid(row=1, column=0,sticky="nsew")
+			inventario = Tkinter.Button(canvasFrame, text="Inventario", width=25, command=mostrarInventario).grid(row=2, column=0,sticky="nsew")
 			#agentInfo = Tkinter.Button(canvasFrame, text ="Informacion de agente",width=25, command = deleteClient).grid(row=2, column=0, sticky="nsew")
 
 			#getHostInfo()
