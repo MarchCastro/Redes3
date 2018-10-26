@@ -24,13 +24,20 @@ def crear(nombre):
 	if ret:
 		print rrdtool.error()
 		
-def crearLB(nombre):
-	ret = rrdtool.create(nombre,
-		                 "--start",'N',
-		                 "--step",'10',
-		                 "DS:ramused:GAUGE:600:U:U",	                                                   
-		                 "RRA:AVERAGE:0.5:6:700",
-		                 "RRA:AVERAGE:0.5:1:600")
+def crearLB(nombre,num_cores):
+	#Agrega parametros a rrd
+	rrdStr = [nombre, "--start",'N', "--step",'10']
+	#Agrega variable porcentaje de ram usado
+	rrdStr += ["DS:ramused:GAUGE:600:U:U"]
+	#Agrega variable porcentaje de HDD usado
+	rrdStr += ["DS:hddused:GAUGE:600:U:U"]	
+	#Agrega variable porcentaje de uso de cada core
+	for i in range(1,num_cores+1):
+		rrdStr += ["DS:CORE"+str(i)+":GAUGE:600:U:U"]
+	rrdStr += ["RRA:AVERAGE:0.5:6:700"]
+	rrdStr += ["RRA:AVERAGE:0.5:1:600"]
+	#Crea la rrd
+	ret = rrdtool.create(rrdStr)
 	if ret:
 		print rrdtool.error()
 

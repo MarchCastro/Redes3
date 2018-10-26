@@ -16,6 +16,7 @@ from tkMessageBox import showinfo
 from pysnmp.hlapi import *
 from time import sleep
 from getSNMP import consultaSNMP
+from getSNMP import consultaSNMPwalk
 import MigetSNMP
 from MigetSNMP import *
 from actualizarRRD import actualizar, actualizarLB, actualizarHW
@@ -42,7 +43,7 @@ photoCanvas.grid(row=0, column=5, sticky="nsew")
 canvasFrame = None
 
 #La siguiente lista contiene los limites para linea base y notificaciones
-limites_LB = [30,60,90]
+limites_LB = [40,50,65]
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
@@ -87,7 +88,8 @@ def graphics(parametros): #Abre un recuadro a partir del recuadro principal y mu
    #graphic_window = Tkinter.Toplevel(top)
    #graphic_window.title("Graficos")
    #print parametros
-   a = VentanaGraficas(top,parametros[2],limites_LB)
+   num_cores = len(consultaSNMPwalk(parametros[0],parametros[2],parametros[1],'1.3.6.1.2.1.25.3.3.1.2'))
+   a = VentanaGraficas(top,parametros[2],limites_LB,num_cores)
    #print comunidad, puerto, ip, oid
 
 

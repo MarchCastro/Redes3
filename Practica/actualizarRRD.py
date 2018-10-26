@@ -3,6 +3,7 @@ import rrdtool
 import crearRRD
 from correos import enviaCorreo_LB, send_alert_attached, check_aberration
 from getSNMP import consultaSNMP
+from getSNMP import consultaSNMPwalk
 from pathlib2 import Path
 
 
@@ -84,43 +85,86 @@ def actualizar(cadena,comunidad,host,puerto,rrd):
 def actualizarLB(cadena,comunidad,host,puerto,rrd,limites):
 	ram_used = 0
 	
+	#Obtiene numero de nucleos
+	num_cores = len(consultaSNMPwalk(comunidad,host,puerto,'1.3.6.1.2.1.25.3.3.1.2'))
+	
 	#Verifica que exista una rrd asociada al host, en caso de no existir crea una rrd nueva
 	archivo_rrd = Path(rrd+".rrd")
 	if archivo_rrd.is_file() == False:
-		crearRRD.crearLB(rrd+".rrd")
+		crearRRD.crearLB(rrd+".rrd",num_cores)
 		print "rrd LB creada"
 	else:
 		print "Abriendo rrd LB..."
 
-	# Obtiene max ram del host
+	#Obtiene max ram del host
 	max_ram = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.4.1.2021.4.5.0'))
+	#Obtiene max HDD del host
+	max_hdd = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.25.2.3.1.5.1'))
+
+	#Variable de insercion en rrd
+	valor = ""
 
 	#Inicia proceso de adquisicion de datos
 	while 1:
 		print cadena
-		#octetos de entrada de la interfaz eth
-		ram_used = int(
-			consultaSNMP(comunidad,host,puerto,
-						 '1.3.6.1.4.1.2021.4.6.0')) #Memoria libre
+		
+		#-----------------------------------------------------------------
+		#Adquisicion de RAM
+		ram_used = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.4.1.2021.4.6.0')) #Memoria libre
 		porcentaje = (ram_used*100)/max_ram # Porcentaje de RAM libre
 		porcentaje = 100 - porcentaje; # Porcentaje de RAM usada
 		valor = "N:" + str(porcentaje)
 
-		print valor
-		rrdtool.update(rrd+'.rrd', valor) # actualizamos el archivo previamente creado en rrd1.py
-		rrdtool.dump(rrd+'.rrd',rrd+'.xml') # ver el contenido de la bd opcional
-		time.sleep(1)
+		#Verifica limites para enviar notificaciones notificaciones
+		if porcentaje >= limites[2] and estados_limites[2] == 0:
+			estados_limites[2] = 1
+			notificar(host,comunidad,'% de RAM - umbral go',limites[2],'',str(1))
+		elif porcentaje >= limites[1] and estados_limites[1] == 0:
+			estados_limites[1] = 1
+			notificar(host,comunidad,'% de RAM - umbral set',limites[1],'',str(1))
+		elif porcentaje >= limites[0] and estados_limites[0] == 0:
+			estados_limites[0] = 1
+			notificar(host,comunidad,'% de RAM - umbral ready',limites[0],'',str(1))
+
+		#-----------------------------------------------------------------
+		#Adquisicion de HDD
+		hdd_used = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.25.2.3.1.6.1')) #HDD usado
+		porcentaje = (hdd_used*100)/max_hdd # Porcentaje de HDD usado
+		valor += ":" + str(porcentaje)		
 		
 		#Verifica limites para enviar notificaciones notificaciones
 		if porcentaje >= limites[2] and estados_limites[2] == 0:
 			estados_limites[2] = 1
-			notificar(host,comunidad,'% de RAM - umbral go',limites[2])
+			notificar(host,comunidad,'% de Almacenamiento - umbral go',limites[2],'',str(2))
 		elif porcentaje >= limites[1] and estados_limites[1] == 0:
 			estados_limites[1] = 1
-			notificar(host,comunidad,'% de RAM - umbral set',limites[1])
+			notificar(host,comunidad,'% de Almacenamiento - umbral set',limites[1],'',str(2))
 		elif porcentaje >= limites[0] and estados_limites[0] == 0:
 			estados_limites[0] = 1
-			notificar(host,comunidad,'% de RAM - umbral ready',limites[0])
+			notificar(host,comunidad,'% de Almacenamiento - umbral ready',limites[0],'',str(2))
+		#-----------------------------------------------------------------
+		#Adquisicion de CPU
+		cores = consultaSNMPwalk(comunidad,host,puerto,'1.3.6.1.2.1.25.3.3.1.2')
+		x = 1
+		for porcentaje in cores:
+			valor += ":" + porcentaje
+			#Verifica limites para enviar notificaciones notificaciones
+			if porcentaje >= limites[2] and estados_limites[2] == 0:
+				estados_limites[2] = 1
+				notificar(host,comunidad,'% de Procesamiento en nucleo '+str(x)+' - umbral go',limites[2],"-"+str(x),str(3))
+			elif porcentaje >= limites[1] and estados_limites[1] == 0:
+				estados_limites[1] = 1
+				notificar(host,comunidad,'% de Procesamiento en nucleo '+str(x)+' - umbral set',limites[1],"-"+str(x),str(3))
+			elif porcentaje >= limites[0] and estados_limites[0] == 0:
+				estados_limites[0] = 1
+				notificar(host,comunidad,'% de Procesamiento en nucleo '+str(x)+' - umbral ready',limites[0],"-"+str(x),str(3))
+			x = x +1		
+		#-----------------------------------------------------------------
+
+		print "LB - " + valor
+		rrdtool.update(rrd+'.rrd', valor) # actualizamos el archivo previamente creado en rrd1.py
+		rrdtool.dump(rrd+'.rrd',rrd+'.xml') # ver el contenido de la bd opcional
+		time.sleep(1)
 
 	if ret:
 		print rrdtool.error()
@@ -176,11 +220,11 @@ def actualizarHW(cadena,comunidad,host,puerto,rrd):
 		print rrdtool.error()
 		time.sleep(300)
 
-def notificar(host,comunidad,unidad,limite):
+def notificar(host,comunidad,unidad,limite,id_nucleo,id_grafica):
 	#Implementa envio de correo electronico
 	cad = "Notificacion importante - mini Observium\nEl host "+host+" perteneciente a la comunidad "+comunidad+" ha sobrepasado el limite de "+str(limite)+" "+unidad+" permitida."
-	print cad
-	enviaCorreo_LB(cad)
+	#print cad + " " + host+"-"+id_grafica+"-LB.png"+id_nucleo
+	enviaCorreo_LB(cad,host+"-"+id_grafica+"-LB.png"+id_nucleo)
 
 
 if __name__ == '__main__':
