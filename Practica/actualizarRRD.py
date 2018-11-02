@@ -148,7 +148,7 @@ def actualizarHW(cadena,comunidad,host,puerto,rrd):
 	begDate = endDate - 3600
 	#Inicia proceso de adquisicion de datos HW
 	while 1:		
-		total_input_traffic = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.2.2.1.10.3'))
+		total_input_traffic = int(consultaSNMP('public','10.100.71.100',1024,'1.3.6.1.2.1.2.2.1.18.1'))
 		total_output_traffic = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.2.2.1.16.3'))
 		
 		'''total_tcp_established = int(consultaSNMP(comunidad,host,puerto,'1.3.6.1.2.1.6.9.0'))
@@ -165,7 +165,7 @@ def actualizarHW(cadena,comunidad,host,puerto,rrd):
 		#valor = str(rrdtool.last(rrdpath+fname)+30) + str(total_input_traffic) + ':' + str(total_output_traffic) + ':' + str(total_tcp_established) + ':' + str(input_tcp_segs) + ':' + str(output_tcp_segs) + ':' + str(input_icmp_msgs) + ':' + str(output_icmp_msgs) + ':' + str(input_snmp_getReq) + ':' + str(output_snmp_getResp)
 		
 		#valor = str(rrdtool.last(rrdpath+fname)+30)+":" + str(total_input_traffic) + ':' + str(total_output_traffic) + ':' + str(total_tcp_established) + ':' + str(input_tcp_segs) + ':' + str(output_tcp_segs) + ':' + str(input_icmp_msgs) + ':' + str(output_icmp_msgs) + ':' + str(input_snmp_getReq) + ':' + str(output_snmp_getResp)
-		valor = str(rrdtool.last(rrdpath+fname)+30)+":" + str(total_input_traffic) + ':' + str(total_output_traffic)
+		valor = str(rrdtool.last(rrdpath+fname)+30)+":" + str(total_input_traffic)
 		print 'Valor: ',valor
 		rrdtool.update(rrdpath+fname,valor)
 		rrdtool.dump(rrdpath+fname,rrd+'.xml')

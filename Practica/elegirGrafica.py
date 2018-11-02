@@ -31,7 +31,7 @@ class VentanaGraficas(object):
 		tk.Label(self.window, text='Algoritmos', fg='black').grid(row=0, column=1)
 		tk.Button(self.window, text='Trafico de la interfaz', command= lambda: self.inicia_ventana_grafica(1)).grid(row=1, column=0)
 		tk.Button(self.window, text='Linea de base - CPU', command= lambda: self.inicia_ventana_grafica_LB(2)).grid(row=1, column=1)
-		tk.Button(self.window, text='Holt Winters trafico interfaz', command= lambda: self.inicia_ventana_grafica_holtW(1)).grid(row=1, column=2)
+		tk.Button(self.window, text='Holt Winters OutNUcastPkts', command= lambda: self.inicia_ventana_grafica_holtW(1)).grid(row=1, column=2)
 		tk.Button(self.window, text='Conexiones TCP establecidas', command= lambda: self.inicia_ventana_grafica(2)).grid(row=2, column=0)
 		tk.Button(self.window, text='Linea de base - RAM', command= lambda: self.inicia_ventana_grafica_LB(2)).grid(row=2, column=1)
 		tk.Button(self.window, text='Holt Winters conexiones TCP', command= lambda: self.inicia_ventana_grafica_holtW(2)).grid(row=2, column=2)

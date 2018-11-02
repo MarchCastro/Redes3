@@ -89,7 +89,7 @@ def check_aberration(rrdpath, fname):
         values = rrdtool.graph(graphtmpfile.name+'F',
                                 '--start', str(previosupdate),
                                 '--end', str(lastupdate),
-                            'DEF:f0=' + rrdfilename + ':inoctets:FAILURES',#:start=' + previosupdate + ':end=' + str(lastupdate),
+                            'DEF:f0=' + rrdfilename + ':outucastpkts:FAILURES',#:start=' + previosupdate + ':end=' + str(lastupdate),
                             'PRINT:f0:LAST:%1.0lf')
         print values
         

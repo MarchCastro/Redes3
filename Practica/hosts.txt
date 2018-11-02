@@ -1,1 +1,2 @@
-192.168.0.18 1 161 comunidadEquipo12_4CM3
+192.168.1.66 1 161 comunidadEquipo12_4CM3
+10.100.71.100 1 1024 public
