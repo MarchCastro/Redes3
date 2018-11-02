@@ -16,16 +16,15 @@ mailserver = 'mx.my-domain.com'
 mailsender = 'ruben.murga.d@gmail.com'
 gmail_password = 'aqolqmlxpyvfzcpy'
 
-def enviaCorreo_LB(mensaje):
+def enviaCorreo_LB(mensaje,imagen):
 	msg = MIMEMultipart()
-	msg['From']='ruben.murga.d@gmail.com' 
-	msg['To']="march.castrof@gmail.com"
+	msg['From']='ruben.murga.d@gmail.com'
+	msg['To']="samuel.asantiagom@gmail.com"
 	
 	msg['Subject']="Alerta - MiniObservium"
 	msg.attach(MIMEText(mensaje))
-	png_file = '10.100.71.106-2-LB.png'
     #print png_file
-	fp = open(png_file, 'rb')
+	fp = open(imagen, 'rb')
 	img = MIMEImage(fp.read())
 	fp.close()
 	msg.attach(img)
@@ -37,7 +36,7 @@ def enviaCorreo_LB(mensaje):
 	mailServer.ehlo()
 	mailServer.login('ruben.murga.d@gmail.com',"aqolqmlxpyvfzcpy")
 	
-	mailServer.sendmail('ruben.murga.d@gmail.com', "march.castrof@gmail.com", msg.as_string())
+	mailServer.sendmail('ruben.murga.d@gmail.com', "samuel.asantiagom@gmail.com", msg.as_string())
 	
 	mailServer.close() 
 

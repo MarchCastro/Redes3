@@ -4,14 +4,17 @@ import threading
 import Tkinter as tk
 from actualizarRRD import actualizar
 from graficarRRD import graficar, graficar_HW, graficar_LB
-from PIL import ImageTk, Image
+from PIL import ImageTk
+import Image
+import os
 
 class VentanaGraficas(object):
-	def __init__(self,root,host,limites_LB):
+	def __init__(self,root,host,limites_LB,num_cores):
 		self.root = root
 		self.window = None
 		self.host = host
 		self.limites_LB = limites_LB
+		self.num_cores = num_cores
 
 		self.rrd_name = host+"-net.rrd"
 		#variables HW
@@ -29,14 +32,21 @@ class VentanaGraficas(object):
 		self.window.title("Graficos")
 		tk.Label(self.window, text='Servicio', fg='black').grid(row=0, column=0)
 		tk.Label(self.window, text='Algoritmos', fg='black').grid(row=0, column=1)
+		
+		tk.Button(self.window, text='Linea de base - RAM', command= lambda: self.inicia_ventana_grafica_LB(1)).grid(row=1, column=1)
+		tk.Button(self.window, text='Linea de base - HDD', command= lambda: self.inicia_ventana_grafica_LB(2)).grid(row=2, column=1)
+		tk.Button(self.window, text='Linea de base - CPU', command= lambda: self.inicia_ventana_grafica_LB(3)).grid(row=3, column=1)
+
 		tk.Button(self.window, text='Trafico de la interfaz', command= lambda: self.inicia_ventana_grafica(1)).grid(row=1, column=0)
+<<<<<<< HEAD
 		tk.Button(self.window, text='Linea de base - CPU', command= lambda: self.inicia_ventana_grafica_LB(2)).grid(row=1, column=1)
 		tk.Button(self.window, text='Holt Winters OutNUcastPkts', command= lambda: self.inicia_ventana_grafica_holtW(1)).grid(row=1, column=2)
+=======
+		tk.Button(self.window, text='Holt Winters trafico interfaz', command= lambda: self.inicia_ventana_grafica_holtW(1)).grid(row=1, column=2)
+>>>>>>> 3d318650d668f18dba38c3f4121f637c04552665
 		tk.Button(self.window, text='Conexiones TCP establecidas', command= lambda: self.inicia_ventana_grafica(2)).grid(row=2, column=0)
-		tk.Button(self.window, text='Linea de base - RAM', command= lambda: self.inicia_ventana_grafica_LB(2)).grid(row=2, column=1)
 		tk.Button(self.window, text='Holt Winters conexiones TCP', command= lambda: self.inicia_ventana_grafica_holtW(2)).grid(row=2, column=2)
 		tk.Button(self.window, text='Segmentos TCP', command= lambda: self.inicia_ventana_grafica(3)).grid(row=3, column=0)
-		tk.Button(self.window, text='Linea de base - HDD', command= lambda: self.inicia_ventana_grafica_LB(2)).grid(row=3, column=1)
 		tk.Button(self.window, text='Holt Winters segmentos TCP', command= lambda: self.inicia_ventana_grafica_holtW(3)).grid(row=3, column=2)
 		tk.Button(self.window, text='Estadisticas ICMP', command= lambda: self.inicia_ventana_grafica(4)).grid(row=4, column=0)
 		tk.Button(self.window, text='Holt Winters estadisticas ICMP', command= lambda: self.inicia_ventana_grafica_holtW(4)).grid(row=4, column=2)
@@ -46,7 +56,7 @@ class VentanaGraficas(object):
 	def inicia_ventana_grafica(self,id_grafica):
 		a = Grafica(self.root,self.rrd_name,self.host+"-"+str(id_grafica)+".png",id_grafica)
 	def inicia_ventana_grafica_LB(self,id_grafica):
-		a = Grafica_LB(self.root,self.rrd_name_LB,self.host+"-"+str(id_grafica)+"-LB.png",id_grafica,self.limites_LB)
+		a = Grafica_LB(self.root,self.rrd_name_LB,self.host+"-"+str(id_grafica)+"-LB.png",id_grafica,self.limites_LB,self.num_cores)
 	def inicia_ventana_grafica_holtW(self,id_grafica):
 		a = Grafica_HW(self.root,self.rrd_name_HW,self.host+"_"+str(id_grafica)+"_HW.png",id_grafica)	
 		
@@ -142,44 +152,51 @@ class Grafica_HW(object):
 		
 #GRAFICA LINEA BASE
 class Grafica_LB(object):
-	def __init__(self, root, rrd_name, imagen, id_grafica,limites):
+	def __init__(self, root, rrd_name, imagen, id_grafica,limites,num_cores):
 	
 		self.root = root
 		self.rrd_name = rrd_name
 		self.imagen = imagen
 		self.id_grafica = id_grafica
 		self.limites = limites
+		self.num_cores = num_cores
 	
 		self.window1 = None
 		self.img = None
 		self.display = None	
 	
 		#Debe ser un hilo por cada grafica iniciada
-		t2 = threading.Thread(target=graficar_LB, args=("Graficando LB...",self.rrd_name,self.imagen,self.id_grafica,limites,))
+		t2 = threading.Thread(target=graficar_LB, args=("Graficando LB...",self.rrd_name,self.imagen,self.id_grafica,limites,self.num_cores))
 		t2.daemon = True
 		t2.start()
 	
 		self.window1 = tk.Toplevel(self.root)
 
 		if id_grafica == 1:
-			self.window1.title("Linea base para el porcentaje de uso de CPU")			
+			self.window1.title("Linea base para el porcentaje de uso de RAM")			
 		elif id_grafica == 2:
-			self.window1.title("Linea base para el porcentaje de uso de RAM")
-		elif id_grafica == 3:
 			self.window1.title("Linea base para el porcentaje de uso de HDD")
+		elif id_grafica == 3:
+			self.window1.title("Linea base para el porcentaje de uso de CPU")
 		else:
 			self.window1.title("Graficos")
-
-		self.img = ImageTk.PhotoImage(Image.open(self.imagen))
-		self.display = tk.Label(self.window1, image=self.img)
-		self.display.pack(side = "bottom", fill = "both", expand = "yes")
-		self.actualiza_imagen()
+			
+		#--------------------------------------------------------
+		if id_grafica == 3: # Si se desea graficar el uso de CPU se abre la imagen de cada nucleo
+			self.window1.destroy()
+			for i in range(1,num_cores+1):
+				os.system('feh '+self.imagen+"-"+str(i)+" &")
+		else: # RAM y HDD
+			self.img = ImageTk.PhotoImage(Image.open(self.imagen))
+			self.display = tk.Label(self.window1, image=self.img)
+			self.display.pack(side = "bottom", fill = "both", expand = "yes")
+			self.actualiza_imagen()
 
 	def actualiza_imagen(self):
 		self.img = ImageTk.PhotoImage(Image.open(self.imagen))
 		self.display.config(image=self.img)
 		self.window1.after(1000, self.actualiza_imagen)
-		print "Actualizacion img LB..."
+		print "Actualizacion img LB..."+str(self.id_grafica)
 
 if __name__ == '__main__':
 	#Este hilo debe inciar desde la pantalla principal

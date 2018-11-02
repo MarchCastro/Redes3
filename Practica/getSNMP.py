@@ -39,3 +39,39 @@ def consultaSNMP(comunidad,host,puerto,oid):
 		    varB=(' = '.join([x.prettyPrint() for x in varBind]))
 		    resultado= varB.split()[2]
 	return resultado
+
+def consultaSNMPwalk(comunidad,host,puerto,oid):
+	'''
+		Recibe el nombre de la comunidad, el host o ip y el OID a consultar
+	'''
+	resultado = []
+	for (errorIndication,
+		errorStatus,
+		errorIndex,
+		varBinds) in nextCmd(SnmpEngine(), 
+				          CommunityData(comunidad),
+				          UdpTransportTarget((host, puerto)),
+				          ContextData(),                                                           
+				          ObjectType(ObjectIdentity(oid)),
+				          lexicographicMode=False):
+		if errorIndication:
+			print(errorIndication)
+			break
+		elif errorStatus:
+			print('%s at %s' % (errorStatus.prettyPrint(), errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
+			break
+		else:
+			for varBind in varBinds:
+				varB=(' = '.join([x.prettyPrint() for x in varBind]))
+				resultado.append(varB.split()[2])
+	return resultado
+
+if __name__ == '__main__':
+	print consultaSNMPwalk('comunidadEquipo12_4CM3','127.0.0.1','161','1.3.6.1.2.1.25.3.3.1.2')
+
+
+
+
+
+
+
