@@ -71,7 +71,7 @@ Misma que posteriormente y conforme fueron surgiendo los distintos fallos se mos
 \end{figure}
 \FloatBarrier
 
-Sin embargo, también se realizaron mediciones con otros paquetes tal y como la gráfica de la figura \ref{image:grafica3} en la cual se plasman los datos obtenidos con el OID de InOctets.
+Sin embargo, también se realizaron mediciones con otros paquetes tal y como la gráfica de la figura \ref{image:grafica3} en la cual se plasman los datos obtenidos con el OID de \textbf{InOctets}.
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
@@ -130,7 +130,7 @@ En esta sección se explicarán las partes del código más importante. En el m�
 \FloatBarrier
 
 
-El método \textbf{crearHW}, mostrado en la figura \ref{image:codigo1} se encarga de crear el archivo rrd en el cual se almacenarán los datos indicados que en este caso se refieren a los datos de entrada de OutNUCastPkts.
+El método \textbf{crearHW}, mostrado en la figura \ref{image:codigo1} se encarga de crear el archivo .rrd en el cual se almacenarán los datos indicados que en este caso se refieren a los datos de entrada de OutNUCastPkts.
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
@@ -140,9 +140,8 @@ El método \textbf{crearHW}, mostrado en la figura \ref{image:codigo1} se encarg
 \end{figure}
 \FloatBarrier
 
-
-
-Una vez que se ha creado la rrd, volvemos al códgo completo del método actualizarHW mostrado en la figura \ref{image:codigo3}, en el cual se obtienen los datos de entrada utilizando el protocolo SNMP con el cual se indica el OID del cual se desea obtener dichos datos y con los cuales se actualiza el archivo rrd.
+\newpage
+Una vez que se ha creado la base rrd, volvemos al códgo completo del método \textbf{actualizarHW} mostrado en la figura \ref{image:codigo3}, en el cual se obtienen los datos de entrada que se almacenan en la variable \textit{total\_input\_traffic}, utilizando el protocolo SNMP al  cual se indica el OID, hostname, puerto y nombre de la comunidad y con dichos datos obtenidos, se actualiza el archivo .rrd y con el comando .dump, se envian esos datos a un archivo .xml que es legible para el usuario.
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
@@ -152,7 +151,7 @@ Una vez que se ha creado la rrd, volvemos al códgo completo del método actuali
 \end{figure}
 \FloatBarrier
 
-Posteriormente, la figura \ref{image:codigo2} muestra el código utilizado para realizar la graficación de los valores que se estan leyendo desde el archivo rrd. En este método se indican que valores se desean gráficar, los colores y lo que significará cada una de las etiquetas mostradas en la parte inferior de la gráfica.
+Posteriormente, la figura \ref{image:codigo2} muestra el código utilizado para realizar la graficación de los valores que se estan leyendo desde el archivo .rrd. En este método se indican que valores se desean gráficar, los colores y lo que significará cada una de las etiquetas mostradas en la parte inferior de la gráfica.
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
@@ -161,7 +160,7 @@ Posteriormente, la figura \ref{image:codigo2} muestra el código utilizado para 
 		\label{image:codigo2}
 \end{figure}
 \FloatBarrier
-Por último, las figuras \ref{image:codigo5} y \ref{image:codigo6} son las encargadas de revisar los datos en búsqueda de un cambio de valores en los fallos y en caso de encontrarlo se realiza el envío del correo electrónico.
+Por último, las figuras \ref{image:codigo5} y \ref{image:codigo6} muestran los métodos encargados de revisar los datos en búsqueda de un cambio de valores en los fallos y en caso de encontrarlo se realiza el envío del correo electrónico.\\
 El método check\_aberration se encarga de verificar los datos que se generan en los fallos mismos que solo toman un valor de 0 o 1, en caso de que el valor haya cambiado de 0 a 1, significa que un fallo ha comenzado, si el valor cambia de 1 a 0, significará que el fallo ha finalizado.
 \FloatBarrier
 \begin{figure}[htbp!]
@@ -171,6 +170,7 @@ El método check\_aberration se encarga de verificar los datos que se generan en
 		\label{image:codigo5}
 \end{figure}
 \FloatBarrier
+\newpage
 Por otro lado, el método se encarga de enviar el correo correspondiente con el titular necesario para indicar si el fallo comenzó o finalizó y anexando la imagen de la gráfica en el punto en el cual comenzó o termino dicho fallo.
 \FloatBarrier
 \begin{figure}[htbp!]
