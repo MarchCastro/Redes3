@@ -24,14 +24,14 @@ La petición de datos implica:
 \FloatBarrier
 \begin{figure}[htbp!]
 		\centering
-		    \includegraphics[width=.9 \textwidth]{../images/ap2.jpeg} 
+		    \includegraphics[width=1 \textwidth]{../images/ap2.jpeg} 
 		\caption{Ingreso de valores.}
 		\label{image:ap2}
 \end{figure}
 \FloatBarrier
 
 Se hacen las validaciones pertinentes como se muestra en la imagen \ref{image:ap1} para que no haya ningún campo sin llenar, tamto la ruta del archivo como los valores deben ser ingresados o por su defecto son los valores, que se tienen por default.
-En la linea 85 se evalua la hora estimada en la que se pronostica que el fallo podrá ocurrir, en determinada forma es la funcion más importante ya que en ella se evalúa el método de mínimos cuadrados y se regresa el valor en tiempo UNIX, como conclusion tenemos ese valor en la variable "estimado".
+En la linea 85 se evalua la hora estimada en la que se pronostica que el fallo podrá ocurrir, en determinada forma es la funcion más importante ya que en ella se evalúa el método de mínimos cuadrados y se regresa el valor en tiempo UNIX, como conclusion tenemos ese valor en la variable ``estimado".
 
 En la línea 86 se manda llamar la funcion que nos generará la grafica con los valores, enviando asi mismo la hora estimada para que pueda trazar una línea vertical representando con mayor precisión la hora de la predicción del fallo.
 
@@ -50,7 +50,7 @@ Una variable llamada \textbf{strinicio} declarada en la linea 96 la cual nos va 
 
 Una variable llamada \textbf{strfin} la cual detemrina en que momento se tomó el último valor en la base de datos.
 
-Una variable llamada \textbf{strpred} el cual representa la hora exacta en la que el fallo está pronosticado, este valor lo tomamos de la variable "estimado".
+Una variable llamada \textbf{strpred} el cual representa la hora exacta en la que el fallo está pronosticado, este valor lo tomamos de la variable ``estimado".
 
 Finalmente una imagen la cual fué generada en la función: \textbf{graficarLectura} de la línea 86.
 
@@ -66,7 +66,7 @@ Finalmente una imagen la cual fué generada en la función: \textbf{graficarLect
 
 \item \textbf{Notificación}
 
-La función \textbf{CPU} es la más importante ya que al final del proceso regresará la fecha en tiempo UNIX de la predicción que queremos realizar, dicho de otro modo, al registrar los valores de carga de CPU queremos saber, por ejemplo, en qué momento llegará esa carga al 60 porciento, entonces para solucionar éste problema se implementa el algoritmo de mínimos cuadrados, el cual es utilizado de la siguiente manera:
+La función \textbf{CPU} es la más importante ya que al final del proceso regresará la fecha en tiempo UNIX de la predicción que queremos realizar, dicho de otro modo, al registrar los valores de carga de CPU queremos saber, por ejemplo, en qué momento llegará esa carga al 60 porciento, entonces para solucionar este problema se implementa el algoritmo de mínimos cuadrados, el cual es utilizado de la siguiente manera:
 
 Declaramos la variable info para saber cada cuanto tiempo se realiza un step en la base de datos, ese valor se almacena en la variable rrdstep.
 La variable estimado tendrá el valor final en el que la predicción coincide con el porcentaje de carga de CPU al que queremos evaluar. Inicialmente comienza desde la fecha de inicio de captura de datos más el step que sería equivalente a la primer captura.
