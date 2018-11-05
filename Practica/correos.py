@@ -17,9 +17,10 @@ mailsender = 'ruben.murga.d@gmail.com'
 gmail_password = 'aqolqmlxpyvfzcpy'
 
 def enviaCorreo_LB(mensaje,imagen):
+	print "Enviando correo"
 	msg = MIMEMultipart()
-	msg['From']='ruben.murga.d@gmail.com'
-	msg['To']="samuel.asantiagom@gmail.com"
+	msg['From']='asantiagom1401@alumno.ipn.mx'
+	msg['To']="tanibet.escom@gmail.com"
 	
 	msg['Subject']="Alerta - MiniObservium"
 	msg.attach(MIMEText(mensaje))
@@ -29,14 +30,14 @@ def enviaCorreo_LB(mensaje,imagen):
 	fp.close()
 	msg.attach(img)
 
-	mailServer = smtplib.SMTP('smtp.gmail.com',587)
+	mailServer = smtplib.SMTP('smtp.office365.com',587)
 	
 	mailServer.ehlo()
 	mailServer.starttls()
 	mailServer.ehlo()
-	mailServer.login('ruben.murga.d@gmail.com',"aqolqmlxpyvfzcpy")
+	mailServer.login('asantiagom1401@alumno.ipn.mx',"As17B3D51pN")
 	
-	mailServer.sendmail('ruben.murga.d@gmail.com', "samuel.asantiagom@gmail.com", msg.as_string())
+	mailServer.sendmail('asantiagom1401@alumno.ipn.mx', "tanibet.escom@gmail.com", msg.as_string())
 	
 	mailServer.close() 
 

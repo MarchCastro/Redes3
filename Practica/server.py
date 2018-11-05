@@ -43,7 +43,7 @@ photoCanvas.grid(row=0, column=5, sticky="nsew")
 canvasFrame = None
 
 #La siguiente lista contiene los limites para linea base y notificaciones
-limites_LB = [40,50,65]
+limites_LB = [50,75,90]
 
 fields = 'Hostname', 'Version SNMP', 'Puerto', 'Comunidad'
 
