@@ -20,7 +20,7 @@ def enviaCorreo_LB(mensaje,imagen):
 	print "Enviando correo"
 	msg = MIMEMultipart()
 	msg['From']='asantiagom1401@alumno.ipn.mx'
-	msg['To']="tanibet.escom@gmail.com"
+	msg['To']="asantiagom1401@alumno.ipn.mx"
 	
 	msg['Subject']="Alerta - MiniObservium"
 	msg.attach(MIMEText(mensaje))
@@ -37,7 +37,7 @@ def enviaCorreo_LB(mensaje,imagen):
 	mailServer.ehlo()
 	mailServer.login('asantiagom1401@alumno.ipn.mx',"As17B3D51pN")
 	
-	mailServer.sendmail('asantiagom1401@alumno.ipn.mx', "tanibet.escom@gmail.com", msg.as_string())
+	mailServer.sendmail('asantiagom1401@alumno.ipn.mx', "asantiagom1401@alumno.ipn.mx", msg.as_string())
 	
 	mailServer.close() 
 

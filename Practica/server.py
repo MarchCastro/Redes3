@@ -92,11 +92,11 @@ def mostrarInventario():
 					if datos[3].endswith('\n'):
 						datos[3] = datos[3][:-1]
 						inv.append([datos[0], #IP del disp
-									consultaSNMP(datos[3],''+datos[0]+'',int(datos[2]),'1.3.6.1.2.1.1.5.0'), #nombre del host
-									consultaSNMP(datos[3],datos[0],int(datos[2]),'1.3.6.1.2.1.1.1.0'), #version del SO
-									consultaSNMP(datos[3],datos[0],int(datos[2]),'1.3.6.1.2.1.1.3.0'), #tiempo de actividad
-									consultaSNMP(datos[3],datos[0],int(datos[2]),'1.3.6.1.2.1.25.1.2.0'), #fecha y hora del host en hex
-									len(consultaSNMPwalk(datos[3],datos[0],int(datos[2]),'1.3.6.1.2.1.25.3.3.1.1'))]) #procesos en ejecucion
+									consultaSNMP(datos[3],'192.168.61.129',int(datos[2]),'1.3.6.1.2.1.1.5.0'), #nombre del host
+									consultaSNMP(datos[3],'192.168.61.129',int(datos[2]),'1.3.6.1.2.1.1.1.0'), #version del SO
+									consultaSNMP(datos[3],'192.168.61.129',int(datos[2]),'1.3.6.1.2.1.1.3.0'), #tiempo de actividad
+									consultaSNMP(datos[3],'192.168.61.129',int(datos[2]),'1.3.6.1.2.1.25.1.2.0'), #fecha y hora del host en hex
+									len(consultaSNMPwalk(datos[3],'192.168.61.129',int(datos[2]),'1.3.6.1.2.1.25.3.3.1.1'))]) #procesos en ejecucion
 	print inv
 	
 def addClient(): #Abre un recuadro a partir del recuadro principal y muestra su propio boton para 
