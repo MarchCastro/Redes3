@@ -84,3 +84,50 @@ Por último, se implementó un mecanismo de alarma vía correo electrónico que 
 		\label{image:correo3}
 \end{figure}
 \FloatBarrier
+
+\subsection{Explicación de código}
+El código escrito para la implementación de línea base se basa casi en su totalidad en la recolección de datos SNMP con python vista en la \textbf{Práctica 1}. Esto abarca, la adquisición de datos y la actualización de las bases RRD ya que se utiliza la misma estructura RRD. No obstante, el código que si se puede destacar en esta práctica es el de la graficación. La figura \ref{image:codigo-graficacion} muestra la parte del código que permite graficar los umbrales.
+
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=.9 \textwidth]{images/codigo-graficacion}
+		\caption{Código para generar gráficas.}
+		\label{image:codigo-graficacion}
+\end{figure}
+\FloatBarrier
+
+Como se puede observar, se deben definir los 3 umbrales los cuales son recibidos como parámetros de la función \textbf{graficar\_LB}. Así mismo, se definen las variables utilizadas, colores y etiquetas.
+
+Otro segmento de código a destacar es el momento en el que se mandan las alertas vía correo electrónico. Esto se lleva a cabo en la adquisición de datos justo después de realizar la consulta SNMP con el OID correspondiente. Una vez obtenido este dato se compara con cada uno de los \textbf{limites} o umbrales establecidos. Esto se puede observar en la siguiente figura: 
+
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=.9 \textwidth]{images/codigo-alerta}
+		\caption{Verificación de alertas .}
+		\label{image:codigo-alerta}
+\end{figure}
+\FloatBarrier
+
+Una vez que se ha sobre pasado uno de los umbrales se llama a la función \textbf{notificar}:
+
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=.9 \textwidth]{images/codigo-notificar}
+		\caption{Llamada a notificar .}
+		\label{image:codigo-notificar}
+\end{figure}
+\FloatBarrier
+
+Esta función se encarga de formar la cadena correcta que se integrará al correo y a su vez, llama a la función \textbf{enviaCorreo\_LB} la cual es la encargada de adjuntar la imagen de la gráfica correspondiente y enviar el correo:
+
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=.9 \textwidth]{images/codigo-correo}
+		\caption{Envío de correo.}
+		\label{image:codigo-correo}
+\end{figure}
+\FloatBarrier
