@@ -35,7 +35,7 @@ def enviaCorreo_LB(mensaje,imagen):
 	mailServer.ehlo()
 	mailServer.starttls()
 	mailServer.ehlo()
-	mailServer.login('asantiagom1401@alumno.ipn.mx',"As17B3D51pN")
+	mailServer.login('asantiagom1401@alumno.ipn.mx','<password>')
 	
 	mailServer.sendmail('asantiagom1401@alumno.ipn.mx', "asantiagom1401@alumno.ipn.mx", msg.as_string())
 	
