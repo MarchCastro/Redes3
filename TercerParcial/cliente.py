@@ -83,6 +83,19 @@ def sensor_correo():
     stdin, stdout, stderr = s.exec_command("rm "+archivo)
     s.close()
 
+def ftp_counter():
+    ssh_hostname = '192.168.0.32' # IP del servidor
+    ssh_port = 22
+    ssh_username = 'root'
+    ssh_password = 'hola123.,'
+    
+    paramiko.util.log_to_file('paramiko.log')
+    s = paramiko.SSHClient()
+    s.load_system_host_keys()
+    s.connect(ssh_hostname,ssh_port,ssh_username,ssh_password)
+    stdin, stdout, stderr = s.exec_command("ls -1 /home/samuel/ | wc -l")
+    print 'Numero de archivos alojados en el servidor FTP: '+stdout.read()
+
 if __name__ == "__main__":
     salir = False
     opcion = 0
@@ -111,6 +124,7 @@ if __name__ == "__main__":
             print ("\n---- SENSOR FTP ----")
         elif opcion == 4:
             print ("\n---- SENSOR FTP Server File Count ----")
+            ftp_counter()
         elif opcion == 5:
             print ("\n---- SENSOR DE IMPRESION ----")
         elif opcion == 6:
