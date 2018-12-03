@@ -95,6 +95,26 @@ def ftp_counter():
     s.connect(ssh_hostname,ssh_port,ssh_username,ssh_password)
     stdin, stdout, stderr = s.exec_command("ls -1 /home/samuel/ | wc -l")
     print 'Numero de archivos alojados en el servidor FTP: '+stdout.read()
+    s.close()
+
+def sensor_ssh():
+    ssh_hostname = '192.168.0.32' # IP del servidor
+    ssh_port = 22
+    ssh_username = 'root'
+    ssh_password = 'hola123.,'
+    
+    paramiko.util.log_to_file('paramiko.log')
+    s = paramiko.SSHClient()
+    s.load_system_host_keys()
+    s.connect(ssh_hostname,ssh_port,ssh_username,ssh_password)
+    stdin, stdout, stderr = s.exec_command("netstat -tnpa | grep 'ESTABLISHED.*sshd' | wc -l")
+    num = int(stdout.read())
+    print 'Numero de conexiones SSH en el servidor: '+str(num)
+    if(num > 0):
+        print "Destino         Origen                  Usuario\n"
+        stdin, stdout, stderr = s.exec_command("netstat -tnpa | grep 'ESTABLISHED.*sshd' | tr -s ' ' | cut -d' ' -f4,5,8 | tr ' ' '\t'")
+        print stdout.read()
+    s.close()
 
 if __name__ == "__main__":
     salir = False
@@ -129,6 +149,7 @@ if __name__ == "__main__":
             print ("\n---- SENSOR DE IMPRESION ----")
         elif opcion == 6:
             print ("\n---- SENSOR SSH ----")
+            sensor_ssh()
         elif opcion == 7:
             print ("\n---- ADMINISTRACION DE ARCHIVOS DE CONFIGURACION ----")
         elif opcion == 8:
