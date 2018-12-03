@@ -7,8 +7,10 @@ import os
 import paramiko
 import smtplib
 import time
+import requests
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from ftplib import FTP
 
 def pedirNumeroEntero():
  
@@ -23,16 +25,83 @@ def pedirNumeroEntero():
      
     return num
  
-def tiempoRespuestaHTTP():
-    #ip = str(input('Ingresa host del servidor: '))
-    ip = '192.168.1.69'
+def HTTPmethod():
+    ip = str(input('Ingresa host del servidor: '))
+    print
+    #ip = '192.168.1.69'
     #nf = urllib.urlopen('http://'+ip).read()
-    conn = httplib.HTTPSConnection(ip)
+    #Tiempo de respuesta
+    conn = httplib.HTTPConnection(ip)
     start = datetime.datetime.now()
     print 'Inicio de solicitud: ', start 
     end = datetime.datetime.now()
     print 'Recepcion de solicitud: ', end 
-    print 'Tiempo de respuesta de solicitud: ', end - start
+    print 'Tiempo de respuesta de solicitud: ', end - start, 'segundos'
+    #Bytes recibidos
+    conn.request('GET', '/')
+    res = conn.getresponse()
+    data = res.read()
+    print 'Bytes recibidos: ', (len(data)), 'bytes'
+    #Ancho de banda    
+    start = time.time()
+    file = requests.get('http://'+ip)
+    end = time.time()
+    time_difference = end - start
+    file_size = int(file.headers['Content-Length'])/1000    
+    print 'Velocidad de ancho de banda', round(file_size / time_difference), 'Kb/s'
+    #st = pyspeedtest.SpeedTest(ip)
+    #print 'Velocidad de ancho de banda', st.download(), 'bytes por segundo'
+
+def FTP_receive_method():
+    """ip = str(input('Ingresa host del servidor: '))
+    user = str(input('Ingresa el usuario: '))
+    pss = str(input('Ingresa la contrasena: '))"""
+    ip = '192.168.1.69'
+    ftp = FTP(ip)
+    #ftp.login(user,pss)
+    ftp.login('marce','1596')
+    ftp.cwd('/home/marce/')
+    print 'Los archivos disponibles son: '
+    ftp.retrlines('LIST')
+    try:
+        filename = str(input('Ingresa el nombre del archivo que deseas: '))
+        start = time.time()
+        tr_response = ftp.retrbinary('RETR '+filename, open(filename, 'wb').write)  
+        print 
+        end = time.time()
+        print tr_response
+        time_difference = end - start
+        print 'Tamano de archivo recibido:', ftp.size(filename), 'bytes'
+        print 'Tiempo de respuesta:', "{0:.5f}".format(time_difference), 'segundos'
+    except:
+        print 'Ocurrio un error al recibir el archivo'
+    ftp.quit()
+    ftp.close()
+
+def FTP_upload_method():
+    """ip = str(input('Ingresa host del servidor: '))
+    user = str(input('Ingresa el usuario: '))
+    pss = str(input('Ingresa la contrasena: '))"""
+    ip = '192.168.1.69'
+    ftp = FTP(ip)
+    #ftp.login(user,pss)
+    ftp.login('marce','1596')
+    start = time.time()
+    ftp.cwd('/home/marce/')
+    try:
+        ftp_response = ftp.storbinary("STOR " + 'prueba.jpg', open('prueba.jpg', 'r'))
+        end = time.time()
+        time_difference = end - start
+        print
+        print ftp_response
+        print 'Archivo transferido: prueba.jpg'
+        print 'Tamano de archivo transferido:', ftp.size('/home/marce/prueba.jpg'), 'bytes'
+        print 'Tiempo de respuesta:', "{0:.5f}".format(time_difference), 'segundos'
+    except:
+        print 'Ocurrio un error al recibir el archivo'
+    #ftp.delete('prueba.jpg')
+    ftp.quit()
+    ftp.close()
 
 def sensor_correo():
     '''
@@ -139,9 +208,24 @@ if __name__ == "__main__":
             sensor_correo()
         elif opcion == 2:
             print ("\n---- SENSOR HTTP ----")
-            tiempoRespuestaHTTP()
+            HTTPmethod()
         elif opcion == 3:
             print ("\n---- SENSOR FTP ----")
+            print '1. Descargar archivo desde servidor'
+            print '2. Subir archivo a servidor'
+            print '3. Salir'
+            num = int(input("Selecciona una opcion (numero entero 1-3):"))
+            while num != 3:    
+                if num == 1:
+                    FTP_receive_method()
+                elif num == 2:
+                    FTP_upload_method()
+                print
+                print ("\n---- SENSOR FTP ----")
+                print '1. Descargar archivo desde servidor'
+                print '2. Subir archivo a servidor'
+                print '3. Salir'
+                num = int(input("Selecciona una opcion (numero entero 1-3):"))
         elif opcion == 4:
             print ("\n---- SENSOR FTP Server File Count ----")
             ftp_counter()
