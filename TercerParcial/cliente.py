@@ -53,13 +53,13 @@ def HTTPmethod():
     #print 'Velocidad de ancho de banda', st.download(), 'bytes por segundo'
 
 def FTP_receive_method():
-    """ip = str(input('Ingresa host del servidor: '))
+    ip = str(input('Ingresa host del servidor: '))
     user = str(input('Ingresa el usuario: '))
-    pss = str(input('Ingresa la contrasena: '))"""
-    ip = '192.168.1.69'
+    pss = str(input('Ingresa la contrasena: '))
+    #ip = '192.168.1.69'
     ftp = FTP(ip)
-    #ftp.login(user,pss)
-    ftp.login('marce','1596')
+    ftp.login(user,pss)
+    #ftp.login('marce','1596')
     ftp.cwd('/home/marce/')
     print 'Los archivos disponibles son: '
     ftp.retrlines('LIST')
