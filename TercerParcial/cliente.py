@@ -185,6 +185,67 @@ def sensor_ssh():
         print stdout.read()
     s.close()
 
+def pedirNumeroEntero2():
+    correcto=False
+    num=0
+    while(not correcto):
+        try:
+            num = int(input("Selecciona una opcion (numero entero 1-3):"))
+            correcto=True
+        except ValueError:
+            print('Error, introduce un numero entero')
+    return num
+
+def importar():
+    with open("importar.conf",'r') as exportar:
+        for linea in exportar.readlines():
+            linea = linea.rstrip().split(' ')
+            if len(linea[0]) > 0:
+                if linea[0][0] != '#':
+                    print linea
+                    ftp = FTP(linea[0]) # Connect
+                    ftp.login(linea[3],linea[4]) # Login
+                    file = open(linea[2]+'.'+linea[5]+'.'+str(time.time()),'wb') # Abre archivo local
+                    ftp.retrbinary('RETR %s' % linea[1],file.write) # Upload
+                    ftp.quit()
+
+def exportar():
+    with open("exportar.conf",'r') as exportar:
+        for linea in exportar.readlines():
+            linea = linea.rstrip().split(' ')
+            if len(linea[0]) > 0:
+                if linea[0][0] != '#':
+                    print linea
+                    ftp = FTP(linea[0]) # Connect
+                    ftp.login(linea[3],linea[4]) # Login
+                    file = open(linea[1],'rb') # Abre archivo local
+                    ftp.storbinary('STOR %s' % linea[2],file) # Upload
+                    ftp.retrlines('LIST') # Lista archivos
+                    ftp.quit()
+
+def admin_conf_files():
+    regresar = False
+    opcion = 0
+    while not regresar:
+        print ("\n \n")
+        print ("----- Menu de opciones de archivos de configuracion-----")
+        print ("1. Importar archivos de configuracion")
+        print ("2. Exportar archivos de configuracion")
+        print ("3. Regresar") 
+     
+        opcion = pedirNumeroEntero2()
+     
+        if opcion == 1:
+            print ("\n---- IMPORTAR ARCHIVOS DE CONFIGURACION ----")
+            importar()
+        elif opcion == 2:
+            print ("\n---- EXPORTART ARCHIVOS DE CONFIGURACION ----")
+            exportar()
+        elif opcion == 3:
+            regresar = True
+        else:
+            print ("Introduce un numero entre 1 y 3")
+
 if __name__ == "__main__":
     salir = False
     opcion = 0
@@ -236,6 +297,7 @@ if __name__ == "__main__":
             sensor_ssh()
         elif opcion == 7:
             print ("\n---- ADMINISTRACION DE ARCHIVOS DE CONFIGURACION ----")
+            admin_conf_files()
         elif opcion == 8:
             salir = True
         else:
