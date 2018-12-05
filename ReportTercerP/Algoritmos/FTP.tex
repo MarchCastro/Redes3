@@ -33,3 +33,28 @@ Por último, se ejecutó el comando \textbf{sudo service vsftp restart} con el c
 \end{figure}
 \FloatBarrier
 \subsection{Sensor FTP Server File Count}
+
+Para la implementación del contador de archivos que almacena el servidor FTP se realiza una conexión SSH y se enlistan y se cuentan los archivos en el directorio de almacenamiento del servidor. Para ello se utiliza el siguiente comando:\\
+\texttt{ls -1 /home/ftp/ | wc -l}\\
+
+El código se puede observar en la figura \ref{image:ftpcounter}.
+
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=.75 \textwidth]{images/ftpcounter}
+		\caption{Código del contador de archivos en el servidor FTP.}
+		\label{image:ftpcounter}
+\end{figure}
+\FloatBarrier
+
+El funcionamiento se puede ver en la figura \ref{image:ftpcounterfunc}.
+
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=.75 \textwidth]{images/ftpcounterfunc}
+		\caption{Contador de archivos en el servidor FTP.}
+		\label{image:ftpcounterfunc}
+\end{figure}
+\FloatBarrier
